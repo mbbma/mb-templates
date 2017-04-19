@@ -1,6 +1,6 @@
 /******************************************************************
 Site Name:
-Author:
+Author: MB - Bedrijfskundig Marketing
 
 Stylesheet: Grid Stylesheet
 
@@ -24,230 +24,152 @@ over your project's layout.
 
 ******************************************************************/
 
-// using a mixin since we can't use placeholder selectors
-@mixin grid-col {
-  float: left;
-  padding-right: 0.75em;
-
+.gutter {
+  margin-left:      10px !important;
+  margin-right:     10px !important;
 }
 
 // the last column
 .last-col {
   float: right;
-  padding-right: 0 !important;
+  margin-right: 0 !important;
 }
 
-
-/*
-Mobile Grid Styles
-These are the widths for the mobile grid.
-There are four types, but you can add or customize
-them however you see fit.
-*/
-@media (max-width: 767px) {
-
-  .m-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
+  .col-1of2 {
+    float: left;
+    margin-right: 4%;
+    width: 48%;
   }
 
-  .m-1of2 {
-    @include grid-col;
-    width: 50%;
+@mixin grid-col-3 {
+  float:left;
+    margin-right:5%;
+}
+
+@mixin grid-col-4 {
+    float:left;
+    margin-right:4%;
   }
 
-  .m-1of3 {
-    @include grid-col;
-    width: 33.33%;
+
+
+@media all and (min-width: 740px) {
+
+
+   .col-1of3 {
+    @include grid-col-3;
+    width: 30%;
+  }
+  
+   .col-2of3 {
+    @include grid-col-3;
+    width: 65%;
+  }
+  
+  .col-1of4 {
+    @include grid-col-4;
+    width: 22%;
   }
 
-  .m-2of3 {
-    @include grid-col;
-    width: 66.66%;
+   .col-3of4 {
+    @include grid-col-4;
+    width: 74%;
   }
 
-  .m-1of4 {
-    @include grid-col;
-    width: 25%;
+  .float-left,
+  .gutter {
+    float:          left;
   }
 
-  .m-3of4 {
-    @include grid-col;
-    width: 75%;
+  .float-right {
+    float:          right;
   }
 
-} // end mobile styles
-
-
-/* Portrait tablet to landscape */
-@media (min-width: 768px) and (max-width: 1029px) {
-
-  .t-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
+  .gutter-left {
+    margin-left:      20px;
   }
 
-  .t-1of2 {
-    @include grid-col;
-    width: 50%;
+  .gutter-right {
+    margin-right:     20px;
   }
 
-  .t-1of3 {
-    @include grid-col;
-    width: 33.33%;
+  .columns-1 {width: 40px;}
+  .columns-2 {width: 100px;}
+  .columns-3 {width: 160px;}
+  .columns-4 {width: 220px;}
+  .columns-5 {width: 280px;}
+  .columns-6 {width: 340px;}
+  .columns-7 {width: 400px;}
+  .columns-8 {width: 460px;}
+  .columns-9 {width: 520px;}
+  .columns-10 {width: 580px;}
+  .columns-11 {width: 640px;}
+  .columns-12 {width: 700px;}
+
+  #zone-header,
+  #zone-navigation,
+  #zone-content,
+  #zone-postscript,
+  #zone-postscript-2,
+  #zone-footer,
+  #zone-footer-2 {
+    width:          720px;
   }
 
-  .t-2of3 {
-    @include grid-col;
-    width: 66.66%;
+
+}
+
+@media all and (min-width: 980px) {
+
+  .columns-1 {width: 60px;}
+  .columns-2 {width: 140px;}
+  .columns-3 {width: 220px;}
+  .columns-4 {width: 300px;}
+  .columns-5 {width: 380px;}
+  .columns-6 {width: 460px;}
+  .columns-7 {width: 540px;}
+  .columns-8 {width: 620px;}
+  .columns-9 {width: 700px;}
+  .columns-10 {width: 780px;}
+  .columns-11 {width: 860px;}
+  .columns-12 {width: 940px;}
+
+  #zone-header,
+  #zone-navigation,
+  #zone-content,
+  #zone-postscript,
+  #zone-postscript-2,
+  #zone-footer,
+  #zone-footer-2 {
+    width:          960px;
   }
 
-  .t-1of4 {
-    @include grid-col;
-    width: 25%;
+
+}
+
+@media all and (min-width: 1220px) {
+
+  .columns-1 {width: 80px;}
+  .columns-2 {width: 180px;}
+  .columns-3 {width: 280px;}
+  .columns-4 {width: 380px;}
+  .columns-5 {width: 480px;}
+  .columns-6 {width: 580px;}
+  .columns-7 {width: 680px;}
+  .columns-8 {width: 780px;}
+  .columns-9 {width: 880px;}
+  .columns-10 {width: 980px;}
+  .columns-11 {width: 1080px;}
+  .columns-12 {width: 1180px;}
+
+  #zone-header,
+  #zone-navigation,
+  #zone-content,
+  #zone-postscript,
+  #zone-postscript-2,
+  #zone-footer,
+  #zone-footer-2 {
+    width:          1200px;
   }
 
-  .t-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
-
-  .t-1of5 {
-    @include grid-col;
-    width: 20%;
-  }
-
-  .t-2of5 {
-    @include grid-col;
-    width: 40%;
-  }
-
-  .t-3of5 {
-    @include grid-col;
-    width: 60%;
-  }
-
-  .t-4of5 {
-    @include grid-col;
-    width: 80%;
-  }
-
-} // end tablet
-
-/* Landscape to small desktop */
-@media (min-width: 1030px) {
-
-  .d-all  {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .d-1of2 {
-    @include grid-col;
-    width: 50%;
-  }
-
-  .d-1of3 {
-    @include grid-col;
-    width: 33.33%;
-  }
-
-  .d-2of3 {
-    @include grid-col;
-    width: 66.66%;
-  }
-
-  .d-1of4 {
-    @include grid-col;
-    width: 25%;
-  }
-
-  .d-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
-
-  .d-1of5 {
-    @include grid-col;
-    width: 20%;
-  }
-
-  .d-2of5 {
-    @include grid-col;
-    width: 40%;
-  }
-
-  .d-3of5 {
-    @include grid-col;
-    width: 60%;
-  }
-
-  .d-4of5 {
-    @include grid-col;
-    width: 80%;
-  }
-
-  .d-1of6 {
-    @include grid-col;
-    width: 16.6666666667%;
-  }
-
-  .d-1of7 {
-    @include grid-col;
-    width: 14.2857142857%;
-  }
-
-  .d-2of7 {
-    @include grid-col;
-    width: 28.5714286%;
-  }
-
-  .d-3of7 {
-    @include grid-col;
-    width: 42.8571429%;
-  }
-
-  .d-4of7 {
-    @include grid-col;
-    width: 57.1428572%;
-  }
-
-  .d-5of7 {
-    @include grid-col;
-    width: 71.4285715%;
-  }
-
-  .d-6of7 {
-    @include grid-col;
-    width: 85.7142857%;
-  }
-
-  .d-1of8 {
-    @include grid-col;
-    width: 12.5%;
-  }
-
-  .d-1of9 {
-    @include grid-col;
-    width: 11.1111111111%;
-  }
-
-  .d-1of10 {
-    @include grid-col;
-    width: 10%;
-  }
-
-  .d-1of11 {
-    @include grid-col;
-    width: 9.09090909091%;
-  }
-
-  .d-1of12 {
-    @include grid-col;
-    width: 8.33%;
-  }
-
-} // end desktop styles
+}

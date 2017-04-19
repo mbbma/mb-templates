@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: MB - Bedrijfskundig Marketing Advies
+Author: MB - Bedrijfskundig Marketing Advies
 
 Stylesheet: Print Stylesheet
 
@@ -71,10 +71,9 @@ though, go for it.
     }
 
     // hide content people who print don't need to see
+    #site-navigation, .footer-columns-second, .footer-columns-third, .footer-columns-fourth, .logo-mobile,
     .sidebar,
     .page-navigation,
-    .wp-prev-next,
-    .respond-form,
-    nav {
+    .wp-prev-next {
       display: none;
     }

@@ -1,0 +1,75 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Normal
+
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	font-size: 100%;
+
+}
+
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+
+/*********************
+HEADER STYLES
+*********************/
+
+
+/*********************
+CONTENT STYLES
+*********************/
+
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.main-navigation {
+	padding: 0;
+
+	ul {}
+	li { 
+
+		a {
+			border-bottom: 0;
+			display: block;
+			text-decoration: none;
+			/*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+	} /* end .menu ul li */
+
+} /* end .nav */
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+
+/*********************
+FOOTER STYLES
+*********************/
+

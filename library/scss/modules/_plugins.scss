@@ -1,0 +1,72 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Plugins
+
+We put all the form and button styles in here to setup a consistent
+look. If we need to customize them, we can do this in the main
+stylesheets and just override them. Easy Peasy.
+
+You're gonna see a few data-uri thingies down there. If you're not
+sure what they are, check this link out:
+http://css-tricks.com/data-uris/
+If you want to create your own, use this helpful link:
+http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/
+
+******************************************************************/
+
+.metaslider {
+  border:         1px solid #ccc;
+}
+
+.page-number-wrapper {
+  text-align:       center;
+}
+
+ul.page-numbers {
+  list-style: none;
+  margin: 0;
+}
+
+ul.page-numbers {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #dfdbdf -moz-use-text-color #dfdbdf #dfdbdf;
+    border-image: none;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    clear: both;
+    display: inline-block;
+    margin: 1px;
+    padding: 0;
+    white-space: nowrap;
+}
+
+ul.page-numbers li {
+    border-right: 1px solid #dfdbdf;
+    display: inline;
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.page-numbers a,
+.page-numbers span {
+    display: block;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0;
+    min-width: 1em;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+.page-numbers span.current {
+    background: none repeat scroll 0 0 #f7f6f7;
+    color: #978a97;
+}

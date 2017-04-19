@@ -1,0 +1,117 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mobile only
+
+******************************************************************/
+
+/*
+IMPORTANT NOTE ABOUT SASS 3.3 & UP
+You can't use @extend within media queries
+anymore, so just be aware that if you drop
+them in here, they won't work.
+*/
+/*********************
+GENERAL STYLES
+*********************/
+
+	body {
+		font-size: 80%;
+	}
+
+	.center {
+		padding:30px 10px;
+	}
+	
+	.menu-toggle-desktop,
+	.mobile-none,
+	.logo-normal {
+		display:				none;
+	}
+	.logo-mobile{
+		height: 35px;
+		vertical-align: middle;
+	}
+
+/*********************
+Navigation
+*********************/
+	.overlay-menu {
+		position: relative;
+		height: 100%;
+	}
+
+	.mobile-menu {
+		display: block;
+	}
+
+	#zone-navigation-wrapper {
+		margin:					0 0 20px;
+		width:					100%;
+	}
+
+	.main-navigation {
+		background:				#fff;
+	}
+
+	#site-navigation.gutter {
+		margin:					0 !important;
+	}
+
+	.main-navigation {
+		width:					100%;
+	}
+
+	.main-navigation ul ul {
+		position:				static !important;
+		float:					none !important;
+		box-shadow:				none !important;
+		display: none;
+	}
+
+	.main-navigation ul ul a {
+		width:					100% !important;
+		text-align:				center !important;
+		background:				#ccc !important;
+	}
+
+	.main-navigation li a {
+		border-top: 			1px solid #ccc;
+		padding: 24px 10px !important;
+		text-align: center;
+		width: 100%;
+		font-size: 15px;
+		text-transform: uppercase;
+		display: table;
+	}
+
+		.main-navigation li a.submenu-toggle {
+		border-bottom: 			none;
+		padding: 0 !important;
+		width: 20px;
+		display: block;
+	}
+
+/*********************
+MISC
+*********************/
+
+	.embed-youtube {
+		max-width:					300px;
+	}
+
+	.breadcrumb{
+		display: none;
+	}
+
+
+.nieuwsbrief-wrapper {
+		padding: 20px 50px;
+	}
+
+
+/*********************
+CONTENT STYLES
+*********************/
+	

@@ -164,10 +164,10 @@ hr {
 */
 
 p {
-  -webkit-hyphens: auto;
-  -epub-hyphens:   auto;
-  -moz-hyphens:    auto;
-  hyphens:         auto;
+  -webkit-hyphens: none;
+  -epub-hyphens:   none;
+  -moz-hyphens:    none;
+  hyphens:         none;
 
 }
 
@@ -216,7 +216,6 @@ q:after {
 }
 
 small, .small {
-    font-size: 75%;
 }
 
 /**
@@ -498,3 +497,17 @@ span.amp {
   font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
   font-style: italic;
 }
+
+/* =MISC
+----------------------------------------------- */
+
+.comment-content a {
+  word-wrap: break-word;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed, iframe, object {
+  max-width: 100%;
+}
+
+

@@ -28,59 +28,59 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 LINK STYLES
 *********************/
 
-a  {
-  color: $link-color;
-  text-decoration: none;
+a {
+	color: $link-color;
+	text-decoration: none;
 
-  /* on hover */
-  &:hover, &:focus {
-    color: $link-hover;
-    text-decoration: underline;
-  }
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover;
+		text-decoration: underline;
+	}
 
-  /* on click */
-  &:active {
+	/* on click */
+	&:active {
 
-  }
+	}
 
-  /* mobile tap color */
-  &:link {
-    /*
-    this highlights links on iPhones/iPads.
-    so it basically works like the :hover selector
-    for mobile devices.
-    */
-    -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-  }
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
 }
 
 
 
 %btn {
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  color: $white;
-  line-height: 1em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 15px 20px;
-  border-radius: 4px;
-  border: 0;
-  cursor: pointer;
-  @include transition(background-color 0.14s ease-in-out);
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color: $white;
+	line-height: 1em;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 15px 20px;
+	border-radius: 4px;
+	border: 0;
+	cursor: pointer;
+	@include transition(background-color 0.14s ease-in-out);
 
-  // hovering on the btn
-  &:hover, &:focus {
-    color: $white;
-    text-decoration: none;
-    outline: none;
-  } // end hover
+	// hovering on the btn
+	&:hover, &:focus {
+		color: $white;
+		text-decoration: none;
+		outline: none;
+	} // end hover
 
-  // clicking on the button
-  &:active {
-    top: 1px; // adds a tiny hop to the click
-  } // end active
+	// clicking on the button
+	&:active {
+		top: 1px; // adds a tiny hop to the click
+	} // end active
 
 } // end .button
 
@@ -90,37 +90,37 @@ You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
 .green-btn {
-  @extend %btn; // here we load the btn defaults
-  background-color: #00ce5d;
+	@extend %btn; // here we load the btn defaults
+	background-color: #00ce5d;
 
-  &:hover,
-  &:focus {
-    background-color: #fff;
-    color: #00ce5d;
-  } // end hover
+	&:hover,
+	&:focus {
+		background-color: #fff;
+		color: #00ce5d;
+	} // end hover
 
-  &:active {
-    background-color: #fff;
-    color: #00ce5d;
-  } // end active
+	&:active {
+		background-color: #fff;
+		color: #00ce5d;
+	} // end active
 
 } // end green button
 
 
 .white-btn {
-  @extend %btn; // here we load the btn defaults
-  background-color: #fff;
-  color:        #3ca499;
+	@extend %btn; // here we load the btn defaults
+	background-color: #fff;
+	color: #3ca499;
 
-  &:hover,
-  &:focus {
-    background-color: #3ca499;
-    color: #fff;
-  } // end hover
+	&:hover,
+	&:focus {
+		background-color: #3ca499;
+		color: #fff;
+	} // end hover
 
-  &:active {
-    background-color: #3ca499;
-    color: #fff;
-  } // end active
+	&:active {
+		background-color: #3ca499;
+		color: #fff;
+	} // end active
 
 } // end white button

@@ -82,8 +82,13 @@ Media Queries
 
 } // end of media query
 
+@media only screen and (min-width: 980px) and (max-width: 1219px)  {
+	@import "breakpoints/06-normal-only";
+
+} // end of media query
+
 @media only screen and (min-width: 1220px) {
-	@import "breakpoints/06-large";
+	@import "breakpoints/07-large";
 
 } // end of media query
 

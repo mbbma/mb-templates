@@ -21,7 +21,7 @@ INPUTS
 *********************/
 
 .wpcf7-form-control-wrap {
-  position: relative;
+	position: relative;
 }
 
 span.your-name::before,
@@ -29,58 +29,58 @@ span.your-company::before,
 span.your-mail::before,
 span.your-tel::before,
 span.your-message::before {
-  font-family: FontAwesome;
-    color: #559a7d;
-    position: absolute;
-    z-index: 9999;
-    left: 10px;
-    font-size: 18px;
-    top: 25px;
+	font-family: FontAwesome;
+	color: #559a7d;
+	position: absolute;
+	z-index: 9999;
+	left: 10px;
+	font-size: 18px;
+	top: 25px;
 }
 span.your-name::before {
-  content: "\f007";
+	content: "\f007";
 }
 span.your-company::before {
-  content: "\f1ad";
+	content: "\f1ad";
 }
 span.your-mail::before{
-  content: "\f0e0";
+	content: "\f0e0";
 }
 span.your-tel::before {
-  content: "\f095";
+	content: "\f095";
 }
 span.your-message::before {
-  content: "\f086";
+	content: "\f086";
 }
 div.wpcf7 .ajax-loader {
-  display: none !important;
+	display: none !important;
 }
 
 input[type="submit"] {
-  color: #fff;
-  width: 100%;
-  padding: 10px 0;
-  border: none;
-  font-size: 25px;
-  font-weight: 700;
+	color: #fff;
+	width: 100%;
+	padding: 10px 0;
+	border: none;
+	font-size: 25px;
+	font-weight: 700;
 
-  background: #e73240; /* Old browsers */
-  background: -moz-linear-gradient(top,  #e73240 0%, #b92b36 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #e73240 0%,#b92b36 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #e73240 0%,#b92b36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73240', endColorstr='#b92b36',GradientType=0 ); /* IE6-9 */
-  
-  &:hover, &:focus {
-    background: #fff;
-    color:  $base-red;
-  }
+	background: #e73240; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e73240 0%, #b92b36 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #e73240 0%,#b92b36 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #e73240 0%,#b92b36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73240', endColorstr='#b92b36',GradientType=0 ); /* IE6-9 */
+
+	&:hover, &:focus {
+		background: #fff;
+		color:  $base-red;
+	}
 }
 
 .contact-undertxt {
-  font-weight: 700;
-    .fa-lock{
-      margin-right: 10px;
-    }
+	font-weight: 700;
+	.fa-lock{
+		margin-right: 10px;
+	}
 }
 
 // setting up defaults
@@ -101,50 +101,50 @@ input[type="color"],
 select,
 textarea,
 .field {
-  display: block;
-  line-height: 1.3em;
-  padding: 10px 35px;
-  margin-bottom: 14px;
-  font-size: 1em;
-  color: $text-color;
-  border-radius: 3px;
-  vertical-align: middle;
-  box-shadow: none;
-  border: 0;
-  width: 100%;
-  max-width: 400px;
-  font-family: $lato;
-  background-color: $gray;
-  @include transition(background-color 0.24s ease-in-out);
+	display: block;
+	line-height: 1.3em;
+	padding: 10px 35px;
+	margin-bottom: 14px;
+	font-size: 1em;
+	color: $text-color;
+	border-radius: 3px;
+	vertical-align: middle;
+	box-shadow: none;
+	border: 0;
+	width: 100%;
+	max-width: 400px;
+	font-family: $lato;
+	background-color: $gray;
+	@include transition(background-color 0.24s ease-in-out);
 
-  // a focused input (or hovered on)
-  &:focus,
-  &:active {
-    background-color: lighten($gray, 4%);
-    outline: none; 
-  } // end hover or focus
+	// a focused input (or hovered on)
+	&:focus,
+	&:active {
+		background-color: lighten($gray, 4%);
+		outline: none; 
+	} // end hover or focus
 
 } // end input defaults
 
 // spacing out the password (thx @murtaugh)
 input[type="password"] {
-  letter-spacing: 0.3em;
+	letter-spacing: 0.3em;
 }
 
 // textareas
 textarea {
-  max-width: 100%;
-  max-height: 100px;
-  line-height: 1.5em;
+	max-width: 100%;
+	max-height: 100px;
+	line-height: 1.5em;
 }
 
 // selects
 select {
-  -webkit-appearance: none; /* 1 */
-  // Base64 encoded little arrow
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHCAYAAADXhRcnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEOEZCMjYxMEYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEOEZCMjYxMUYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ4RkIyNjBFRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ4RkIyNjBGRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Vxkp9gAAAI9JREFUeNpidHFxucHAwKAOxE+AmJmBMPgLxDJAfJMFSKwD4kqoAClgA+P///8ZXF1dPaCGcBKh6QcQB+3evXs7WDMIAA2QB1I7gFgDj0aQFz2BGh+AOEwwUaDAQyBlCMR7cGjcC5KHaQQBuM3IAOiKTiBVhiTUDdRUhq4Oq2aoAelAahIQ5wM1zsCmBiDAADhYMJXVZ9u9AAAAAElFTkSuQmCC);
-  background-repeat: no-repeat;
-  background-position: 97.5% center;
+	-webkit-appearance: none; /* 1 */
+	// Base64 encoded little arrow
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHCAYAAADXhRcnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEOEZCMjYxMEYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEOEZCMjYxMUYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ4RkIyNjBFRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ4RkIyNjBGRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Vxkp9gAAAI9JREFUeNpidHFxucHAwKAOxE+AmJmBMPgLxDJAfJMFSKwD4kqoAClgA+P///8ZXF1dPaCGcBKh6QcQB+3evXs7WDMIAA2QB1I7gFgDj0aQFz2BGh+AOEwwUaDAQyBlCMR7cGjcC5KHaQQBuM3IAOiKTiBVhiTUDdRUhq4Oq2aoAelAahIQ5wM1zsCmBiDAADhYMJXVZ9u9AAAAAElFTkSuQmCC);
+	background-repeat: no-repeat;
+	background-position: 97.5% center;
 }
 
 

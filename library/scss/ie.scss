@@ -31,7 +31,8 @@ import the mixins file so SASS can understand the variables.
 	@import "breakpoints/03-narrow";
 	@import "breakpoints/04-narrow-only";
 	@import "breakpoints/05-normal";
-	@import "breakpoints/06-large";
+	@import "breakpoints/06-normal-only";
+	@import "breakpoints/07-large";
 
 /*
 you can call the larger styles if you want, but there's really no need

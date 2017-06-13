@@ -12,16 +12,16 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
-						<h2>Overview of all pages</h2>  
-							<ul class="arrowlist sitemaplist">
-								<?php wp_list_pages( array(
-								/* Neem de menustructuur over */
-								'sort_column' => 'menu_order',
-								'title_li' => '',
-								/* Page id om niet weer te geven */
-								'exclude' => '()'
-								) ); ?>
-							</ul>
+						<h1>Overzicht van alle pagina's</h1>  
+						<ul class="arrowlist sitemaplist">
+							<?php wp_list_pages( array(
+							/* Neem de menustructuur over */
+							'sort_column' => 'menu_order',
+							'title_li' => '',
+							/* Page id om niet weer te geven */
+							'exclude' => '()'
+							) ); ?>
+						</ul>
 					
 				<?php endwhile; // end of the loop. ?>
 

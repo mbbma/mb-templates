@@ -25,11 +25,8 @@
 			<br/>
 
 			<div> 
-				<ul>
-					<li class="fa fa-search"> Gebruik een ander zoekwoord</li><br/>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><li class="fa fa-home"> Ga terug naar de homepagina</li></a><br/>
-					<li class="fa fa-adn"> Let op typfouten, bijvoorbeeld zoek geschreven als zoekg</li>
-				</ul>
+				<i class="fa fa-search"></i> Gebruik een ander zoekwoord<br>
+				<i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Ga terug naar de homepagina</a>
 			</div>
 
 		<?php else : ?>

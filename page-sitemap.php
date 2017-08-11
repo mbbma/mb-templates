@@ -6,7 +6,7 @@ Template Name: Sitemap
 
 get_header(); ?>
 		<div id="primary" class="content-area content-sidebar columns-12 center">
-			<main id="main" class="site-main" role="main">
+			<main id="main" class="site-main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 

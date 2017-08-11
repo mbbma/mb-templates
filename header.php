@@ -19,14 +19,14 @@
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 <?php include('json-ld.php'); ?>
 <script type="application/ld+json"><?php echo json_encode($payload); ?></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header">
 		<div id="zone-user-wrapper">
 			<div id="zone-user">
 				<?php if (is_active_sidebar('topbar-1')) : ?>
@@ -48,7 +48,7 @@
 							</a>
 						</div>
 					</div>
-					<nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav id="site-navigation" class="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<div class="menu-toggle"><?php _e( '<span class="line first-line first"></span><span class="line second-line"></span><span class="line last-line last"></span>', 'mbbma' ); ?></div>
 						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mbbma' ); ?></a>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>

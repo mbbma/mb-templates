@@ -30,7 +30,7 @@
 		<?php endif; ?>
 	</section>
 
-	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+	<footer id="colophon" class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
 		<div id="zone-footer-wrapper">
 			<div id="zone-footer">
 				<?php if (is_active_sidebar('footer-columns-1')) : ?>

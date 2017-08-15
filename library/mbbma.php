@@ -133,7 +133,6 @@ function mbbma_scripts_and_styles() {
 
 		//adding scripts file in the footer
 		wp_register_script( 'mbbma-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-		wp_register_script( 'mbbma-retina', get_stylesheet_directory_uri() . '/library/js/retina-1.1.0.min.js', array( 'jquery' ), '', true );
 		wp_register_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0');
 
 		// enqueue styles and scripts
@@ -147,7 +146,6 @@ function mbbma_scripts_and_styles() {
 		*/
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'mbbma-js' );
-		wp_enqueue_script( 'mbbma-retina' );
 		wp_enqueue_style( 'font-awesome' );
 
 	}

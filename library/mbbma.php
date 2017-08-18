@@ -328,4 +328,10 @@ function mc_microdata_breadcrumb ($link_output)
     return $link_output;
 }
 
+add_filter( 'wpseo_breadcrumb_single_link', 'ss_breadcrumb_single_link', 10, 2 ); 
+function ss_breadcrumb_single_link( $link_output, $link ) 
+{
+	return str_replace('<a', '<a title="' . esc_html( $link['text'] ) . '"', $link_output);
+}
+
 ?>

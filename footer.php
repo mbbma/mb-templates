@@ -52,7 +52,7 @@
 		</div>
 		<div id="zone-footer-wrapper-2">
 			<div id="zone-footer-2">
-			© <?php echo date('Y'); ?>: <a href="http://www.mbbedrijfskundigmarketingadvies.nl" target="_blank">MB - Bedrijfskundig Marketing Advies </a>
+			© <?php echo date('Y'); ?>: <a href="http://www.mbbedrijfskundigmarketingadvies.nl" title="MB - Bedrijfskundig Marketing Advies" target="_blank">MB - Bedrijfskundig Marketing Advies </a>
 			</div>
 		</div>
 	</footer>

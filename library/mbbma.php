@@ -171,6 +171,7 @@ function mbbma_theme_support() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'mbbma' ),
+		'sitemap' => __( 'Sitemap', 'mbbma' )
 	) );
 
 	// Setup the WordPress core custom background feature.

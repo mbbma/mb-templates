@@ -63,6 +63,10 @@ Navigation
 		width:					100%;
 	}
 
+	.main-navigation ul{
+		display: none;
+	}
+
 	.main-navigation ul ul {
 		position:				static !important;
 		float:					none !important;

@@ -84,7 +84,7 @@ NAVIGATION STYLES
 }
 
 .main-navigation {
-
+	float: right;
 	ul {
 		display: block;
 		margin: 0;
@@ -98,6 +98,9 @@ NAVIGATION STYLES
 		position: 				relative;
 		margin: 				0 auto;
 		border-right: 			1px solid #000;
+		&:last-of-type{
+			border-right: 0px;
+		}
 	
 		a {
 			border-bottom: 0;

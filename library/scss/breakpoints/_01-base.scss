@@ -67,6 +67,11 @@ LAYOUT & GRID STYLES
 	background: 			#fff;
 }
 
+#region-header{
+	display: table;
+	width: 100%;
+}
+
 .site, #zone-content-wrapper {
 	background:				#fff;
 }
@@ -231,8 +236,6 @@ LOGO & NAVIGATION STYLES
 	right:					20px;
 	width:					20px;
 	height:					20px !important;
-	background:				url(../images/submenu-toggle.png) no-repeat 0 2px;
-	text-indent:			-9999px;
 	border-top:				none !important;
 }
 
@@ -789,11 +792,11 @@ Search & 404 page
 *********************/
 
 input.search-submit {
-	background: #690AA9 url("../images/icon-search.png") no-repeat scroll center center;
+	background: #690AA9;
 	color: #690AA9;
 	height: 35px;
 	padding-top: 5px;
-	float:left;
+	float: left;
 }
 
 .widget_search .search-submit {

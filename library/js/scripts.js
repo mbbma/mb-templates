@@ -138,7 +138,6 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
-}); /* end of as page load scripts */
 
 (function ($) {
 	$(document).ready(function() {
@@ -152,7 +151,7 @@ jQuery(document).ready(function($) {
 		$(this).toggleClass('menu-toggle-active');
 		$('.main-navigation ul.menu').slideToggle();
 	});
-	$('.sub-menu').before('<a href="#" class="submenu-toggle">Open Submenu</a>');
+	$('.sub-menu').before('<a href="#" class="submenu-toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>');
 	$('.submenu-toggle').click(function(){
 		$(this).siblings('.sub-menu').slideToggle();
 	});
@@ -167,3 +166,23 @@ $('a').click(function(){
     return false;
 });
 
+// Contact form check icons
+$('.wpcf7-form-control-wrap input').focusout(function(){
+	if ($(this).val()) {
+		$(this).parent().addClass('active');
+	}
+	else{
+		$(this).parent().removeClass('active');
+	}
+});
+$('.wpcf7-form-control-wrap textarea').focusout(function(){
+	if ($(this).val()) {
+		$(this).parent().addClass('active');
+	}
+	else{
+		$(this).parent().removeClass('active');
+	}
+});
+
+
+}); /* end of as page load scripts */

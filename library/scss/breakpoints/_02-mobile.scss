@@ -51,50 +51,42 @@ Navigation
 		width:					100%;
 	}
 
-	.main-navigation {
-		background:				#fff;
-	}
-
 	#site-navigation.gutter {
 		margin:					0 !important;
 	}
 
 	.main-navigation {
-		width:					100%;
-	}
-
-	.main-navigation ul{
-		display: none;
-	}
-
-	.main-navigation ul ul {
-		position:				static !important;
-		float:					none !important;
-		box-shadow:				none !important;
-		display: none;
-	}
-
-	.main-navigation ul ul a {
-		width:					100% !important;
-		text-align:				center !important;
-		background:				#ccc !important;
-	}
-
-	.main-navigation li a {
-		border-top: 			1px solid #ccc;
-		padding: 24px 10px !important;
-		text-align: center;
 		width: 100%;
-		font-size: 15px;
-		text-transform: uppercase;
-		display: table;
-	}
-
-		.main-navigation li a.submenu-toggle {
-		border-bottom: 			none;
-		padding: 0 !important;
-		width: 20px;
-		display: block;
+		background: #fff;
+		ul{
+			display: none;
+			margin: 0;
+			ul.sub-menu{
+				display: none;
+				li{	
+					a{
+						background: #ccc;
+						padding-left: 0;
+						padding-right: 0;
+					}
+				}
+			}
+			li{
+				a{
+					border-top: 			1px solid #ccc;
+					padding: 24px 10px;
+					text-align: center;
+					width: 100%;
+					font-size: 15px;
+					text-transform: uppercase;
+					display: table;
+					&.submenu-toggle{
+						width: 20px;
+						display: block;
+					}
+				}
+			}
+		}
 	}
 
 /*********************
@@ -109,8 +101,7 @@ MISC
 		display: none;
 	}
 
-
-.nieuwsbrief-wrapper {
+	.nieuwsbrief-wrapper {
 		padding: 20px 50px;
 	}
 

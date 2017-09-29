@@ -22,18 +22,35 @@ INPUTS
 
 .wpcf7-form-control-wrap {
 	position: relative;
-	display: inline-block;
+	display: table;
+	width: 100%;
+	&:after{
+		content: "\f00c";
+		font-family: FontAwesome;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 18px;
+		color: $form-icons;
+		opacity: 0;
+		transition: all .4s ease-in-out 0s;
+	}
+	&.active{
+		&:after{
+			opacity: 1;
+		}
+	}
 }
 
 span.your-name::before,
 span.your-company::before,
-span.your-mail::before,
+span.your-email::before,
 span.your-tel::before,
 span.your-message::before {
 	font-family: FontAwesome;
-	color: #559a7d;
+	color: $form-icons;
 	position: absolute;
-	z-index: 9999;
+	z-index: 10;
 	left: 10px;
 	font-size: 18px;
 	top: 10px;
@@ -44,7 +61,7 @@ span.your-name::before {
 span.your-company::before {
 	content: "\f1ad";
 }
-span.your-mail::before{
+span.your-email::before{
 	content: "\f0e0";
 }
 span.your-tel::before {
@@ -64,13 +81,8 @@ input[type="submit"] {
 	border: none;
 	font-size: 25px;
 	font-weight: 700;
-
-	background: #e73240; /* Old browsers */
-	background: -moz-linear-gradient(top,  #e73240 0%, #b92b36 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  #e73240 0%,#b92b36 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  #e73240 0%,#b92b36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73240', endColorstr='#b92b36',GradientType=0 ); /* IE6-9 */
-
+	transition: all .4s ease-in-out 0s;
+	background: #e73240;
 	&:hover, &:focus {
 		background: #fff;
 		color:  $base-red;
@@ -111,9 +123,8 @@ textarea,
 	border-radius: 3px;
 	vertical-align: middle;
 	box-shadow: none;
-	border: 0;
+	border: 2px solid $gray;
 	width: 100%;
-	max-width: 400px;
 	font-family: $lato;
 	background-color: $gray;
 	@include transition(background-color 0.24s ease-in-out);

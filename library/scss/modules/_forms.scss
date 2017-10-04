@@ -40,6 +40,9 @@ INPUTS
 			opacity: 1;
 		}
 	}
+	span.wpcf7-not-valid-tip{
+		display: none;
+	}
 }
 
 span.your-name::before,
@@ -82,7 +85,7 @@ input[type="submit"] {
 	font-size: 25px;
 	font-weight: 700;
 	transition: all .4s ease-in-out 0s;
-	background: #e73240;
+	background: $base-red;
 	&:hover, &:focus {
 		background: #fff;
 		color:  $base-red;
@@ -136,6 +139,10 @@ textarea,
 		outline: none; 
 	} // end hover or focus
 
+	&.wpcf7-not-valid{
+		border-color: $base-red;
+	}
+
 } // end input defaults
 
 // spacing out the password (thx @murtaugh)
@@ -158,5 +165,3 @@ select {
 	background-repeat: no-repeat;
 	background-position: 97.5% center;
 }
-
-

@@ -132,57 +132,86 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
+	/*
+		* Let's fire off the gravatar function
+		* You can remove this if you don't need it
+	*/
+	loadGravatars();
 
+	(function ($) {
+		$(document).ready(function() {
+		$("body").css("display", "none");
+		$("body").fadeIn(600);
+		});
+	})(jQuery);
 
-(function ($) {
-	$(document).ready(function() {
-	$("body").css("display", "none");
-	$("body").fadeIn(600);
+	(function ($) {
+		$('.menu-toggle').click(function(){
+			$(this).toggleClass('menu-toggle-active');
+			$('.main-navigation ul.menu').slideToggle();
+		});
+		$('.sub-menu').before('<a href="#" class="submenu-toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>');
+		$('.submenu-toggle').click(function(){
+			$(this).siblings('.sub-menu').slideToggle();
+		});
+	})(jQuery);
+
+	/* Smooth scrolling */
+	$('a').click(function(){
+	    $('html, body').animate({
+	        scrollTop: $( $(this).attr('href') ).offset().top
+	    }, 700);
+	    return false;
 	});
-})(jQuery);
 
-(function ($) {
-	$('.menu-toggle').click(function(){
-		$(this).toggleClass('menu-toggle-active');
-		$('.main-navigation ul.menu').slideToggle();
+	// Contact form check icons
+	$('.wpcf7-form-control-wrap input, .wpcf7-form-control-wrap textarea').focusout(function(){
+		if ($(this).val()) {
+			$(this).parent().addClass('active');
+		} else{
+			$(this).parent().removeClass('active');
+		}
 	});
-	$('.sub-menu').before('<a href="#" class="submenu-toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>');
-	$('.submenu-toggle').click(function(){
-		$(this).siblings('.sub-menu').slideToggle();
+
+
+	// Contact form redirect
+	// https://contactform7.com/dom-events/
+	// http://vincoding.com/passing-contact-form-7-data-thank-page/
+	// Deze code is gemaakt voor meerdere formulier met textuele input velden en optioneel één textarea
+
+	var forms = [];
+	var formSelector = [];
+	$('.wpcf7').each(function(){
+		forms.push('#' + $(this).attr('id'));
+		formSelector.push(document.querySelector('#' + $(this).attr('id')));
 	});
-})(jQuery);
 
+	if ($('.wpcf7').length) {
+		for (var j = 0; j <= forms.length - 1; j++) {
+			formSelector[j].addEventListener( 'wpcf7mailsent', function(event) {
+				var inputNames = [];
+				var inputValues = [];
+				var url = $('.logo a').attr('href') + 'contact/bedankt/?';
 
-/* Smooth scrolling */
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
-    }, 700);
-    return false;
-});
+				$(this).find('input.wpcf7-form-control').each(function(){ //De variabelen in arrays plaatsen
+					if ($(this).hasClass('wpcf7-submit') == false) {
+						inputNames.push($(this).attr('placeholder'));
+						inputValues.push($(this).val());
+					}
+				});
 
-// Contact form check icons
-$('.wpcf7-form-control-wrap input').focusout(function(){
-	if ($(this).val()) {
-		$(this).parent().addClass('active');
-	}
-	else{
-		$(this).parent().removeClass('active');
-	}
-});
-$('.wpcf7-form-control-wrap textarea').focusout(function(){
-	if ($(this).val()) {
-		$(this).parent().addClass('active');
-	}
-	else{
-		$(this).parent().removeClass('active');
-	}
-});
+				for (var i = 0; i <= inputNames.length - 1; i++) { //Voor elk input veld worden de variabelen in de URL geplaatst
+					url += inputNames[i] + '=' + inputValues[i] + '&';
+				};
 
+				if ($(this).find('textarea').length) { //Als er een textarea bestaat wordt deze ook toegevoegd
+					url += $(this).find('textarea').attr('placeholder') + '=' + $(this).find('textarea').val() + '&';
+				}
+
+				location = url;
+
+			}, false );
+		};
+	}
 
 }); /* end of as page load scripts */

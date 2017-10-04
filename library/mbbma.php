@@ -273,8 +273,7 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 				'next_text'		=> $next_arrow,
 			 ) );
 		}
-	}
-	
+	}	
 }
 
 /*********************

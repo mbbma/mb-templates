@@ -42,9 +42,9 @@
 				<div id="region-header">
 					<div class="site-branding">
 						<div class="logo" itemscope itemtype="http://schema.org/Organization">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<img alt="logo" class="logo-normal" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
-								<img alt="logo" class="logo-mobile" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>" rel="home">
+								<img alt="<?php bloginfo( 'name' ); ?> logo" class="logo-normal" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
+								<img alt="<?php bloginfo( 'name' ); ?> logo" class="logo-mobile" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
 							</a>
 						</div>
 					</div>

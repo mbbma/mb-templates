@@ -53,6 +53,9 @@
 						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mbbma' ); ?></a>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</nav>
+					<div class="phone-number">
+						<a href="tel:#" class="phone-number-icon" title="Phone number"><i class="fa fa-phone" aria-hidden="true"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>

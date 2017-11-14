@@ -160,7 +160,7 @@ jQuery(document).ready(function($) {
 	$('a').click(function(){
 		if(/#/.test($(this).prop('href')) === true) {
 			$('html, body').animate({
-				scrollTop: $( $(this).prop('href') ).offset().top
+				scrollTop: $( $(this).attr('href') ).offset().top
 			}, 700);
 			return false;
 		}

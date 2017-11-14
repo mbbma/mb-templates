@@ -165,3 +165,64 @@ select {
 	background-repeat: no-repeat;
 	background-position: 97.5% center;
 }
+
+/*Gravity forms*/
+.gform_wrapper{
+	ul.gform_fields{
+		margin: 0;
+		.gfield_label{
+			display: none;
+		}
+		li.gfield{
+			margin: 0 0 1.5em;
+			position: relative;
+			.ginput_container{
+				margin: 0;
+				&:before,
+				&:after{
+					font-family: FontAwesome;
+					color: $form-icons;
+					position: absolute;
+					top: 10px;
+					z-index: 10;
+					font-size: 18px;
+				}
+				&:before{
+					left: 10px;
+				}
+				&:after{
+					content: "\f00c";
+					right: 10px;
+					opacity: 0;
+					transition: all .4s ease-in-out 0s;
+				}
+				&.active{
+					&:after{
+						opacity: 1;
+					}
+				}
+			}
+			&.icon-name{
+				.ginput_container:before{
+					content: "\f007";
+				}
+			}
+			&.icon-mail{
+				.ginput_container:before{
+					content: "\f0e0";
+				}
+			}
+			&.icon-phone{
+				.ginput_container:before{
+					content: "\f095";
+				}
+			}
+			&.icon-message{
+				.ginput_container:before{
+					content: "\f086";
+				}
+			}
+		}
+	}
+}
+

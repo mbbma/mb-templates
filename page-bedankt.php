@@ -21,16 +21,8 @@ get_header(); ?>
 				<div class="page-pad">
 					<div class="columns-6 center">
 						<h1>Bedankt <?php echo htmlspecialchars($_GET["Naam"]) ?>,</h1>
-						<br><br>
-						Hartelijk bedankt voor het invullen van het formulier.<br>
-						Dit zijn de gegevens die u heeft ingevoerd:<br><br>
-						<?php
-							$getVars = array_keys($_GET);
-							foreach ($getVars as $key => $value) {
-								echo "<strong>" . $value . ":</strong> " . htmlspecialchars($_GET[$getVars[$key]]) . "<br>";
-							}
-						?>
 						<br>
+						Hartelijk bedankt voor het invullen van het formulier.<br>
 						Wij nemen zo snel mogelijk contact met u op.
 						<br><br>
 						Heeft u eerder vragen kunt u altijd contact met ons opnemen!

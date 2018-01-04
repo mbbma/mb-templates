@@ -10,6 +10,7 @@ sidebars, comments, etc.
 
 // LOAD MBBMA CORE 
 require_once( 'library/mbbma.php' );
+require_once( 'library/query.php' );
 
 
 function mbbma_setup() {

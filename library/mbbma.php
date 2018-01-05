@@ -279,6 +279,8 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 /*********************
 RANDOM ITEMS
 *********************/
+// Enable shortcodes in text widgets
+add_filter('widget_text','do_shortcode');
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 function mbbma_filter_ptags_on_images($content){

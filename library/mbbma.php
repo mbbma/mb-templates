@@ -336,4 +336,18 @@ function ss_breadcrumb_single_link( $link_output, $link )
 	return str_replace('<a', '<a title="' . esc_html( $link['text'] ) . '"', $link_output);
 }
 
+/* Email Return Path */
+class email_return_path {
+  	function __construct() {
+		add_action( 'phpmailer_init', array( $this, 'fix' ) );    
+  	}
+ 
+	function fix( $phpmailer ) {
+	  	$phpmailer->Sender = $phpmailer->From;
+	}
+}
+ 
+new email_return_path();
+
+
 ?>

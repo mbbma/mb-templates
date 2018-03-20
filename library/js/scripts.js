@@ -93,17 +93,6 @@ var timeToWaitForLast = 100;
  * images on mobile to save bandwidth. Once we hit an acceptable viewport
  * then we can swap out those images since they are located in a data attribute.
 */
-function loadGravatars() {
-  // set the viewport using the function above
-  viewport = updateViewportDimensions();
-  // if the viewport is tablet or larger, we load in the gravatars
-  if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-  });
-	}
-} // end function
-
 
 /* skip-link-focus-fix.js */
 ( function() {
@@ -136,14 +125,6 @@ jQuery(document).ready(function($) {
 		* Let's fire off the gravatar function
 		* You can remove this if you don't need it
 	*/
-	loadGravatars();
-
-	(function ($) {
-		$(document).ready(function() {
-		$("body").css("display", "none");
-		$("body").fadeIn(600);
-		});
-	})(jQuery);
 
 	(function ($) {
 		$('.menu-toggle').click(function(){

@@ -349,5 +349,10 @@ class email_return_path {
  
 new email_return_path();
 
+/*
+	Gravity Forms anker
+*/
+add_filter( 'gform_confirmation_anchor', '__return_true' );
+
 
 ?>

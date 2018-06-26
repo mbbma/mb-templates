@@ -354,5 +354,15 @@ new email_return_path();
 */
 add_filter( 'gform_confirmation_anchor', '__return_true' );
 
+// Automatische <p>'tjes weggehaald
+function get_rid_of_wpautop(){
+	if(!is_singular()){
+		remove_filter ('the_content', 'wpautop');
+		remove_filter ('the_excerpt', 'wpautop');
+	}
+}
+
+add_action( 'template_redirect', 'get_rid_of_wpautop' );
+
 
 ?>

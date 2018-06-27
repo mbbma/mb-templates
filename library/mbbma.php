@@ -349,10 +349,15 @@ class email_return_path {
  
 new email_return_path();
 
-/*
-	Gravity Forms anker
-*/
+/* Gravity Forms anker */
 add_filter( 'gform_confirmation_anchor', '__return_true' );
+
+// Slaat GF inzendingen in op zonder returns
+add_filter("gform_save_field_value", "save_field_value", 10, 4);
+function save_field_value($value, $lead, $field, $form){
+	$new_value = str_replace(array("\n", "\t", "\r"), '', $value);
+	return $new_value;
+}
 
 // Automatische <p>'tjes weggehaald
 function get_rid_of_wpautop(){

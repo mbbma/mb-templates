@@ -203,7 +203,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function mbbma_fonts() {
-   wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Amatic+SC:400,700|Lato:300,400,700,900');
+   wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Lato:300,400,700,900');
 }
 
 add_action('wp_enqueue_scripts', 'mbbma_fonts');

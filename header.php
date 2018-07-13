@@ -25,7 +25,7 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
+	<?php do_action('before'); ?>
 	<header id="masthead" class="site-header">
 		<div id="zone-user-wrapper">
 			<div id="zone-user">
@@ -42,16 +42,16 @@
 				<div id="region-header">
 					<div class="site-branding">
 						<div class="logo" itemscope itemtype="http://schema.org/Organization">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>" rel="home">
-								<img alt="<?php bloginfo( 'name' ); ?> logo" class="logo-normal" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
-								<img alt="<?php bloginfo( 'name' ); ?> logo" class="logo-mobile" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
+							<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" rel="home">
+								<img alt="<?php bloginfo('name'); ?> logo" class="logo-normal" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
+								<img alt="<?php bloginfo('name'); ?> logo" class="logo-mobile" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
 							</a>
 						</div>
 					</div>
 					<nav id="site-navigation" class="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<div class="menu-toggle"><?php _e( '<span class="line first-line first"></span><span class="line second-line"></span><span class="line last-line last"></span>', 'mbbma' ); ?></div>
 						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mbbma' ); ?></a>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+						<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
 					</nav>
 					<div class="phone-number">
 						<a href="tel:#" class="phone-number-icon" title="Phone number"><i class="fa fa-phone" aria-hidden="true"></i></a>
@@ -61,7 +61,7 @@
 		</div>
 	</header>
 
-	<section id="content" class="site-content">
+	<main id="content" class="site-content">
 		<?php if (is_active_sidebar('content-preface-1')) : ?>
 		<div id="zone-preface-first-wrapper">
 			<div id="zone-preface-first">

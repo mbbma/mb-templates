@@ -1,20 +1,3 @@
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Variables
-
-Here is where we declare all our variables like colors, fonts,
-base values, and defaults. We want to make sure this file ONLY
-contains variables that way our files don't get all messy.
-No one likes a mess.
-
-******************************************************************/
-
-/*********************
-COLORS
-*********************/
-
 $black:				#323944;
 $white:				#fff;
 $light-gray:		#f8f9fa;
@@ -31,11 +14,4 @@ $form-icons:		#559a7d;
 $link-color:		#414141;
 $link-hover:		#323944;
 
-
 $border-color:		#ccc;
-
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/

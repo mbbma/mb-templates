@@ -1,175 +1,142 @@
-/******************************************************************
-Site Name:
-Author: MB - Bedrijfskundig Marketing
-
-Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-https://github.com/dope/lemonade - Neat lightweight grid.
-
-
-The grid below is a custom built thingy I modeled a bit after
-Gridset. It's VERY basic and probably shouldn't be used on
-your client projects. The idea is you learn how to roll your
-own grids. It's better in the long run and allows you full control
-over your project's layout.
-
-******************************************************************/
-
 .gutter {
-  margin-left:      10px !important;
-  margin-right:     10px !important;
+	margin-left:			10px !important;
+	margin-right:		 10px !important;
 }
 
-// the last column
 .last-col {
-  float: right;
-  margin-right: 0 !important;
+	float: right;
+	margin-right: 0 !important;
 }
 
-  .col-1of2 {
-    float: left;
-    margin-right: 4%;
-    width: 48%;
-  }
+.col-1of2 {
+	float: left;
+	margin-right: 4%;
+	width: 48%;
+}
 
 @mixin grid-col-3 {
-  float:left;
-    margin-right:5%;
+	float:left;
+	margin-right:5%;
 }
 
 @mixin grid-col-4 {
-    float:left;
-    margin-right:4%;
-  }
+	float:left;
+	margin-right:4%;
+}
 
 
 
 @media all and (min-width: 740px) {
+	.col-1of3 {
+		@include grid-col-3;
+		width: 30%;
+	}
+	
+	.col-2of3 {
+		@include grid-col-3;
+		width: 65%;
+	}
+	
+	.col-1of4 {
+		@include grid-col-4;
+		width: 22%;
+	}
 
+	.col-3of4 {
+		@include grid-col-4;
+		width: 74%;
+	}
 
-   .col-1of3 {
-    @include grid-col-3;
-    width: 30%;
-  }
-  
-   .col-2of3 {
-    @include grid-col-3;
-    width: 65%;
-  }
-  
-  .col-1of4 {
-    @include grid-col-4;
-    width: 22%;
-  }
+	.float-left,
+	.gutter {
+		float: left;
+	}
 
-   .col-3of4 {
-    @include grid-col-4;
-    width: 74%;
-  }
+	.float-right {
+		float: right;
+	}
 
-  .float-left,
-  .gutter {
-    float:          left;
-  }
+	.gutter-left {
+		margin-left: 20px;
+	}
 
-  .float-right {
-    float:          right;
-  }
+	.gutter-right {
+		margin-right: 20px;
+	}
 
-  .gutter-left {
-    margin-left:      20px;
-  }
+	.columns-1 {width: 40px;}
+	.columns-2 {width: 100px;}
+	.columns-3 {width: 160px;}
+	.columns-4 {width: 220px;}
+	.columns-5 {width: 280px;}
+	.columns-6 {width: 340px;}
+	.columns-7 {width: 400px;}
+	.columns-8 {width: 460px;}
+	.columns-9 {width: 520px;}
+	.columns-10 {width: 580px;}
+	.columns-11 {width: 640px;}
+	.columns-12 {width: 700px;}
 
-  .gutter-right {
-    margin-right:     20px;
-  }
-
-  .columns-1 {width: 40px;}
-  .columns-2 {width: 100px;}
-  .columns-3 {width: 160px;}
-  .columns-4 {width: 220px;}
-  .columns-5 {width: 280px;}
-  .columns-6 {width: 340px;}
-  .columns-7 {width: 400px;}
-  .columns-8 {width: 460px;}
-  .columns-9 {width: 520px;}
-  .columns-10 {width: 580px;}
-  .columns-11 {width: 640px;}
-  .columns-12 {width: 700px;}
-
-  #zone-header,
-  #zone-navigation,
-  #zone-content,
-  #zone-postscript,
-  #zone-postscript-2,
-  #zone-footer,
-  #zone-footer-2 {
-    width:          720px;
-  }
-
+	#zone-header,
+	#zone-navigation,
+	#zone-content,
+	#zone-postscript,
+	#zone-postscript-2,
+	#zone-footer,
+	#zone-footer-2 {
+		width: 720px;
+	}
 
 }
 
 @media all and (min-width: 980px) {
+	.columns-1 {width: 60px;}
+	.columns-2 {width: 140px;}
+	.columns-3 {width: 220px;}
+	.columns-4 {width: 300px;}
+	.columns-5 {width: 380px;}
+	.columns-6 {width: 460px;}
+	.columns-7 {width: 540px;}
+	.columns-8 {width: 620px;}
+	.columns-9 {width: 700px;}
+	.columns-10 {width: 780px;}
+	.columns-11 {width: 860px;}
+	.columns-12 {width: 940px;}
 
-  .columns-1 {width: 60px;}
-  .columns-2 {width: 140px;}
-  .columns-3 {width: 220px;}
-  .columns-4 {width: 300px;}
-  .columns-5 {width: 380px;}
-  .columns-6 {width: 460px;}
-  .columns-7 {width: 540px;}
-  .columns-8 {width: 620px;}
-  .columns-9 {width: 700px;}
-  .columns-10 {width: 780px;}
-  .columns-11 {width: 860px;}
-  .columns-12 {width: 940px;}
-
-  #zone-header,
-  #zone-navigation,
-  #zone-content,
-  #zone-postscript,
-  #zone-postscript-2,
-  #zone-footer,
-  #zone-footer-2 {
-    width:          960px;
-  }
-
+	#zone-header,
+	#zone-navigation,
+	#zone-content,
+	#zone-postscript,
+	#zone-postscript-2,
+	#zone-footer,
+	#zone-footer-2 {
+		width: 960px;
+	}
 
 }
 
 @media all and (min-width: 1220px) {
+	.columns-1 {width: 80px;}
+	.columns-2 {width: 180px;}
+	.columns-3 {width: 280px;}
+	.columns-4 {width: 380px;}
+	.columns-5 {width: 480px;}
+	.columns-6 {width: 580px;}
+	.columns-7 {width: 680px;}
+	.columns-8 {width: 780px;}
+	.columns-9 {width: 880px;}
+	.columns-10 {width: 980px;}
+	.columns-11 {width: 1080px;}
+	.columns-12 {width: 1180px;}
 
-  .columns-1 {width: 80px;}
-  .columns-2 {width: 180px;}
-  .columns-3 {width: 280px;}
-  .columns-4 {width: 380px;}
-  .columns-5 {width: 480px;}
-  .columns-6 {width: 580px;}
-  .columns-7 {width: 680px;}
-  .columns-8 {width: 780px;}
-  .columns-9 {width: 880px;}
-  .columns-10 {width: 980px;}
-  .columns-11 {width: 1080px;}
-  .columns-12 {width: 1180px;}
-
-  #zone-header,
-  #zone-navigation,
-  #zone-content,
-  #zone-postscript,
-  #zone-postscript-2,
-  #zone-footer,
-  #zone-footer-2 {
-    width:          1200px;
-  }
+	#zone-header,
+	#zone-navigation,
+	#zone-content,
+	#zone-postscript,
+	#zone-postscript-2,
+	#zone-footer,
+	#zone-footer-2 {
+		width: 1200px;
+	}
 
 }

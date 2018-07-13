@@ -1,11 +1,3 @@
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Blog
-
-******************************************************************/
-
 .posts-col-left, .latest-posts-col-left {
 	width: 100%;
 	position: relative;
@@ -45,7 +37,6 @@ Stylesheet: Blog
 }
 
 .comments-link-footer a {
-	background: transparent url("../images/icon-comments.png") no-repeat scroll 0% 0%;
 	padding: 0px 0px 7px 34px;
 	color: green;
 }
@@ -56,7 +47,6 @@ Stylesheet: Blog
 }
 
 /* sidebar */
-
 #secondary .widget {
 	margin: 0;
 }
@@ -83,84 +73,92 @@ Stylesheet: Blog
 
 
 /* social media blok */
-.social-media {
-	width: 100%;
-	color: #fff;
+.social-media{
+	font-size: 20px;
+	a{
+		margin-right: 10px;
+		display: inline-block;
+	}
+	.facebook,
+	.twitter,
+	.google,
+	.linkedin{
+		&:hover{
+			transform: scale(1.1);
+		}
+	}
+	.facebook{
+		color: #3b5998;
+	}
+	.twitter{
+		color: #4099ff;
+	}
+	.google{
+		color: #dd4b39;
+	}
+	.linkedin{
+		color: #007bb5;
+	}
+}
+
+/******************************************************************
+PAGINATION
+******************************************************************/
+
+.pagination,
+.wp-prev-next {
+	margin: 1.5em 0;
+}
+.pagination{
 	text-align: center;
-	display: table;
+	ul {
+		display: inline-block;
+		background-color: $white;
+		white-space: nowrap;
+		padding: 0;
+		clear: both;
+		border-radius: 3px;
+	}
+	li {
+		padding: 0;
+		margin: 0;
+		float: left;
+		display: inline;
+		overflow: hidden;
+		border-right: 1px solid $gray;
+	}
+	a, span {
+		margin: 0;
+		text-decoration: none;
+		padding: 0;
+		line-height: 1em;
+		font-size: 1em;
+		font-weight: normal;
+		padding: 0.75em;
+		min-width: 1em;
+		display: block;
+		color: $black;
+		&:hover, &:focus {
+			background-color: $black;
+			color: $white;
+		}
+	}
+	.current{
+		cursor: default;
+		color: $text-color;
+		&:hover, &:focus {
+			background-color: $white;
+			color: $text-color;
+		}
+	}
 }
-
-.social-media a {
-	color: #fff;
-}
-
-.social-media .facebook, .social-media .twitter, .social-media .google, .social-media .linkedin {
-	float: left;
-	width: 24%;
-	margin: 0 1.333% 0 0;
-	padding: 10px 0;
-	font-size: 30px;
-	transition: all 0.4s ease-in-out 0s;
-}
-
-.social-media .facebook:hover, .social-media .twitter:hover, .social-media .google:hover, .social-media .linkedin:hover {
-	transform: scale(1.1);
-}
-
-.social-media .facebook {
-	background-color: #3b5998;
-}
-
-.social-media .twitter {
-	background-color: #4099ff;
-}
-
-.social-media .twitter {
-	background-color: #4099ff;
-}
-
-.social-media .google {
-	background-color: #dd4b39;
-}
-
-.social-media .linkedin {
-	background-color: #007bb5;
-}
-
-.social-media .socialm:last-of-type {
-	margin: 0;
-}
-
-
-/* Blog nieuwsbrief */
-.nieuwsbrief-wrapper {
-	background-color: #f6f6f6;
-	padding: 20px 100px;
-	margin: 50px 0;
-	width: 100%;
-	display: table;
-	box-shadow: 0px 0px 5px #000;
-}
-
-.nieuwsbrief-wrapper h2 {
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 800;
-	font-size: 25px;
-	margin: 0 0 20px;
-}
-
-.nieuwsbrief-image {
-	background: url(../images/abonneer-nieuws.png) no-repeat; 
-	height: 147px;
-}
-
-.nieuwsbrief-content {
-	float: left;
-	width: 60%;
-	height: 147px;
-	padding: 5px 0 0 0;
-	display: table;
+.wp-prev-next {
+	.prev-link {
+		float: left;
+	}
+	.next-link {
+		float: right;
+	}
 }
 
 /* Blog recent posts */
@@ -190,30 +188,6 @@ Stylesheet: Blog
 	object-fit: cover;
 }
 
-.single-post hr {
-	margin: 50px 0;
-}
-
-.about-author {
-	display: table;
-	width: 100%;
-}
-
-.about-author h3 {
-	font-weight: 800;
-}
-
-.about-author-img {
-	float: left;
-	width: 15%;
-	margin: 0 2% 0 0;
-}
-
-.about-author-content {
-	float: left;
-	width: 83%;
-}
-
 /* Blog recent posts - SIDEBAR */
 .blog-recent-posts-sidebar {
 	display: table;
@@ -232,46 +206,6 @@ Stylesheet: Blog
 	padding: 5px 0;
 	display: table;
 }
-
-hr.line-recent-posts-sidebar {
-	margin: 10px 0 20px;
-}
-
-/* zoekveld */
-
-#zoeken {
-	height: 28px;
-	width: 200px;
-	border-radius: 0px;
-	background: #F6F6F6 none repeat;
-}
-
-#zoekform {
-	background: #000 url(../images/zoekform.png) no-repeat;
-	background-size: 100% 100%;
-	border: none;
-	width: 40px;
-	height: 40px;
-	transition: all 0.4s ease-in-out 0s;
-}
-
-#zoekform:hover {
-	background: #fff url(../images/zoekform.png) no-repeat;
-	background-size: 100% 100%;
-}
-
-input.search-submit {
-	background: #690AA9 url("../images/icon-search.png") no-repeat scroll center center;
-	color: #690AA9;
-	height: 35px;
-	padding-top: 5px;
-	float:left;
-}
-
-.widget_search .search-submit {
-	display: block;
-}
-
 
 @media all and (max-width: 739px) {
 	.posts-row {

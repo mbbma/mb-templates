@@ -228,6 +228,11 @@ require get_template_directory() . '/library/inc/extras.php';
  */
 require get_template_directory() . '/library/inc/jetpack.php';
 
+/**
+ * Load Woocommerce compatibility file.
+ */
+//require get_template_directory() . '/library/inc/woocommerce.php';
+
 /* Login page aanpassingen */
 
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts

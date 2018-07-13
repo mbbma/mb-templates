@@ -324,10 +324,9 @@ add_filter('the_content', 'my_formatter', 99);
 
 /* W3C Validatie breadcrumb */
 add_filter ('wpseo_breadcrumb_output','mc_microdata_breadcrumb');
-function mc_microdata_breadcrumb ($link_output)
-{
-    $link_output = preg_replace(array('#<span xmlns:v="http://rdf.data-vocabulary.org/\#">#','#<span typeof="v:Breadcrumb"><a href="(.*?)" .*?'.'>(.*?)</a></span>#','#<span typeof="v:Breadcrumb">(.*?)</span>#','# property=".*?"#','#</span>$#'), array('','<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="$1" itemprop="url"><span itemprop="title">$2</span></a></span>','<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">$1</span></span>','',''), $link_output);
-    return $link_output;
+function mc_microdata_breadcrumb ($link_output){
+	$link_output = preg_replace(array('#<span xmlns:v="http://rdf.data-vocabulary.org/\#">#','#<span typeof="v:Breadcrumb"><a href="(.*?)" .*?'.'>(.*?)</a></span>#','#<span typeof="v:Breadcrumb">(.*?)</span>#','# property=".*?"#','#</span>$#'), array('','<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="$1" itemprop="url"><span itemprop="title">$2</span></a></span>','<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">$1</span></span>','',''), $link_output);
+	return $link_output;
 }
 
 add_filter( 'wpseo_breadcrumb_single_link', 'ss_breadcrumb_single_link', 10, 2 ); 
@@ -338,15 +337,13 @@ function ss_breadcrumb_single_link( $link_output, $link )
 
 /* Email Return Path */
 class email_return_path {
-  	function __construct() {
+	function __construct() {
 		add_action( 'phpmailer_init', array( $this, 'fix' ) );    
-  	}
- 
+	}
 	function fix( $phpmailer ) {
-	  	$phpmailer->Sender = $phpmailer->From;
+		$phpmailer->Sender = $phpmailer->From;
 	}
 }
- 
 new email_return_path();
 
 /* Gravity Forms anker */
@@ -366,8 +363,41 @@ function get_rid_of_wpautop(){
 		remove_filter ('the_excerpt', 'wpautop');
 	}
 }
-
 add_action( 'template_redirect', 'get_rid_of_wpautop' );
+
+// https://codeless.co/remove-type-attribute-from-wordpress/
+add_filter('style_loader_tag', 'codeless_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'codeless_remove_type_attr', 10, 2);
+function codeless_remove_type_attr($tag, $handle) {
+	return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+}
+
+/**
+ * Filters the next, previous and submit buttons.
+ * Replaces the forms <input> buttons with <button> while maintaining attributes from original <input>.
+ *
+ * @param string $button Contains the <input> tag to be filtered.
+ * @param object $form Contains all the properties of the current form.
+ *
+ * @return string The filtered button.
+ */
+add_filter( 'gform_next_button', 'input_to_button', 10, 2 );
+add_filter( 'gform_previous_button', 'input_to_button', 10, 2 );
+add_filter( 'gform_submit_button', 'input_to_button', 10, 2 );
+function input_to_button( $button, $form ) {
+	$dom = new DOMDocument();
+	$dom->loadHTML( $button );
+	$input = $dom->getElementsByTagName( 'input' )->item(0);
+	$new_button = $dom->createElement( 'button' );
+	$new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
+	$input->removeAttribute( 'value' );
+	foreach( $input->attributes as $attribute ) {
+		$new_button->setAttribute( $attribute->name, $attribute->value );
+	}
+	$input->parentNode->replaceChild( $new_button, $input );
+
+	return $dom->saveHtml( $new_button );
+}
 
 
 ?>

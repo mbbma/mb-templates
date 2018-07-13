@@ -7,9 +7,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-	</header><!-- .entry-header -->
-	
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
@@ -18,6 +15,6 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</div>
 	<?php edit_post_link( __( 'Edit', 'mbbma' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-</article><!-- #post-## -->
+</article>

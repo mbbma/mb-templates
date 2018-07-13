@@ -1,25 +1,11 @@
-/******************************************************************
-Site Name: MB - Bedrijfskundig Marketing Advies
-Author: MB - Bedrijfskundig Marketing Advies
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/
-
 /*********************
 GENERAL STYLES
 *********************/
 
-html, body {
-	background:				#f6f6f6 !important;
+html, body{
+	background: #f6f6f6 !important;
 }
-
-body {
+body{
 	font-family: $open-sans;
 	font-size: 18px;
 	line-height: 1.5em;
@@ -28,31 +14,25 @@ body {
   	-moz-osx-font-smoothing: grayscale;
   	font-weight: 300;
 }
-
-p {
+p{
 	margin-bottom: 1.5em;
 }
-
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+img{
+	height: auto;
+	max-width: 100%;
 }
-
-
-a, a:hover, div, div:hover, img, img:hover {
+a, a:hover, div, div:hover, img, img:hover{
     transition: all 0.4s ease-in-out 0s;
 }
 
 /*********************
-LAYOUT & GRID STYLES
+HEADER STYLES
 *********************/
-
-#zone-header-wrapper {
-	background:				#fff;
-	position: 				relative;
+#zone-header-wrapper{
+	background: #fff;
+	position: relative;
 }
-
-#zone-user {
+#zone-user{
 	z-index: 10;
 	background: #fff;
 	display: table;
@@ -60,134 +40,124 @@ LAYOUT & GRID STYLES
 	right: 20%;
 	top: 40px;
 }
-
-#zone-header {
-	margin:					0 auto;
-	display:				block;
-	background: 			#fff;
+#zone-header{
+	margin: 0 auto;
+	display: block;
+	background: #fff;
 }
-
 #region-header{
 	display: table;
 	width: 100%;
 }
-
-.site, #zone-content-wrapper {
-	background:				#fff;
+.site, #zone-content-wrapper{
+	background: #fff;
 }
-
 #zone-preface-first,
 #zone-preface-second,
 #zone-postscript,
-#zone-postscript-2 {
-	margin:					0 auto;
-	display:				table;
+#zone-postscript-2{
+	margin: 0 auto;
+	display: table;
 }
-
-#zone-preface-first {
+#zone-preface-first{
 	position: relative;
 	width: 100%;
 }
 
-/* misc */
+/*********************
+LAYOUT & GRID STYLES
+*********************/
 
+/* misc */
 .form-allowed-tags, .cat-links,
-.home .breadcrumb {
+.home .breadcrumb{
 	display: none;
 }
-
-.breadcrumb_last {
-	color: #ff9e00;
-	font-style: italic;
+p#breadcrumbs{
+	font-size: 12px;
 }
 
-p#breadcrumbs {
-	font-size: 13px;
+.center{
+	margin: 0 auto;
+	display: table;
 }
 
-.uppercase {
-	text-transform:			uppercase;
-}
-
-.center {
-	margin:			0 auto;
-	display:		table;
-}
-
- .laatste {
-	margin: 0 !important;
-}
-
-.alignleft {
+.alignleft{
 	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
-.alignright {
+.alignright{
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
-.aligncenter {
+.aligncenter{
 	clear: both;
 	display: block;
 	margin: 0 auto;
 }
-
-.screen-reader-text {
+.screen-reader-text{
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
 }
 
 
+.uppercase{
+	text-transform: uppercase;
+}
+.wrapper{
+	display: table;
+}
+.image{
+	img{
+		display: block;
+	}
+}
+.text-center{
+	text-align: center;
+}
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES / Other titels
 ******************************************************************/
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5{
 	text-rendering: optimizelegibility;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-family: $open-sans;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-
-	/* removing text decoration from all headline links */
-	a {
+	a{
 		text-decoration: none;
 	}
 }
 
-h1, .h1 {
+h1, .h1{
 	font-size: 2.5em;
 	line-height: 1.333em;
 }
 
-h2, .h2 {
+h2, .h2{
 	font-size: 1.75em;
 	line-height: 1.1em;
 	margin: 0 0 0.375em;
 }
 
-h3, .h3 {
+h3, .h3{
 	font-size: 1.125em;
 	text-transform: none;
 }
 
-h3.widget-title {
+h3.widget-title{
 	text-transform: uppercase;
 	font-size: 	20px;
 }
 
-h4, .h4 {
+h4, .h4{
 	font-size: 1.1em;
 	font-weight: 700;
 }
 
-h5, .h5 {
+h5, .h5{
 	font-size: 0.846em;
 	line-height: 2.09em;
 	text-transform: uppercase;
@@ -198,109 +168,101 @@ h5, .h5 {
 LOGO & NAVIGATION STYLES
 *********************/
 
-.logo a {
-	display: block;
+.logo a{
+	display: inline-block;
 }
-
-.site-branding {
-	padding:				10px 0;
-	text-align:				center;
+.site-branding{
+	padding: 10px 0;
+	text-align: center;
 }
-
-
 
 /* Toggle menu */
-
-.mobile-menu {
+.mobile-menu{
 	display: none;
 }
 
-.menu-toggle {
+.menu-toggle{
 	cursor: pointer;
 	display: none;
 }
 
-.menu-toggle, .main-navigation.toggled .nav-menu {
+.menu-toggle, .main-navigation.toggled .nav-menu{
+	display: block;
+}
+
+.main-navigation ul{
+	transition:none;
+}
+
+.submenu-toggle{
+	padding: 0 !important;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	width: 20px;
+	height: 20px !important;
+	border-top: none !important;
+}
+
+.menu-toggle{
+	position: absolute;
+	padding: 4px 0;
+	top: 10px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
+	.line{
+		margin: 0 0 8px 0;
+		width: 30px;
+		height: 2px;
 		display: block;
+		background: #000;
+		transition: top 0.3s ease 0s, transform 0.3s ease 0s, opacity 0.3s ease 0s;
 	}
-
-.main-navigation ul {
-		transition:none;
+	.last-line{
+		margin: 0;
 	}
-
-
-.submenu-toggle {
-	padding:				0 !important;
-	position:				absolute;
-	top:					10px;
-	right:					20px;
-	width:					20px;
-	height:					20px !important;
-	border-top:				none !important;
 }
 
-
-.menu-toggle {
-	position:				absolute;
-	padding:				6px 0;
-	top:					10px;
-	left:					10px;
-	width:					24px;
-	height:					30px;
-}
-
-.menu-toggle .line {
-	margin:					0 0 8px 0;
-	width:					30px;
-	height:					2px;
-	display:				block;
-	background:				#000;
-	transition: 			top 0.3s ease 0s, transform 0.3s ease 0s, opacity 0.3s ease 0s;
-}
-
-.menu-toggle .last-line {
-	margin:					0;
-}
-
-.menu-toggle-active span.first-line {
-	transform: rotate(45deg);
-	top: 10px;
-	position: 				absolute;
-}
-
- .menu-toggle-active span.last-line {
-	transform: rotate(-45deg);
-	top: 10px;
-	position: 				absolute;
-}
-
-.menu-toggle-active span.second-line {
-	opacity: 0;
+.menu-toggle-active{
+	.first-line{
+		transform: rotate(45deg);
+		top: 14px;
+		position: absolute;
+	}
+	.last-line{
+		transform: rotate(-45deg);
+		top: 14px;
+		position: absolute;
+	}
+	.second-line{
+		opacity: 0;
+	}
 }
 
 /*
 Normal menu
 */
 
-.menu-toggle-desktop {
+.menu-toggle-desktop{
 	float: right;
-	.menu-toggle-desktop-menu {
+	.menu-toggle-desktop-menu{
 		background: $base-red;
 		color: #fff;
 		font-size: 22px;
 		position: relative;
-		img.triangle-right {
+		img.triangle-right{
 			top: 33%;
 		}
 	}
-	.menu-toggle-desktop-language {
+	.menu-toggle-desktop-language{
 		font-size: 70%;
 		color: $base-red;
 		font-weight: 700;
 	}
 }
 
-.menu-toggle-desktop-icon {
+.menu-toggle-desktop-icon{
 	display: table-cell;
 	padding: 0 15px 0 30px;
 	text-transform: uppercase;
@@ -308,547 +270,172 @@ Normal menu
 	font-family: $raleway;
 }
 
-.menu-toggle-desktop-button {
-	cursor: 				pointer; 
-    display: 				table;
-    position: 				relative;
-    padding:  				20px 60px 20px 20px;
-    	.menu-toggle-desktop-tekst {
-    		display: table;
-    	}
-    	.burger {
-	    	 bottom: 0;
-		    height: 15px;
-		    margin: auto;
-		    position: absolute;
-		    right: 10px;
-		    top: 0;
-    	}
-		.line {
-			margin:					0 0 5px 0;
-			width:					30px;
-			height:					2px;
-			display:				block;
-			background:				#fff;
-		}
-		.last-line {
-			margin:					0;
-		}
+.menu-toggle-desktop-button{
+	cursor: pointer; 
+	display: table;
+	position: relative;
+	padding: 20px 60px 20px 20px;
+	.menu-toggle-desktop-tekst{
+		display: table;
+	}
+	.burger{
+		bottom: 0;
+		height: 15px;
+		margin: auto;
+		position: absolute;
+		right: 10px;
+		top: 0;
+	}
+	.line{
+		margin: 0 0 5px 0;
+		width: 30px;
+		height: 2px;
+		display: block;
+		background: #fff;
+	}
+	.last-line{
+		margin: 0;
+	}
 }
 
-.overlay-menu {
-	display: 			none; 
-	height: 275px;
-	width: 100%;
-    left: 0;
-    position: absolute;
-    z-index: 9999;
-    background: #f8f8f8;
-
-    .menu-hoofdmenu-container {
-    	margin: 0 auto;
-    	text-align: center;
-    	padding-top: 30px;
-    }
-}
-
-.overlay-menu-close-holder {
-	background: #efefef;
-}
-
-.overlay-menu-close {
-    color: #900028;
-    cursor: pointer;
-    display: none;
-    position: relative;
-    float: right;
-    padding: 30px 50px;
-    margin: 0 100px 0 0;
-}
-
-.overlay-menu-close-line {
-    background-color: #000;
-    height: 2px;
-    position: absolute;
-    top: 27px;
-    width: 26px;
-    left: 25px;
-}
-
-.overlay-menu-close-line-first {
-    transform: rotate(45deg);
-}
-
-.overlay-menu-close-line-last {
-    transform: rotate(-45deg);
-}
-
-
-li.menu-item-has-children {
-			position: relative;
-		}
-
-.main-navigation {
+.main-navigation{
 	border-bottom: 0;
 	margin: 0;
-
-	li {	
-		a {
+	li{
+		&.menu-item-has-children{
+			position: relative;
+		}
+		a{
 			text-align:	center;
 			font-weight: 200;
 			font-size: 12px;
 			line-height: 1em;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-				
-			}
-
 		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
 		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
+		ul.children{
+			li{
+				a{
 					padding-left: 30px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
 				}
-
-				&:first-child {}
-
-				&:last-child {}
-
 			}
-
 		}
+	}
+}
 
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-
-		a {}
-
-	}  /* end current highlighters */
-
-} /* end .nav */
-
-/*********************
-HEADER STYLES
-*********************/
-
-
+#menu-sitemap{
+	margin: 0;
+	ul{
+		margin: 0;
+	}
+	li{
+		padding-left: 20px;
+		position: relative;
+		&:before{
+			content: "\f105";
+			font-family: FontAwesome;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
 
 /*********************
 CONTENT STYLES
 *********************/
 
-
-.intro-txt {
- 	font-size: 120%;
-    line-height: 1.665em;
-    margin-bottom: 1.5em;
-}
-
-		.single-title,
-		.page-title,
-		.entry-title {
-		}
-
-		.single-title {}
-
-		.page-title {}
-
-		.entry-title {}
-
-		.archive-title {}
-
-		/* entry content */
-		.entry-content {
-
-			p {
-				margin: 0 0 1.5em;
-			}
-
-
-			ul, ol, table, dl {}
-
-			ul, ol {
-
-				li {}
-
-			}
-
-			ul {
-
-				li {}
-
-			}
-
-			ol {
-
-				li {}
-
-			}
-
-			table {
-				width: 100%;
-				border: 1px solid $gray;
-				margin-bottom: 1.5em;
-
-				caption {
-					margin: 0 0 7px;
-					font-size: 0.75em;
-					color: $meta-gray;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-				}
-			}
-
-			tr {
-				border-bottom: 1px solid $gray;
-
-				&:nth-child(even) {
-					background-color: $light-gray;
-				}
-			}
-
-			td {
-				padding: 7px;
-				border-right: 1px solid $gray;
-
-				&:last-child {
-					border-right: 0;
-				}
-			}
-
-			th {
-				background-color: $light-gray;
-				border-bottom: 1px solid $gray;
-				border-right: 1px solid $gray;
-
-				&:last-child {
-					border-right: 0;
-				}
-			}
-
-			blockquote {
-				margin: 0 0 1.5em 0.75em;
-				padding: 0 0 0 0.75em;
-				border-left: 3px solid $black;
-				font-style: italic;
-				color: $meta-gray;
-
-				&:before {}
-
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
-
-			img {
-				max-width: 100%;
-				height: auto;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			.size-auto,
-			.size-full,
-			.size-large,
-			.size-medium,
-			.size-thumbnail {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre {
-				background: $black;
-				color: $light-gray;
-				font-size: 0.9em;
-				padding: 1.5em;
-				margin: 0 0 1.5em;
-				border-radius: 3px;
-			}
-
-		} /* end .entry-content */
-
-		.wp-caption {
-			max-width: 100%;
-			background: #eee;
-			padding: 5px;
-
-			/* images inside wp-caption */
-			img {
-				max-width: 100%;
-				margin-bottom: 0;
-				width: 100%;
-			}
-
-			p.wp-caption-text {
-				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
-
-		} /* end .wp-caption */
-
-		/* image gallery styles */
-		.gallery {
-
-			dl {
-
-				a {}
-
-				img {}
-
-			}
-
-			dt {}
-
-			dd {}
-
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
-
-	// the tag output
-	.tags {
-		margin: 0;
+.entry-content{
+	p{
+		margin: 0 0 1.5em;
 	}
-
-
-
-/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/
-
-.pagination,
-.wp-prev-next {
-	margin: 1.5em 0;
+	table{
+		width: 100%;
+		border: 1px solid $gray;
+		margin-bottom: 1.5em;
+	}
+	tr{
+		border-bottom: 1px solid $gray;
+		&:nth-child(even){
+			background-color: $light-gray;
+		}
+	}
+	td{
+		padding: 7px;
+		border-right: 1px solid $gray;
+		&:last-child{
+			border-right: 0;
+		}
+	}
+	th{
+		background-color: $light-gray;
+		border-bottom: 1px solid $gray;
+		border-right: 1px solid $gray;
+		&:last-child{
+			border-right: 0;
+		}
+	}
+	blockquote{
+		margin: 0 0 1.5em 0.75em;
+		padding: 0 0 0 0.75em;
+		border-left: 3px solid $black;
+		font-style: italic;
+		color: $meta-gray;
+	}
+	dd{
+		margin-left: 0;
+		font-size: 0.9em;
+		color: #787878;
+		margin-bottom: 1.5em;
+	}
+	img{
+		max-width: 100%;
+		height: auto;
+	}
+	.size-auto,
+	.size-full,
+	.size-large,
+	.size-medium,
+	.size-thumbnail{
+		max-width: 100%;
+		height: auto;
+	}
 }
-	.pagination{
-    text-align: center;
-
-    ul {
-      display: inline-block;
-      background-color: $white;
-      white-space: nowrap;
-      padding: 0;
-      clear: both;
-      border-radius: 3px;
-    }
-
-    li {
-      padding: 0;
-      margin: 0;
-      float: left;
-      display: inline;
-      overflow: hidden;
-      border-right: 1px solid $gray;
-    }
-
-    a, span {
-      margin: 0;
-      text-decoration: none;
-      padding: 0;
-      line-height: 1em;
-      font-size: 1em;
-      font-weight: normal;
-      padding: 0.75em;
-      min-width: 1em;
-      display: block;
-      color: $black;
-
-      &:hover, &:focus {
-      	background-color: $black;
-      	color: $white;
-      }
-    }
-
-    .current{
-    	cursor: default;
-    	color: $text-color;
-
-    	&:hover, &:focus {
-    		background-color: $white;
-    		color: $text-color;
-    	}
-    }
-
-  } 
-
-	/* fallback previous & next links */
-	.wp-prev-next {
-
-		ul {}
-
-		.prev-link {
-			float: left;
-		}
-
-		.next-link {
-			float: right;
-		}
-
-	} /* end .wp-prev-next */
+.tags{
+	margin: 0;
+}
 
 
-/******************************************************************
-Background images
-******************************************************************/
+
+
 
 /*********************
 FOOTER STYLES
 *********************/
-
-
-#zone-footer-wrapper {
-	background:				#fff;
-}
-
-#zone-footer {
-	margin:					0 auto;
-	padding:				30px 0;
-	display:				table;
-	font-weight:  			300;
-	font-size:  			12px;
-}
-
-#zone-footer ul {
-	margin:					0 0 20px;
-	list-style:				none;
-}
-
-
-#zone-footer-wrapper-2 {
-	background:				#fff;
-}
-
-#zone-footer-2 {
-	color:					#000;
-	text-align:				center;
-	padding:				10px 0;
-	display:				table;
-	margin:					0 auto;
-	font-size:				75%;
-} 
-
-
-#zone-footer-2 a {
-	color:					#000;
-}
-
-
-/*********************
-Search & 404 page
-*********************/
-
-input.search-submit {
-	background: #690AA9;
-	color: #690AA9;
-	height: 35px;
-	padding-top: 5px;
-	float: left;
-}
-
-.widget_search .search-submit {
-	display: block;
-}
-
-input[type="search"] {
-	width: 70%;
-	padding: 6px 10px 7px !important;
-	float: left;
-}
-.error-404 input[type="search"] {
-	width: 70%;
-}
-.error-404 input[type="submit"] {
-	margin: 4px 0 20px 10px;
-}
-
-
-a.bt-404 {
-	background: #3a4052;
-	padding: 15px;
-	font-size: 20px;
-	color: #fff;
-	margin-top:10px;
-	display: table;
-}
-
-a.bt-404:hover {
+#zone-footer-wrapper{
 	background: #fff;
-	color: #3a4052;
+	#zone-footer{
+		margin: 0 auto;
+		padding: 30px 0;
+		display: table;
+		font-weight: 300;
+		font-size: 12px;
+		ul{
+			margin: 0 0 20px;
+			list-style: none;
+		}
+	}
 }
-
-#img-404 {
-	position: relative;
-	min-height:455px;
-	background: url(../images/404.jpg) no-repeat center center/cover;
-	height:776;
-	margin: 20px 0;
-}
-
-.img-404-txt {
-	position: absolute;
-	top: 5%;
-	left:1%;
-	background: rgba(255,255,255,0.52);
-	color:#3a4052;
-	font-size:40px;
-	padding:15px;
-	line-height:1.2em;
-}
-
-.home-404 {
-	margin-bottom:20px;
+#zone-footer-wrapper-2{
+	background: #fff;
+	#zone-footer-2{
+		color: #000;
+		text-align: center;
+		padding: 10px 0;
+		display: table;
+		margin: 0 auto;
+		font-size: 75%;
+		a{
+			color: #000;
+		}
+	}
 }

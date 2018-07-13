@@ -1,79 +1,64 @@
-/******************************************************************
-Site Name: MB - Bedrijfskundig Marketing Advies
-Author: MB - Bedrijfskundig Marketing Advies
+* {
+	background: transparent !important;
+	color: black !important;
+	text-shadow: none !important;
+	filter:none !important;
+	-ms-filter: none !important;
+}
 
-Stylesheet: Print Stylesheet
+a, a:visited {
+	color: #444 !important;
+	text-decoration: underline;
 
-This is the print stylesheet. There's probably not a lot
-of reasons to edit this stylesheet. If you want to
-though, go for it.
+	&:after {
+		content: " (" attr(href) ")";
+	}
 
-******************************************************************/
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+}
 
-  * {
-    background: transparent !important;
-    color: black !important;
-    text-shadow: none !important;
-    filter:none !important;
-    -ms-filter: none !important;
-  }
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+	content: "";
+}
 
-  a, a:visited {
-    color: #444 !important;
-    text-decoration: underline;
+pre, blockquote {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
 
-    // show links on printed pages
-    &:after {
-      content: " (" attr(href) ")";
-    }
+thead {
+	display: table-header-group;
+}
 
-    // show title too
-    abbr[title]:after {
-      content: " (" attr(title) ")";
-    }
-  }
+tr, img {
+	page-break-inside: avoid;
+}
 
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
+img {
+	max-width: 100% !important;
+}
 
-  pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+@page {
+	margin: 0.5cm;
+}
 
-  thead {
-    display: table-header-group;
-  }
+p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+}
 
-  tr, img {
-    page-break-inside: avoid;
-  }
+h2,
+h3 {
+	page-break-after: avoid;
+}
 
-  img {
-    max-width: 100% !important;
-  }
-
-    @page {
-      margin: 0.5cm;
-    }
-
-    p, h2, h3 {
-      orphans: 3;
-      widows: 3;
-    }
-
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
-
-    // hide content people who print don't need to see
-    #site-navigation, .footer-columns-second, .footer-columns-third, .footer-columns-fourth, .logo-mobile,
-    .sidebar,
-    .page-navigation,
-    .wp-prev-next {
-      display: none;
-    }
+#site-navigation, .footer-columns-second, .footer-columns-third, .footer-columns-fourth, .logo-mobile,
+.sidebar,
+.page-navigation,
+.wp-prev-next {
+	display: none;
+}

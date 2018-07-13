@@ -1,51 +1,24 @@
-/******************************************************************
-Site Name: 
-Author: MB - Bedrijfskundig Marketing Advies
-
-Stylesheet: Main Stylesheet
-
-Here's where the magic happens. Here, you'll see we are calling in
-the separate media queries. The base mobile goes outside any query
-and is called at the beginning, after that we call the rest
-of the styles inside media queries.
-
-Helpful articles on Sass file organization:
-http://thesassway.com/advanced/modular-css-naming-conventions
-
-******************************************************************/
-
 /*********************
 IMPORTING PARTIALS
-These files are needed at the beginning so that we establish all
-our mixins, functions, and variables that we'll be using across
-the whole project.
 *********************/
 
-// normalize: http://necolas.github.io/normalize.css/
 @import "partials/normalize";
 
-// Sass variables
 @import "partials/variables";
 
-// typography
 @import "partials/typography";
 
-// Sass functions
 @import "partials/functions";
 
-// import mixins
 @import "partials/mixins";
 
-// the grid
 @import "partials/grid";
 
 /*********************
 IMPORTING MODULES
-Modules are reusable blocks or elements we use throughout the project.
-We can break them up as much as we want or just keep them all in one.
-I mean, you can do whatever you want. The world is your oyster. Unless
-you hate oysters, then the world is your peanut butter & jelly sandwich.
 *********************/
+
+@import "modules/404";
 
 @import "modules/blog";
 
@@ -59,48 +32,37 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 Media Queries
 *********************/
 
-// styles in base.scss
 @import "breakpoints/01-base";
+//@import "woocommerce/01-base";
 
 @media only screen and (max-width: 739px) {
 	@import "breakpoints/02-mobile";
-
-} // end of media query
+	//@import "woocommerce/02-mobile";
+}
 
 @media only screen and (min-width: 740px) {
 	@import "breakpoints/03-narrow";
-
-} // end of media query
+	//@import "woocommerce/03-narrow";
+}
 
 @media only screen and (min-width: 740px) and (max-width: 979px)  {
 	@import "breakpoints/04-narrow-only";
-
-} // end of media query
+}
 
 @media only screen and (min-width: 980px) {
 	@import "breakpoints/05-normal";
-
-} // end of media query
+	//@import "woocommerce/04-normal";
+}
 
 @media only screen and (min-width: 980px) and (max-width: 1219px)  {
 	@import "breakpoints/06-normal-only";
-
-} // end of media query
+}
 
 @media only screen and (min-width: 1220px) {
 	@import "breakpoints/07-large";
+	//@import "woocommerce/05-large";
+}
 
-} // end of media query
-
-/*********************
-PRINT STYLESHEET
-Feel free to customize this. Remember to add things that won't make
-sense to print at the bottom. Things like nav, ads, and forms should
-be set to display none.
-*********************/
 @media print {
-
-	// styles in print.scss
 	@import "partials/print";
-
 }

@@ -1,14 +1,3 @@
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Small Tablet
-
-
-
-******************************************************************/
-
-
 /*********************
 GENERAL STYLES
 *********************/
@@ -19,11 +8,11 @@ body {
 }
 
 .float-left {
-	float:			left;
+	float: left;
 }
 
 .float-right {
-	float:			right;
+	float: right;
 }
 
 /*********************
@@ -37,37 +26,36 @@ LAYOUT & GRID STYLES
 
 #zone-navigation,
 #zone-content {
-		margin:					0 auto;
-		display:				table;
+	margin: 0 auto;
+	display: table;
 }
 
-.page-pad {
-	padding: 50px 0;
+.pad-both{
+	padding-top: 150px;
+	padding-bottom: 150px;
 }
-
-.page-pad-top {
-	padding: 50px 0 0;
+.pad-top{
+	padding-top: 150px;
+}
+.pad-bottom{
+	padding-bottom: 150px;
 }
 
 /*********************
 HEADER STYLES
 *********************/
-
 .site-branding {
 	float: left;
-	padding: 7px 30px
+	padding: 7px 0;
 }
-
 .logo img {
-	height:					50px;
-	vertical-align: 		middle;
+	vertical-align: middle;
 }
-
 .logo-mobile {
-	display:				none;
+	display: none;
 }
 .phone-number{
-	display: 				none;
+	display: none;
 }
 
 
@@ -75,7 +63,9 @@ HEADER STYLES
 CONTENT STYLES
 *********************/
 
-
+.mobile-only{
+	display: none;
+}
 
 /*********************
 NAVIGATION STYLES
@@ -104,30 +94,17 @@ NAVIGATION STYLES
 		&:last-of-type{
 			border-right: 0px;
 		}
-	
 		a {
 			border-bottom: 0;
 			display: block;
 			text-decoration: none;
 			text-align: center;
 			padding: 0;
-			font-size: 20px; 
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
+			font-size: 20px;
 			&:hover, &:focus {
 				text-decoration: underline;
-				color: #e12534;
 			}
 		}
-
-		&:first-child {}
-		&:last-child {}
-
-		/*
-		plan your menus and drop-downs wisely.
-		*/
 		ul.sub-menu,
 		ul.children {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -144,71 +121,38 @@ NAVIGATION STYLES
 				margin: 0;
 				font-size: 80%;
 				a {
-						width: 200px;
-						background: #fff;
-						color: #000;
-						text-align: left;
-						padding-left: 10px;
-					&:hover,
-					&:focus {}
-
-					&:link {}
+					width: 200px;
+					background: #fff;
+					color: #000;
+					text-align: left;
+					padding-left: 10px;
 				}
-
-				&:first-child {}
-
 				&:last-child {
-
 					a {
 						border-bottom: 0;
 					}
 				}
-
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
 				ul {
 					top:0;
 					left:100%;
 				}
 			}
-
-			/* highlight sub-menu current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}
 		}
-
-		/* showing sub-menus */
 		&:hover > ul {
 			top: auto;
 			visibility:hidden;
 		}
-
-	} /* end .menu ul li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-		a {}
-	}  /* end current highlighters */
-
-
-} /* end .nav */
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES
 *********************/
 
 #secondary {
-		margin:					20px 0;
-		float:					right;
-	}
+	margin: 20px 0;
+	float: right;
+}
 
 
 /*********************

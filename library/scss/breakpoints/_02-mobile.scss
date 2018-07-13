@@ -1,118 +1,106 @@
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Mobile only
-
-******************************************************************/
-
-/*
-IMPORTANT NOTE ABOUT SASS 3.3 & UP
-You can't use @extend within media queries
-anymore, so just be aware that if you drop
-them in here, they won't work.
-*/
 /*********************
 GENERAL STYLES
 *********************/
 
-	body {
-		font-size: 80%;
-	}
+body {
+	font-size: 80%;
+}
 
-	.center {
-		padding: 0px 10px;
-	}
-	
-	.menu-toggle-desktop,
-	.mobile-none,
-	.logo-normal {
-		display:				none;
-	}
-	.logo-mobile{
-		height: 35px;
-		vertical-align: middle;
-	}
-	.phone-number{
-		position: absolute;
-		right: 10px;
-		top: 13px;
-	}
-	.phone-number-icon{
-		font-size: 25px;
-	}
+.center {
+	padding: 0px 10px;
+}
+
+.menu-toggle-desktop,
+.mobile-none,
+.logo-normal {
+	display: none;
+}
+.logo-mobile{
+	height: 35px;
+	vertical-align: middle;
+}
+.phone-number{
+	position: absolute;
+	right: 10px;
+	top: 13px;
+}
+.phone-number-icon{
+	font-size: 25px;
+}
+
+.pad-both{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.pad-top{
+	padding-top: 50px;
+}
+.pad-bottom{
+	padding-bottom: 50px;
+}
 
 /*********************
 Navigation
 *********************/
-	.overlay-menu {
-		position: relative;
-		height: 100%;
-	}
+.overlay-menu {
+	position: relative;
+	height: 100%;
+}
 
-	.mobile-menu {
-		display: block;
-	}
+.mobile-menu {
+	display: block;
+}
 
-	#zone-navigation-wrapper {
-		margin:					0 0 20px;
-		width:					100%;
-	}
+#zone-navigation-wrapper {
+	margin: 0 0 20px;
+	width: 100%;
+}
 
-	#site-navigation.gutter {
-		margin:					0 !important;
-	}
+#site-navigation.gutter {
+	margin: 0 !important;
+}
 
-	.main-navigation {
-		width: 100%;
-		background: #fff;
-		ul{
+.main-navigation {
+	width: 100%;
+	background: #fff;
+	ul{
+		display: none;
+		margin: 0;
+		ul.sub-menu{
 			display: none;
-			margin: 0;
-			ul.sub-menu{
-				display: none;
-				li{	
-					a{
-						background: #ccc;
-						padding-left: 0;
-						padding-right: 0;
-					}
+			li{	
+				a{
+					background: #ccc;
+					padding-left: 0;
+					padding-right: 0;
 				}
 			}
-			li{
-				a{
-					border-top: 			1px solid #ccc;
-					padding: 24px 10px;
-					text-align: center;
-					width: 100%;
-					font-size: 15px;
-					text-transform: uppercase;
-					display: table;
-					&.submenu-toggle{
-						width: 20px;
-						display: block;
-					}
+		}
+		li{
+			a{
+				border-top: 1px solid #ccc;
+				padding: 24px 10px;
+				text-align: center;
+				width: 100%;
+				font-size: 15px;
+				text-transform: uppercase;
+				display: table;
+				&.submenu-toggle{
+					width: 20px;
+					display: block;
 				}
 			}
 		}
 	}
+}
 
 /*********************
 MISC
 *********************/
 
-	.embed-youtube {
-		max-width:					300px;
-	}
-
-	.breadcrumb{
-		display: none;
-	}
-
-	.nieuwsbrief-wrapper {
-		padding: 20px 50px;
-	}
-
+.breadcrumb{
+	display: none;
+}
 
 /*********************
 CONTENT STYLES

@@ -5,20 +5,14 @@ Template Name: Bedankt
 */
 
 get_header(); ?>
-		<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary" class="content-area">
+		<section id="main" class="site-main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-				<div class="page-pad">
+				<div class="pad-both">
 					<div class="columns-6 center">
 						<h1>Bedankt <?php echo htmlspecialchars($_GET["Naam"]) ?>,</h1>
 						<br>
@@ -32,8 +26,8 @@ get_header(); ?>
 					</div>
 				</div>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</section>
+	</div>
 <?php get_footer(); ?>

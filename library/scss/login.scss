@@ -1,29 +1,3 @@
-/******************************************************************
-Site Name: MB - Bedrijfskundig Marketing Advies 
-Author: MB - Bedrijfskundig Marketing Advies
-
-Stylesheet: Login Stylesheet
-
-This stylesheet is loaded (if admin.php is setup in your
-functions file) on the login page. This way you can style
-the login page. It won't affect any other page, admin or front-end.
-
-For more info, check out the codex:
-http://codex.wordpress.org/Creating_Admin_Themes
-
-******************************************************************/
-
-
-body.login {}
-
-
-#login {} /* the form box */
-
-/*
-This is the Wordpress logo in the admin area.
-You'll have to load your own images and mess
-with the width and height.
-*/
 .login h1 a {
 	background: url(../images/login.png) no-repeat top center; 
 	width: 325px;
@@ -58,12 +32,3 @@ body form .input {
 	outline: none;
 	box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
 }
-
-/*
-You'll have to override some of the default styles
-but since we're referencing the id, it should be easy.
-*/
-#wp-submit {} /* login button*/
-
-
-

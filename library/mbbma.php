@@ -350,10 +350,11 @@ new email_return_path();
 add_filter( 'gform_confirmation_anchor', '__return_true' );
 
 // Slaat GF inzendingen in op zonder returns
-add_filter("gform_save_field_value", "save_field_value", 10, 4);
-function save_field_value($value, $lead, $field, $form){
-	$new_value = str_replace(array("\n", "\t", "\r"), '', $value);
-	return $new_value;
+// https://docs.gravityforms.com/gform_export_field_value/ --> 7
+add_filter( 'gform_export_field_value', 'decode_export_values' );
+function decode_export_values( $value ) {
+	$value = str_replace(array("\n", "\t", "\r"), ' ', $value);
+	return $value;
 }
 
 // Automatische <p>'tjes weggehaald

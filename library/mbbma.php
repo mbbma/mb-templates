@@ -400,5 +400,23 @@ function input_to_button( $button, $form ) {
 	return $dom->saveHtml( $new_button );
 }
 
+if( !function_exists('mr_tab_to_indent_in_textarea') ){
+	function mr_tab_to_indent_in_textarea() {
+		$tabindent = '<script>
+		jQuery(function($) {
+			$("textarea#content, textarea#wp_mce_fullscreen").keydown(function(e){  
+				if( e.keyCode != 9 ) return;
+				e.preventDefault();
+				var textarea = $(this)[0], start = textarea.selectionStart, before = textarea.value.substring(0, start), after = textarea.value.substring(start, textarea.value.length);
+				textarea.value = before + "\t" + after; textarea.setSelectionRange(start+1,start+1);  
+			});
+		});</script>';
+		echo $tabindent;
+	}
+
+	add_action('admin_footer-post-new.php', 'mr_tab_to_indent_in_textarea');
+	add_action('admin_footer-post.php', 'mr_tab_to_indent_in_textarea');
+}
+
 
 ?>

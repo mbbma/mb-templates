@@ -147,6 +147,15 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	$(document).on({
+		touchstart: function() {
+			$(this).addClass('hover');
+		},
+		touchend: function() {
+			$(this).removeClass('hover');
+		}
+	});
+
 	// Gravity form check icons
 	checkForm();
 

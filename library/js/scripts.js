@@ -147,6 +147,9 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	/***************************
+	IOS hover fix
+	***************************/
 	$(document).on({
 		touchstart: function() {
 			$(this).addClass('hover');
@@ -156,7 +159,9 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	// Gravity form check icons
+	/***************************
+	Gravity forms
+	***************************/
 	checkForm();
 
 	$('.ginput_container input, .ginput_container textarea').focusout(function(){
@@ -169,6 +174,20 @@ jQuery(document).ready(function($) {
 				$(this).parent().addClass('active');
 			} else{
 				$(this).parent().removeClass('active');
+			}
+		});
+	}
+
+	/***************************
+	IE object fit
+	***************************/
+	if ( ! Modernizr.objectfit ) {
+		$('.object-fit').each(function () {
+			var $container = $(this),
+			imgUrl = $container.find('img').prop('src');
+
+			if (imgUrl) {
+				$container.css('backgroundImage', 'url(' + imgUrl + ')');
 			}
 		});
 	}

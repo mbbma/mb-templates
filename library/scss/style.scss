@@ -63,6 +63,14 @@ Media Queries
 	//@import "woocommerce/05-large";
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.object-fit{
+		img{
+			opacity: 0;
+		}
+	}
+}
+
 @media print {
 	@import "partials/print";
 }

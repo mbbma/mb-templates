@@ -8,6 +8,15 @@ function get_post_data() {
 // stuff for any page
 $payload["@context"] = "http://schema.org/";
 
+// $payload["@type"] = "Organization";
+// $payload["AggregateRating"] = array(  
+//   "@type" => "AggregateRating",
+//   "bestRating" => "10",
+//   "worstRating" => "1", 
+//   "ratingValue" => "8.6", 
+//   "reviewCount" => "539",
+// );
+
 // this has all the data of the post/page etc
 $post_data = get_post_data();
 

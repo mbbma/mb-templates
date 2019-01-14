@@ -194,20 +194,6 @@ function mbbma_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-
-/*
-This is a modification of a function found in the
-twentythirteen theme where we can declare some
-external fonts. If you're using Google Fonts, you
-can replace these fonts, change it in your scss files
-and be up and running in seconds.
-*/
-function mbbma_fonts() {
-   wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Lato:300,400,700,900');
-}
-
-add_action('wp_enqueue_scripts', 'mbbma_fonts');
-
 /**
  * Implement the Custom Header feature.
  */

@@ -11,6 +11,25 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+
+<!-- Webfontloader -->
+<script>
+	WebFontConfig = {
+		google: {
+			families: [
+				'Amatic+SC:400,700',
+				'Lato:300,400,700,900'
+			]
+		}
+	};
+	(function(d) {
+		var wf = d.createElement('script'), s = d.scripts[0];
+		wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+		wf.async = true;
+		s.parentNode.insertBefore(wf, s);
+	})(document);
+</script>
+
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 <title><?php wp_title( '|', true, 'right' ); ?></title>

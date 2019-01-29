@@ -3,7 +3,7 @@ GENERAL STYLES
 *********************/
 
 html, body{
-	background: #f6f6f6 !important;
+	background: #f6f6f6;
 }
 body{
 	font-family: $open-sans;
@@ -83,12 +83,10 @@ p#breadcrumbs{
 }
 
 .alignleft{
-	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
 .alignright{
-	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
@@ -99,7 +97,7 @@ p#breadcrumbs{
 }
 .screen-reader-text{
     clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
+    position: absolute;
 }
 
 
@@ -196,13 +194,13 @@ LOGO & NAVIGATION STYLES
 }
 
 .submenu-toggle{
-	padding: 0 !important;
+	padding: 0;
 	position: absolute;
 	top: 10px;
 	right: 20px;
 	width: 20px;
-	height: 20px !important;
-	border-top: none !important;
+	height: 20px;
+	border-top: none;
 }
 
 .menu-toggle{

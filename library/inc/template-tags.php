@@ -20,7 +20,7 @@ function mbbma_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'mbbma' ); ?></h1>
+		<div class="screen-reader-text"><?php _e( 'Posts navigation', 'mbbma' ); ?></div>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>

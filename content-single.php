@@ -53,12 +53,6 @@
 				</div>
 			</a>
 
-			<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"> 
-				<div class="google">
-					<i class="fa fa-google-plus"></i>
-				</div>
-			</a>
-
 			<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;">
 				<div class="linkedin laatste">
 					<i class="fa fa-linkedin"></i>

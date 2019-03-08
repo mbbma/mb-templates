@@ -12,7 +12,11 @@ body{
 	color: $text-color;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
-  	font-weight: 300;
+	font-weight: 300;
+	&.no-scroll{
+		overflow: hidden;
+		height: 100%;
+	}
 }
 p{
 	margin-bottom: 1.5em;

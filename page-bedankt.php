@@ -8,9 +8,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<section id="main" class="site-main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'page' ); ?>
+			<?php
+				while ( have_posts() ) : the_post();
+					get_template_part( 'content', 'page' );
+				endwhile;
+			?>
 
 				<div class="pad-both">
 					<div class="columns-6 center">
@@ -25,8 +27,6 @@ get_header(); ?>
 						Team <?php bloginfo( 'name' ); ?>
 					</div>
 				</div>
-
-			<?php endwhile; ?>
 
 		</section>
 	</div>

@@ -116,15 +116,7 @@ var timeToWaitForLast = 100;
 })();
 
 
-/*
- * Put all your regular jQuery in here.
-*/
 jQuery(document).ready(function($) {
-
-	/*
-		* Let's fire off the gravatar function
-		* You can remove this if you don't need it
-	*/
 
 	(function ($) {
 		$('.menu-toggle').click(function(){
@@ -137,15 +129,21 @@ jQuery(document).ready(function($) {
 		});
 	})(jQuery);
 
-	/* Smooth scrolling */
+	/***************************
+	Smooth scrolling
+	***************************/
 	$('a').click(function(){
 		if(/#/.test($(this).prop('href')) === true) {
-			$('html, body').animate({
-				scrollTop: $( $(this).attr('href') ).offset().top
-			}, 700);
-			return false;
+			smoothScroll( $(this).attr('href'), 700 );
 		}
 	});
+
+	function smoothScroll(elem, time){
+		$('html, body').animate({
+			scrollTop: $( elem ).offset().top
+		}, time);
+		return false;
+	}
 
 	/***************************
 	IOS hover fix
@@ -191,5 +189,17 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
+	
+	/***************************
+	Popup
+	***************************/
+	$('.show-popup').click(function(){
+		$('.popup[data-name="' + $(this).attr('data-value') + '"], .popup-background').addClass('active');
+		$('body').addClass('no-scroll');
+	});
+	$('.popup .close, .popup-background').click(function(){
+		$('.popup, .popup-background').removeClass('active');
+		$('body').removeClass('no-scroll');
+	});
 
-}); /* end of as page load scripts */
+});

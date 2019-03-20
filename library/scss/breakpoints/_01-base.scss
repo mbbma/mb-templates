@@ -415,16 +415,17 @@ CONTENT STYLES
 .popup{
 	display: none;
 	position: fixed;
-	top: 20px;
+	top: 50%;
 	left: 40px;
 	right: 40px;
 	bottom: 20px;
 	max-width: 600px;
-	max-height: 600px;
+	max-height: calc(100vh - 20px);
+	transform: translateY(-50%);
 	margin: auto;
 	background: #fff;
+	overflow: scroll;
 	z-index: 1001;
-	padding: 30px;
 	&.active{
 		display: block;
 	}
@@ -451,6 +452,7 @@ CONTENT STYLES
 		}
 	}
 	.content{
+		padding: 30px;
 		.gform_wrapper{
 			padding-top: 25px;
 			ul.gform_fields{

@@ -107,11 +107,8 @@ CONTENT STYLES
 *********************/
 
 .popup{
-	top: 10px;
 	left: 10px;
 	right: 10px;
-	bottom: 10px;
-	padding: 20px 20px 20px;
 	.close{
 		top: 10px;
 		right: 20px;
@@ -123,6 +120,7 @@ CONTENT STYLES
 		}
 	}
 	.content{
+		padding: 20px 20px 20px;
 		.gform_wrapper{
 			padding-top: 0px;
 			ul.gform_fields{

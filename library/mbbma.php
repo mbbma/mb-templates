@@ -162,8 +162,7 @@ function mbbma_theme_support() {
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
 
-	// default thumb size
-	set_post_thumbnail_size(200, 200, true);
+	// add_image_size( 'custom-thumbnail', 574, 225, true );
 
 	// wp menus
 	add_theme_support( 'menus' );

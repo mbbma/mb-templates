@@ -1,17 +1,30 @@
-$black:				#323944;
-$white:				#fff;
+/*********************
+COLORS
+*********************/
+$text-color:		#414141;
+$link-color:		#414141;
+
+$hue1:				#322f2d;
+$hue2:				#3e3b38;
+$hue3:				#4e4a46;
+$hue4:				#615c57;
+$hue5:				#908983;
+$hue6:				#e9e9e9;
+
+$btn-primary:		#375a77;
+
+// Used in tables
 $light-gray:		#f8f9fa;
 $gray:				#eaedf2;
-$text-color:		#414141;
-$meta-gray:			#9fa6b4;
 
-$base-red:			#e12534;
-$base-green:		#5abebe;
-$bg-grey:			#f8f8f8;
+/*********************
+OTHERS
+*********************/
+$site-width:		1600px;
 
-$form-icons:		#559a7d;
+$mobile-font-size:	16px;
+$menu-item-amount:	6;
 
-$link-color:		#414141;
-$link-hover:		#323944;
-
-$border-color:		#ccc;
+$pad-mobile:		50px;
+$pad-normal:		150px;
+$pad-normal-half:	75px;

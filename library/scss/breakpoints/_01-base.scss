@@ -2,41 +2,51 @@
 GENERAL STYLES
 *********************/
 
-html, body{
+html,
+body {
 	background: #f6f6f6;
 }
-body{
+body {
 	font-family: $open-sans;
 	font-size: 18px;
 	line-height: 1.5em;
 	color: $text-color;
-  	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-weight: 300;
-	&.no-scroll{
+	&.no-scroll {
 		overflow: hidden;
 		height: 100%;
 	}
 }
-p{
+p {
 	margin-bottom: 1.5em;
 }
-img{
+img {
 	height: auto;
 	max-width: 100%;
 }
-a, a:hover, div, div:hover, img, img:hover{
-    transition: all 0.4s ease-in-out 0s;
+a,
+a:hover,
+div,
+div:hover,
+img,
+img:hover,
+input[type="submit"],
+input[type="submit"]:hover,
+button,
+button:hover {
+	transition: all 0.4s ease-in-out 0s;
 }
 
 /*********************
 HEADER STYLES
 *********************/
-#zone-header-wrapper{
+#zone-header-wrapper {
 	background: #fff;
 	position: relative;
 }
-#zone-user{
+#zone-user {
 	z-index: 10;
 	background: #fff;
 	display: table;
@@ -44,296 +54,219 @@ HEADER STYLES
 	right: 20%;
 	top: 40px;
 }
-#zone-header{
+#zone-header {
 	margin: 0 auto;
 	display: block;
 	background: #fff;
 }
-#region-header{
+#region-header {
 	display: table;
 	width: 100%;
 }
-.site, #zone-content-wrapper{
+.site,
+#zone-content-wrapper {
 	background: #fff;
 }
 #zone-preface-first,
 #zone-preface-second,
 #zone-postscript,
-#zone-postscript-2{
+#zone-postscript-2 {
 	margin: 0 auto;
 	display: table;
 }
-#zone-preface-first{
+#zone-preface-first {
 	position: relative;
 	width: 100%;
 }
+
+// // Meescrollend menu
+// .site-header{
+// 	#zone-header-wrapper{
+// 		position: fixed;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 		margin: 0 auto;
+// 		z-index: 100;
+// 		max-width: $site-width;
+// 		width: 100%;
+// 	}
+// }
 
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
 /* misc */
-.form-allowed-tags, .cat-links,
-.home .breadcrumb{
+.form-allowed-tags,
+.cat-links,
+.home .breadcrumb {
 	display: none;
 }
-p#breadcrumbs{
+p#breadcrumbs {
 	font-size: 12px;
 }
 
-.center{
+.center {
 	margin: 0 auto;
 	display: table;
 }
 
-.alignleft{
+.alignleft {
 	float: left;
 	margin-right: 1.5em;
 }
-.alignright{
+.alignright {
 	float: right;
 	margin-left: 1.5em;
 }
-.aligncenter{
+.aligncenter {
 	clear: both;
 	display: block;
 	margin: 0 auto;
 }
-.screen-reader-text{
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute;
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
 }
 
-
-.uppercase{
+.uppercase {
 	text-transform: uppercase;
 }
-.wrapper{
+.wrapper {
 	display: table;
 	width: 100%;
 }
-.image{
-	img{
+.image {
+	img {
 		display: block;
 	}
 }
-.text-center{
+.text-center {
 	text-align: center;
 }
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES / Other titels
 ******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5{
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
 	text-rendering: optimizelegibility;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-family: $open-sans;
-	a{
+	line-height: 1.4em;
+	margin: 0;
+	a {
 		text-decoration: none;
 	}
 }
 
-h1, .h1{
-	font-size: 2.5em;
-	line-height: 1.333em;
+h1,
+.h1 {
+	font-size: 40px;
+	margin-bottom: 0.6em;
 }
 
-h2, .h2{
-	font-size: 1.75em;
-	line-height: 1.1em;
-	margin: 0 0 0.375em;
+h2,
+.h2 {
+	font-size: 32px;
+	margin-bottom: 0.6em;
 }
 
-h3, .h3{
-	font-size: 1.125em;
-	text-transform: none;
+h3,
+.h3 {
+	font-size: 26px;
 }
 
-h3.widget-title{
-	text-transform: uppercase;
-	font-size: 	20px;
-}
-
-h4, .h4{
-	font-size: 1.1em;
-	font-weight: 700;
-}
-
-h5, .h5{
-	font-size: 0.846em;
-	line-height: 2.09em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+h4,
+.h4 {
+	font-size: 20px;
 }
 
 /*********************
 LOGO & NAVIGATION STYLES
 *********************/
 
-.logo a{
+.logo a {
 	display: inline-block;
 }
-.site-branding{
+.site-branding {
 	padding: 10px 0;
 	text-align: center;
 }
 
 /* Toggle menu */
-.mobile-menu{
+.mobile-menu {
 	display: none;
 }
 
-.menu-toggle{
+.menu-toggle {
 	cursor: pointer;
 	display: none;
 }
 
-.menu-toggle, .main-navigation.toggled .nav-menu{
+.menu-toggle,
+.main-navigation.toggled .nav-menu {
 	display: block;
 }
 
-.main-navigation ul{
-	transition:none;
+.main-navigation ul {
+	transition: none;
 }
 
-.submenu-toggle{
-	padding: 0;
-	position: absolute;
-	top: 10px;
-	right: 20px;
-	width: 20px;
-	height: 20px;
-	border-top: none;
-}
-
-.menu-toggle{
+.menu-toggle {
 	position: absolute;
 	padding: 4px 0;
 	top: 10px;
 	left: 10px;
 	width: 30px;
 	height: 30px;
-	.line{
+	.line {
 		margin: 0 0 8px 0;
 		width: 30px;
 		height: 2px;
 		display: block;
 		background: #000;
-		transition: top 0.3s ease 0s, transform 0.3s ease 0s, opacity 0.3s ease 0s;
+		transition: top 0.3s ease 0s, transform 0.3s ease 0s,
+			opacity 0.3s ease 0s;
 	}
-	.last-line{
+	.last-line {
 		margin: 0;
 	}
 }
 
-.menu-toggle-active{
-	.first-line{
+.menu-toggle-active {
+	.first-line {
 		transform: rotate(45deg);
 		top: 14px;
 		position: absolute;
 	}
-	.last-line{
+	.last-line {
 		transform: rotate(-45deg);
 		top: 14px;
 		position: absolute;
 	}
-	.second-line{
+	.second-line {
 		opacity: 0;
 	}
 }
 
-/*
-Normal menu
-*/
-
-.menu-toggle-desktop{
-	float: right;
-	.menu-toggle-desktop-menu{
-		background: $base-red;
-		color: #fff;
-		font-size: 22px;
-		position: relative;
-		img.triangle-right{
-			top: 33%;
-		}
-	}
-	.menu-toggle-desktop-language{
-		font-size: 70%;
-		color: $base-red;
-		font-weight: 700;
-	}
-}
-
-.menu-toggle-desktop-icon{
-	display: table-cell;
-	padding: 0 15px 0 30px;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-family: $raleway;
-}
-
-.menu-toggle-desktop-button{
-	cursor: pointer; 
-	display: table;
-	position: relative;
-	padding: 20px 60px 20px 20px;
-	.menu-toggle-desktop-tekst{
-		display: table;
-	}
-	.burger{
-		bottom: 0;
-		height: 15px;
-		margin: auto;
-		position: absolute;
-		right: 10px;
-		top: 0;
-	}
-	.line{
-		margin: 0 0 5px 0;
-		width: 30px;
-		height: 2px;
-		display: block;
-		background: #fff;
-	}
-	.last-line{
+#menu-sitemap {
+	margin: 0;
+	ul {
 		margin: 0;
 	}
-}
-
-.main-navigation{
-	border-bottom: 0;
-	margin: 0;
-	li{
-		&.menu-item-has-children{
-			position: relative;
-		}
-		a{
-			text-align:	center;
-			font-weight: 200;
-			font-size: 12px;
-			line-height: 1em;
-		}
-		ul.sub-menu,
-		ul.children{
-			li{
-				a{
-					padding-left: 30px;
-				}
-			}
-		}
-	}
-}
-
-#menu-sitemap{
-	margin: 0;
-	ul{
-		margin: 0;
-	}
-	li{
+	li {
 		padding-left: 20px;
 		position: relative;
-		&:before{
+		&:before {
 			content: "\f105";
 			font-family: FontAwesome;
 			position: absolute;
@@ -347,50 +280,49 @@ Normal menu
 CONTENT STYLES
 *********************/
 
-.entry-content{
-	p{
+.entry-content {
+	p {
 		margin: 0 0 1.5em;
 	}
-	table{
+	table {
 		width: 100%;
 		border: 1px solid $gray;
 		margin-bottom: 1.5em;
 	}
-	tr{
+	tr {
 		border-bottom: 1px solid $gray;
-		&:nth-child(even){
+		&:nth-child(even) {
 			background-color: $light-gray;
 		}
 	}
-	td{
+	td {
 		padding: 7px;
 		border-right: 1px solid $gray;
-		&:last-child{
+		&:last-child {
 			border-right: 0;
 		}
 	}
-	th{
+	th {
 		background-color: $light-gray;
 		border-bottom: 1px solid $gray;
 		border-right: 1px solid $gray;
-		&:last-child{
+		&:last-child {
 			border-right: 0;
 		}
 	}
-	blockquote{
+	blockquote {
 		margin: 0 0 1.5em 0.75em;
 		padding: 0 0 0 0.75em;
-		border-left: 3px solid $black;
+		border-left: 3px solid #000;
 		font-style: italic;
-		color: $meta-gray;
 	}
-	dd{
+	dd {
 		margin-left: 0;
 		font-size: 0.9em;
 		color: #787878;
 		margin-bottom: 1.5em;
 	}
-	img{
+	img {
 		max-width: 100%;
 		height: auto;
 	}
@@ -398,27 +330,26 @@ CONTENT STYLES
 	.size-full,
 	.size-large,
 	.size-medium,
-	.size-thumbnail{
+	.size-thumbnail {
 		max-width: 100%;
 		height: auto;
 	}
 }
-.tags{
+.tags {
 	margin: 0;
 }
 
-.object-fit{
+.object-fit {
 	background-size: cover;
 	background-position: center;
 }
 
-.popup{
+.popup {
 	display: none;
 	position: fixed;
-	top: 50%;
+	top: 100%;
 	left: 40px;
 	right: 40px;
-	bottom: 20px;
 	max-width: 600px;
 	max-height: calc(100vh - 20px);
 	transform: translateY(-50%);
@@ -426,47 +357,52 @@ CONTENT STYLES
 	background: #fff;
 	overflow: scroll;
 	z-index: 1001;
-	&.active{
+	opacity: 0;
+	&.active {
 		display: block;
 	}
-	.close{
+	&.show{
+		opacity: 1;
+		top: 50%;
+	}
+	.close {
 		position: absolute;
 		top: 20px;
 		right: 40px;
 		width: 40px;
 		height: 40px;
 		cursor: pointer;
-		.line{
+		.line {
 			width: 45px;
 			height: 2px;
 			background: #000;
 			position: absolute;
 			top: 19px;
 			left: -2px;
-			&.first-line{
+			&.first-line {
 				transform: rotate(45deg);
 			}
-			&.last-line{
+			&.last-line {
 				transform: rotate(-45deg);
 			}
 		}
 	}
-	.content{
+	.content {
 		padding: 30px;
-		.gform_wrapper{
+		.gform_wrapper {
 			padding-top: 25px;
-			ul.gform_fields{
-				.gfield_label{
+			ul.gform_fields {
+				.gfield_label {
 					display: block;
 					font-weight: 400;
 					margin-top: 20px;
 				}
 				input[type="text"],
-				textarea{
+				textarea {
 					background-color: #f7f8fa;
 				}
 			}
-			button{
+			button {
 				margin-top: 20px;
 			}
 		}
@@ -479,40 +415,44 @@ CONTENT STYLES
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(0,0,0,1);
+	background: rgba(0, 0, 0, 1);
+	opacity: 0;
 	z-index: 1000;
-	&.active{
+	&.active {
 		display: block;
+	}
+	&.show{
+		opacity: 1;
 	}
 }
 
 /*********************
 FOOTER STYLES
 *********************/
-#zone-footer-wrapper{
+#zone-footer-wrapper {
 	background: #fff;
-	#zone-footer{
+	#zone-footer {
 		margin: 0 auto;
 		padding: 30px 0;
 		display: table;
 		font-weight: 300;
 		font-size: 12px;
-		ul{
+		ul {
 			margin: 0 0 20px;
 			list-style: none;
 		}
 	}
 }
-#zone-footer-wrapper-2{
+#zone-footer-wrapper-2 {
 	background: #fff;
-	#zone-footer-2{
+	#zone-footer-2 {
 		color: #000;
 		text-align: center;
 		padding: 10px 0;
 		display: table;
 		margin: 0 auto;
 		font-size: 75%;
-		a{
+		a {
 			color: #000;
 		}
 	}

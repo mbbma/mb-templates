@@ -96,17 +96,4 @@
 			?>
 		</div>
 	</div>
-
-	<footer class="entry-meta">
-		<?php
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
-
-		<?php edit_post_link( __( 'Edit', 'mbbma' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer>
 </article>

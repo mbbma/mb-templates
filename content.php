@@ -58,11 +58,7 @@
 					
 					<?php endif; ?>
 				<?php endif; ?>
-				<div class="bt-blog">
-					<a class="bt" href="<?php the_permalink(); ?>">Lees verder</a>
-				</div>
-
-				<?php edit_post_link( __( 'Edit', 'mbbma' ), '<span class="edit-link">', '</span>' ); ?>
+				<a class="btn-primary" href="<?php the_permalink(); ?>">Lees verder</a>
 			</footer>
 		</div>
 	</div>

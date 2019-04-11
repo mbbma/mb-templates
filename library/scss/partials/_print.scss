@@ -1,13 +1,14 @@
 * {
-	background: transparent !important;
-	color: black !important;
-	text-shadow: none !important;
-	filter:none !important;
-	-ms-filter: none !important;
+	background: transparent;
+	color: #000;
+	text-shadow: none;
+	filter: none;
+	-ms-filter: none;
 }
 
-a, a:visited {
-	color: #444 !important;
+a,
+a:visited {
+	color: #444;
 	text-decoration: underline;
 
 	&:after {
@@ -25,7 +26,8 @@ a[href^="#"]:after {
 	content: "";
 }
 
-pre, blockquote {
+pre,
+blockquote {
 	border: 1px solid #999;
 	page-break-inside: avoid;
 }
@@ -34,19 +36,22 @@ thead {
 	display: table-header-group;
 }
 
-tr, img {
+tr,
+img {
 	page-break-inside: avoid;
 }
 
 img {
-	max-width: 100% !important;
+	max-width: 100%;
 }
 
 @page {
 	margin: 0.5cm;
 }
 
-p, h2, h3 {
+p,
+h2,
+h3 {
 	orphans: 3;
 	widows: 3;
 }
@@ -56,7 +61,11 @@ h3 {
 	page-break-after: avoid;
 }
 
-#site-navigation, .footer-columns-second, .footer-columns-third, .footer-columns-fourth, .logo-mobile,
+#site-navigation,
+.footer-columns-second,
+.footer-columns-third,
+.footer-columns-fourth,
+.logo-mobile,
 .sidebar,
 .page-navigation,
 .wp-prev-next {

@@ -47,7 +47,7 @@ Media Queries
 	//@import "woocommerce/03-narrow";
 }
 
-@media only screen and (min-width: 740px) and (max-width: 979px)  {
+@media only screen and (min-width: 740px) and (max-width: 979px) {
 	@import "breakpoints/04-narrow-only";
 }
 
@@ -56,7 +56,7 @@ Media Queries
 	//@import "woocommerce/04-normal";
 }
 
-@media only screen and (min-width: 980px) and (max-width: 1219px)  {
+@media only screen and (min-width: 980px) and (max-width: 1219px) {
 	@import "breakpoints/06-normal-only";
 }
 
@@ -66,8 +66,8 @@ Media Queries
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.object-fit{
-		img{
+	.object-fit {
+		img {
 			opacity: 0;
 		}
 	}

@@ -1,6 +1,6 @@
 input.search-submit {
-	background: #690AA9;
-	color: #690AA9;
+	background: #690aa9;
+	color: #690aa9;
 	height: 35px;
 	padding-top: 5px;
 	float: left;
@@ -12,7 +12,7 @@ input.search-submit {
 
 input[type="search"] {
 	width: 70%;
-	padding: 6px 10px 7px !important;
+	padding: 6px 10px 7px;
 	float: left;
 }
 .error-404 input[type="search"] {
@@ -22,13 +22,12 @@ input[type="search"] {
 	margin: 4px 0 20px 10px;
 }
 
-
 a.bt-404 {
 	background: #3a4052;
 	padding: 15px;
 	font-size: 20px;
 	color: #fff;
-	margin-top:10px;
+	margin-top: 10px;
 	display: table;
 }
 

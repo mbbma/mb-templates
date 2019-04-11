@@ -4,7 +4,6 @@ GENERAL STYLES
 
 body {
 	font-size: 100%;
-
 }
 
 .float-left {
@@ -16,82 +15,103 @@ body {
 }
 
 /*********************
-LAYOUT & GRID STYLES
+HEADER STYLES
 *********************/
 
 .site {
-	max-width: 1600px;
+	max-width: $site-width;
 	margin: 0 auto;
 }
-
 #zone-navigation,
 #zone-content {
 	margin: 0 auto;
 	display: table;
 }
-
-.pad-both{
-	padding-top: 150px;
-	padding-bottom: 150px;
-}
-.pad-top{
-	padding-top: 150px;
-}
-.pad-bottom{
-	padding-bottom: 150px;
-}
-
-/*********************
-HEADER STYLES
-*********************/
 .site-branding {
 	float: left;
 	padding: 7px 0;
 }
+.phone-number {
+	display: none;
+}
+
+// // Meescrollend menu
+// .site-header{
+// 	&.site-header-up{
+// 		#zone-header-wrapper{
+// 			top: -100px;
+// 		}
+// 	}
+// }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.pad-both {
+	padding-top: $pad-normal;
+	padding-bottom: $pad-normal;
+}
+.pad-top {
+	padding-top: $pad-normal;
+}
+.pad-bottom {
+	padding-bottom: $pad-normal;
+}
+
+.pad-both-half {
+	padding-top: $pad-normal-half;
+	padding-bottom: $pad-normal-half;
+}
+.pad-top-half {
+	padding-top: $pad-normal-half;
+}
+.pad-bottom-half {
+	padding-bottom: $pad-normal-half;
+}
+
+.mobile-only {
+	display: none;
+}
+
+#secondary {
+	margin: 20px 0;
+	float: right;
+}
+
+/*********************
+LOGO & NAVIGATION STYLES
+*********************/
 .logo img {
 	vertical-align: middle;
 }
 .logo-mobile {
 	display: none;
 }
-.phone-number{
-	display: none;
-}
-
-
-/*********************
-CONTENT STYLES
-*********************/
-
-.mobile-only{
-	display: none;
-}
-
-/*********************
-NAVIGATION STYLES
-*********************/
 
 .menu-toggle,
 .submenu-toggle {
-	display:		none;
+	display: none;
 }
 
 .main-navigation {
 	float: right;
 	ul {
-		display: block;
 		margin: 0;
-		padding: 40px 0 60px; 
+		&.menu{
+			display: table;
+			padding: 40px 0;
+		}
 	}
 	li {
-		float:					left;
-		font-weight:			400;
-		text-transform:			uppercase;
-		border-top:				none;
-		position: 				relative;
-		margin: 				0 auto;
-		border-right: 			1px solid #000;
-		&:last-of-type{
+		float: left;
+		font-weight: 400;
+		text-transform: uppercase;
+		border-top: none;
+		position: relative;
+		margin: 0 auto;
+		border-right: 1px solid #000;
+		&:last-of-type {
 			border-right: 0px;
 		}
 		a {
@@ -101,61 +121,50 @@ NAVIGATION STYLES
 			text-align: center;
 			padding: 0;
 			font-size: 20px;
-			&:hover, &:focus {
+			line-height: 1em;
+			&:hover,
+			&:focus {
 				text-decoration: underline;
 			}
 		}
 		ul.sub-menu,
 		ul.children {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			background: #fff;
-			visibility: hidden;
-			float: left;
-			left: 0;
 			position: absolute;
-			top: 40px;
-			z-index: 99999;
-			margin: 0;
+			top: 100%;
+			left: -10px;
+			z-index: 1;
+			padding: 5px 10px;
+			background: #fff;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			visibility: hidden;
+			width: 200px;
 			li {
-				padding: 5px;
+				padding: 0 0 5px;
 				margin: 0;
-				font-size: 80%;
-				a {
-					width: 200px;
-					background: #fff;
-					color: #000;
-					text-align: left;
-					padding-left: 10px;
+				&:last-of-type{
+					padding: 0;
 				}
-				&:last-child {
-					a {
-						border-bottom: 0;
-					}
+				a {
+					text-align: left;
+					transition: none;
 				}
 				ul {
-					top:0;
-					left:100%;
+					top: 0;
+					left: 100%;
 				}
 			}
 		}
 		&:hover > ul {
 			top: auto;
-			visibility:hidden;
+			visibility: visible;
 		}
 	}
 }
 
 /*********************
-SIDEBARS & ASIDES
+CONTENT STYLES
 *********************/
-
-#secondary {
-	margin: 20px 0;
-	float: right;
-}
-
 
 /*********************
 FOOTER STYLES
 *********************/
-

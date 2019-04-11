@@ -13,6 +13,97 @@
 */
 
 
+/**
+ * Jquery Inview 2
+ * Version: 0.1
+ * Author: Matthew Frey (mmmeff)
+ *    - forked from http://github.com/protonet/jquery.inview/
+ */
+(function ($) {
+	var inviewObjects = {},
+	d = document,
+	w = window,
+	documentElement = d.documentElement,
+	expando = $.expando,
+	timer,
+	   // pixel count margins to wrap viewport (negative gives extra time for dom to render)
+	   yMargin = -100,
+	   xMargin = 0;
+
+	   $.event.special.inview = {
+		   add: function(data) {
+			   inviewObjects[data.guid + "-" + this[expando]] = { data: data, $element: $(this) };
+
+		   // Use setInterval in order to also make sure this captures elements within
+		   // "overflow:scroll" elements or elements that appeared in the dom tree due to
+		   // dom manipulation and reflow
+		   // old: $(window).scroll(checkInView);
+		   //
+		   // By the way, iOS (iPad, iPhone, ...) seems to not execute, or at least delays
+		   // intervals while the user scrolls. Therefore the inview event might fire a bit late there
+		   // 
+		   // Don't waste cycles with an interval until we get at least one element that
+		   // has bound to the inview event.	
+		   if (!timer && !$.isEmptyObject(inviewObjects)) {
+			   timer = setInterval(checkInView, 333);
+		   }
+	   },
+
+	   remove: function(data) {
+		   try { delete inviewObjects[data.guid + "-" + this[expando]]; } catch(e) {}
+
+		   // Clear interval when we no longer have any elements listening
+		   if ($.isEmptyObject(inviewObjects)) {
+			   clearInterval(timer);
+			   timer = null;
+		   }
+	   }
+   };
+
+   function checkInView() {
+	   // Fuck IE and its quirks, we're doing this the right way.
+	   var $elements = $();
+
+	   $.each(inviewObjects, function(i, inviewObject) {
+		   var selector = inviewObject.data.selector,
+		   $element = inviewObject.$element;
+
+		   $elements = $elements.add(selector ? $element.find(selector) : $element);
+	   });
+
+	   if ($elements.length) {
+		   for (var i = 0; i < $elements.length; i++) {
+			   if (!$elements[i]) {
+				   continue;
+			   } else if (!$.contains(documentElement, $elements[i])) {
+				   delete $elements[i];
+				   continue;
+			   }
+
+			   var $el = $($elements[i]),
+			   inView = $el.data('inview'),
+			   rect = $el[0].getBoundingClientRect(),
+			   height = $el.height(),
+			   width = $el.width();
+			   
+			   if (rect.top >= (0 - height + yMargin) &&
+				   rect.left >= (0 - width + xMargin) &&
+				   rect.bottom <= ((w.innerHeight || documentElement.clientHeight) + height - yMargin) &&
+				   rect.right <= ((w.innerWidth || documentElement.clientWidth) + width - xMargin)) {
+				   if (!inView) {
+					   // object has entered viewport
+					   $el.data('inview', true).trigger('inview', [true]);
+				   }
+			   } else if (inView) {
+				   // object has left viewport
+				   $el.data('inview', false).trigger('inview', [false]);
+			   }
+		   }
+	   }
+   }
+})(jQuery);
+
+
 /*
  * Get Viewport Dimensions
  * returns object with viewport dimensions to match css in width and height properties
@@ -123,9 +214,10 @@ jQuery(document).ready(function($) {
 			$(this).toggleClass('menu-toggle-active');
 			$('.main-navigation ul.menu').slideToggle();
 		});
-		$('.sub-menu').before('<a href="#" class="submenu-toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>');
+		$('.sub-menu').before('<div class="submenu-toggle"></div>');
 		$('.submenu-toggle').click(function(){
 			$(this).siblings('.sub-menu').slideToggle();
+			$(this).toggleClass('active');
 		});
 	})(jQuery);
 
@@ -143,6 +235,44 @@ jQuery(document).ready(function($) {
 			scrollTop: $( elem ).offset().top
 		}, time);
 		return false;
+	}
+
+	/***************************
+	Meescrollend menu
+	***************************/
+	fixedScrollMenu();
+
+	function fixedScrollMenu(){
+		var didScroll;
+		var lastScrollTop = 0;
+		var delta = 5;
+		var navbarHeight = $('header.site-header').outerHeight();
+		$(window).scroll(function(event){
+			didScroll = true;
+		});
+		setInterval(function() {
+			if (didScroll) {
+				hasScrolled();
+				didScroll = false;
+			}
+		}, 250);
+		function hasScrolled() {
+			var st = $(this).scrollTop();
+			if (st)
+			if (Math.abs(lastScrollTop - st) <= delta)
+				return;
+
+			if (st > lastScrollTop && st > navbarHeight){
+				$('header.site-header').addClass('site-header-up');
+
+			} else {
+				if(st + $(window).height() < $(document).height()) { 
+					$('header.site-header').removeClass('site-header-up');
+				}
+
+			}
+			lastScrollTop = st;
+		}
 	}
 
 	/***************************
@@ -194,12 +324,49 @@ jQuery(document).ready(function($) {
 	Popup
 	***************************/
 	$('.show-popup').click(function(){
-		$('.popup[data-name="' + $(this).attr('data-value') + '"], .popup-background').addClass('active');
+		let popupValue = $(this).attr('data-value');
+		$('.popup[data-name="' + popupValue + '"], .popup-background').addClass('active');
 		$('body').addClass('no-scroll');
+		setTimeout(function(){
+			$('.popup-background').addClass('show');
+		}, 10);
+		setTimeout(function(){
+			$('.popup[data-name="' + popupValue + '"]').addClass('show');
+		}, 100);
 	});
 	$('.popup .close, .popup-background').click(function(){
-		$('.popup, .popup-background').removeClass('active');
+		$('.popup, .popup-background').removeClass('active show');
 		$('body').removeClass('no-scroll');
 	});
+
+	/***************************
+	Viewport animaties
+	***************************/
+	// viewportAnimation();
+
+	function viewportAnimation(){
+		var animaties = [
+			'.voorbeeldreis .block .images .image',
+			'.voorbeeldreis .block .images .overlay-image',
+			'#bedrijven .logo',
+			'.reizen-grid .block',
+			'.reizen-grid .cta-bar',
+			'#werkwijze .block',
+		];
+
+		var animatiesLength = animaties.length;
+		for (var i = 0; i < animatiesLength; i++) {
+			$(animaties[i]).each(function(index) {
+				$(this).bind('inview', function(event, isInView) {
+					if (isInView) {
+						var thisBlock = this;
+						setTimeout(function(){
+							$(thisBlock).addClass('show');
+						}, index * 50);
+					}
+				});
+			});
+		}
+	}
 
 });

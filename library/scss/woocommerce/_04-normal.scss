@@ -1,13 +1,14 @@
-.archive.woocommerce, .woo-uitgelicht{
-	.producten-overzicht{
+.archive.woocommerce,
+.woo-uitgelicht {
+	.producten-overzicht {
 		width: 75%;
 	}
-	.producten-archive-sidebar{
+	.producten-archive-sidebar {
 		width: 22%;
 	}
 }
 
-.checkout-steps ul li{
+.checkout-steps ul li {
 	width: 31% !important;
 }
 
@@ -24,14 +25,14 @@
 			width: 31.1%;
 			box-shadow: none;
 			margin: 0 3.35% 3.35% 0;
-			&:nth-child(3n){
+			&:nth-child(3n) {
 				margin-right: 0;
 			}
-			a{
-				h2{
+			a {
+				h2 {
 					padding: 0px 0px 10px 0px !important;
 				}
-				.price{
+				.price {
 					left: 20px;
 					bottom: 15px;
 					font-size: 20px;
@@ -56,16 +57,17 @@
 	}
 }
 
- //Check-out
- .woocommerce-checkout {
+//Check-out
+.woocommerce-checkout {
 	#customer_details {
 		float: left;
 		width: 50%;
 	}
-	.col-1, .col-2 {
+	.col-1,
+	.col-2 {
 		width: 100% !important;
-	}		
-	h3#order_review_heading	{
+	}
+	h3#order_review_heading {
 		float: left;
 		width: 40%;
 		margin-left: 10%;

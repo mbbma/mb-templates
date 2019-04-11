@@ -4,12 +4,12 @@ LINK STYLES
 a {
 	color: $link-color;
 	text-decoration: none;
-	&:hover, &:focus {
-		color: $link-hover;
+	&:hover,
+	&:focus {
 		text-decoration: underline;
 	}
 	&:link {
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 	}
 }
 
@@ -17,7 +17,7 @@ a {
 	display: inline-block;
 	position: relative;
 	text-decoration: none;
-	color: $white;
+	color: #fff;
 	line-height: 1em;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -25,10 +25,10 @@ a {
 	border-radius: 4px;
 	border: 0;
 	cursor: pointer;
-	@include transition(background-color 0.14s ease-in-out);
 
-	&:hover, &:focus {
-		color: $white;
+	&:hover,
+	&:focus {
+		color: #fff;
 		text-decoration: none;
 		outline: none;
 	}
@@ -38,18 +38,27 @@ a {
 	}
 }
 
-.green-btn {
+.btn-primary {
 	@extend %btn;
-	background-color: #00ce5d;
+	background-color: $btn-primary;
 
 	&:hover,
-	&:focus {
-		background-color: #fff;
-		color: #00ce5d;
-	}
-
+	&:focus,
 	&:active {
 		background-color: #fff;
-		color: #00ce5d;
+		color: $btn-primary;
+	}
+}
+
+input[type="submit"],
+button {
+	@extend %btn;
+	background-color: $btn-primary;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: #fff;
+		color: $btn-primary;
 	}
 }

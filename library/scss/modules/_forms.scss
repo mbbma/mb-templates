@@ -1,35 +1,10 @@
-.wpcf7-form-control-wrap {
-	position: relative;
-	display: table;
-	width: 100%;
-	&:after{
-		content: "\f00c";
-		font-family: FontAwesome;
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		font-size: 18px;
-		color: $form-icons;
-		opacity: 0;
-		transition: all .4s ease-in-out 0s;
-	}
-	&.active{
-		&:after{
-			opacity: 1;
-		}
-	}
-	span.wpcf7-not-valid-tip{
-		display: none;
-	}
-}
-
 span.your-name::before,
 span.your-company::before,
 span.your-email::before,
 span.your-tel::before,
 span.your-message::before {
 	font-family: FontAwesome;
-	color: $form-icons;
+	color: $btn-primary;
 	position: absolute;
 	z-index: 10;
 	left: 10px;
@@ -42,7 +17,7 @@ span.your-name::before {
 span.your-company::before {
 	content: "\f1ad";
 }
-span.your-email::before{
+span.your-email::before {
 	content: "\f0e0";
 }
 span.your-tel::before {
@@ -51,29 +26,10 @@ span.your-tel::before {
 span.your-message::before {
 	content: "\f086";
 }
-div.wpcf7 .ajax-loader {
-	display: none !important;
-}
-
-input[type="submit"],
-button {
-	color: #fff;
-	width: 100%;
-	padding: 10px 0;
-	border: none;
-	font-size: 25px;
-	font-weight: 700;
-	transition: all .4s ease-in-out 0s;
-	background: $base-red;
-	&:hover, &:focus {
-		background: #fff;
-		color:  $base-red;
-	}
-}
 
 .contact-undertxt {
 	font-weight: 700;
-	.fa-lock{
+	.fa-lock {
 		margin-right: 10px;
 	}
 }
@@ -103,7 +59,6 @@ textarea,
 	font-size: 1em;
 	color: $text-color;
 	border-radius: 3px;
-	vertical-align: middle;
 	box-shadow: none;
 	border: 2px solid $gray;
 	width: 100%;
@@ -114,9 +69,6 @@ textarea,
 	&:active {
 		background-color: lighten($gray, 4%);
 		outline: none;
-	}
-	&.wpcf7-not-valid{
-		border-color: $base-red;
 	}
 }
 
@@ -137,71 +89,71 @@ select {
 }
 
 /*Gravity forms*/
-.gform_wrapper{
-	ul.gform_fields{
+.gform_wrapper {
+	ul.gform_fields {
 		margin: 0;
-		.gfield_label{
+		.gfield_label {
 			display: none;
 		}
-		li.gfield{
+		li.gfield {
 			margin: 0 0 1.5em;
 			position: relative;
-			.ginput_container{
+			.ginput_container {
 				margin: 0;
 				&:before,
-				&:after{
+				&:after {
 					font-family: FontAwesome;
-					color: $form-icons;
+					color: $btn-primary;
 					position: absolute;
 					top: 10px;
 					z-index: 10;
 					font-size: 18px;
 				}
-				&:before{
+				&:before {
 					left: 10px;
 				}
-				&:after{
+				&:after {
 					content: "\f00c";
 					right: 10px;
 					opacity: 0;
-					transition: all .4s ease-in-out 0s;
+					transition: all 0.4s ease-in-out 0s;
 				}
-				&.active{
-					&:after{
+				&.active {
+					&:after {
 						opacity: 1;
 					}
 				}
 			}
-			&.icon-name{
-				.ginput_container:before{
+			&.icon-name {
+				.ginput_container:before {
 					content: "\f007";
 				}
 			}
-			&.icon-mail{
-				.ginput_container:before{
+			&.icon-mail {
+				.ginput_container:before {
 					content: "\f0e0";
 				}
 			}
-			&.icon-phone{
-				.ginput_container:before{
+			&.icon-phone {
+				.ginput_container:before {
 					content: "\f095";
 				}
 			}
-			&.icon-message{
-				.ginput_container:before{
+			&.icon-message {
+				.ginput_container:before {
 					content: "\f086";
 				}
 			}
 		}
 	}
 	.validation_error,
-	.validation_message{
+	.validation_message {
 		display: none;
 	}
-	.gfield_error{
+	.gfield_error {
 		input,
-		textarea{
-			border-color: red !important;
+		textarea {
+			border-color: red;
 		}
 	}
 }

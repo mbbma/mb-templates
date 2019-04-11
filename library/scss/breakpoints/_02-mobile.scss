@@ -3,7 +3,27 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-size: 80%;
+	font-size: $mobile-font-size;
+}
+
+h1,
+.h1 {
+	font-size: 26px;
+}
+
+h2,
+.h2 {
+	font-size: 22px;
+}
+
+h3,
+.h3 {
+	font-size: 20px;
+}
+
+h4,
+.h4 {
+	font-size: 18px;
 }
 
 .center {
@@ -15,36 +35,61 @@ body {
 .logo-normal {
 	display: none;
 }
-.logo-mobile{
-	height: 35px;
-	vertical-align: middle;
-}
-.phone-number{
+.phone-number {
 	position: absolute;
 	right: 10px;
 	top: 13px;
 }
-.phone-number-icon{
+.phone-number-icon {
 	font-size: 25px;
 }
 
-.pad-both{
-	padding-top: 50px;
-	padding-bottom: 50px;
+/*********************
+HEADER STYLES
+*********************/
+
+// // Meescrollend menu
+// .site-header{
+// 	&.site-header-up{
+// 		#zone-header-wrapper{
+// 			top: -60px;
+// 		}
+// 	}
+// }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.pad-both {
+	padding-top: $pad-mobile;
+	padding-bottom: $pad-mobile;
 }
-.pad-top{
-	padding-top: 50px;
+.pad-top {
+	padding-top: $pad-mobile;
 }
-.pad-bottom{
-	padding-bottom: 50px;
+.pad-bottom {
+	padding-bottom: $pad-mobile;
+}
+
+.pad-both-half {
+	padding-top: $pad-mobile;
+	padding-bottom: $pad-mobile;
+}
+.pad-top-half {
+	padding-top: $pad-mobile;
+}
+.pad-bottom-half {
+	padding-bottom: $pad-mobile;
 }
 
 /*********************
-Navigation
+LOGO & NAVIGATION STYLES
 *********************/
-.overlay-menu {
-	position: relative;
-	height: 100%;
+
+.logo-mobile {
+	height: 35px;
+	vertical-align: middle;
 }
 
 .mobile-menu {
@@ -63,42 +108,89 @@ Navigation
 .main-navigation {
 	width: 100%;
 	background: #fff;
-	ul{
+	ul {
 		display: none;
 		margin: 0;
-		ul.sub-menu{
+		&.menu {
+			position: absolute;
+			width: 100%;
+			background: #fff;
+			height: calc(100vh - 60px);
+			overflow: scroll;
+		}
+		ul.sub-menu {
 			display: none;
-			li{	
-				a{
-					background: #ccc;
-					padding-left: 0;
-					padding-right: 0;
+			li {
+				a {
+					font-size: 14px;
+					height: calc((100vh - 60px - 150px) / #{$menu-item-amount});
+					line-height: calc(
+						(100vh - 60px - 150px) / #{$menu-item-amount}
+					);
 				}
 			}
 		}
-		li{
-			a{
+		li {
+			&.menu-item-has-children {
+				position: relative;
+			}
+			a {
 				border-top: 1px solid #ccc;
-				padding: 24px 10px;
 				text-align: center;
 				width: 100%;
-				font-size: 15px;
+				font-size: 16px;
 				text-transform: uppercase;
 				display: table;
-				&.submenu-toggle{
+				height: calc((100vh - 60px - 50px) / #{$menu-item-amount});
+				line-height: calc((100vh - 60px - 50px) / #{$menu-item-amount});
+			}
+			.submenu-toggle {
+				position: absolute;
+				top: calc(
+					((100vh - 58px - 50px) / (#{$menu-item-amount} * 2)) - 15px
+				);
+				right: 10px;
+				display: block;
+				padding: 0;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				font-size: 24px;
+				cursor: pointer;
+				&:before,
+				&:after {
+					content: "";
+					position: absolute;
+					background: $text-color;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					transition: all .4s ease-in-out 0s;
+				}
+				&:before {
 					width: 20px;
-					display: block;
+					height: 2px;
+				}
+				&:after {
+					width: 2px;
+					height: 20px;
+				}
+				&.active{
+					transform: rotate(90deg);
+					&:before{
+						opacity: 0;
+						height: 0;
+					}
 				}
 			}
 		}
 	}
 }
 
-/*********************
-MISC
-*********************/
-
-.breadcrumb{
+.breadcrumb {
 	display: none;
 }
 
@@ -106,30 +198,44 @@ MISC
 CONTENT STYLES
 *********************/
 
-.popup{
+.popup {
 	left: 10px;
 	right: 10px;
-	.close{
+	.close {
 		top: 10px;
 		right: 20px;
 		width: 35px;
 		height: 35px;
-		.line{
+		.line {
 			width: 40px;
 			top: 17px;
 		}
 	}
-	.content{
+	.content {
 		padding: 20px 20px 20px;
-		.gform_wrapper{
+		.gform_wrapper {
 			padding-top: 0px;
-			ul.gform_fields{
-				.gfield_label{
+			ul.gform_fields {
+				.gfield_label {
 					margin-top: 10px;
 				}
 			}
-			button{
+			button {
 				margin-top: 10px;
+			}
+		}
+	}
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+#zone-footer-wrapper{
+	#zone-footer{
+		.footer-columns{
+			padding-bottom: 25px;
+			&:last-of-type{
+				padding-bottom: 0;
 			}
 		}
 	}

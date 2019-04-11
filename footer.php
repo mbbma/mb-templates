@@ -34,18 +34,23 @@
 		<div id="zone-footer-wrapper">
 			<div id="zone-footer">
 				<?php if (is_active_sidebar('footer-columns-1')) : ?>
-					<div class="footer-columns-first columns-4 gutter">
+					<div class="footer-columns footer-columns-first columns-3 gutter">
 						<?php if(is_active_sidebar('footer-columns-1')){ dynamic_sidebar('footer-columns-1');}?>
 					</div>
 				<?php endif; ?>
 				<?php if (is_active_sidebar('footer-columns-2')) : ?>
-					<div class="footer-columns-second columns-4 gutter">
+					<div class="footer-columns footer-columns-second columns-3 gutter">
 						<?php if(is_active_sidebar('footer-columns-2')){ dynamic_sidebar('footer-columns-2');}?>
 					</div>
 				<?php endif; ?>
 				<?php if (is_active_sidebar('footer-columns-3')) : ?>
-					<div class="footer-columns-third columns-4 gutter">
+					<div class="footer-columns footer-columns-third columns-3 gutter">
 						<?php if(is_active_sidebar('footer-columns-3')){ dynamic_sidebar('footer-columns-3');}?>
+					</div>
+				<?php endif; ?>
+				<?php if (is_active_sidebar('footer-columns-4')) : ?>
+					<div class="footer-columns footer-columns-fourth columns-3 gutter">
+						<?php if(is_active_sidebar('footer-columns-4')){ dynamic_sidebar('footer-columns-4');}?>
 					</div>
 				<?php endif; ?>
 			</div>

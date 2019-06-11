@@ -247,8 +247,8 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 	
 	function wpex_pagination() {
 		
-		$prev_arrow = is_rtl() ? '&rarr;' : '&larr;';
-		$next_arrow = is_rtl() ? '&larr;' : '&rarr;';
+		$prev_arrow = '<i class="fa fa-angle-left" aria-hidden="true"></i> Vorige';
+		$next_arrow = 'Volgende <i class="fa fa-angle-right" aria-hidden="true"></i>';
 		
 		global $wp_query;
 		$total = $wp_query->max_num_pages;

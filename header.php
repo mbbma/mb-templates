@@ -17,6 +17,7 @@
 	WebFontConfig = {
 		google: {
 			families: [
+				'Roboto+Slab:400',
 				'Amatic+SC:400,700',
 				'Lato:300,400,700,900'
 			]

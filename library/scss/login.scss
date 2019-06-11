@@ -1,35 +1,150 @@
-.login h1 a {
-	background: url(../images/login.png) no-repeat top center;
-	width: 325px;
-	height: 250px;
-	text-indent: -9999px;
-	overflow: hidden;
-	padding-bottom: 15px;
-	display: block;
+* {
+    box-sizing: border-box;
 }
 
-form {
-	margin-left: 8px;
-	padding: 26px 24px 46px;
-	font-weight: normal;
-	background: white;
-	border: 1px solid #e5e5e5;
-	border-radius: 3px;
-	box-shadow: none;
+.login{
+	background: url(../images/login-background.jpg) no-repeat center center;
+	background-size: cover;
+	#login{
+		width: 100%;
+		max-width: 1200px;
+		position: relative;
+		padding-top: 60px;
+		height: 100vh;
+		h1{
+			text-align: left;
+			a{
+				background: url(../images/mb-login.svg) no-repeat top center;
+				width: 257px;
+				height: 50px;
+				text-indent: -9999px;
+				overflow: hidden;
+				margin: 0;
+				padding: 0;
+				display: block;
+			}
+		}
+		form {
+			position: absolute;
+			left: 0;
+			bottom: 8%;
+			width: 376px;
+			margin: 0;
+			padding: 36px 36px 42px;
+			font-weight: normal;
+			background: white;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			color: #707272;
+			a{
+				color: #707272;
+			}
+			&:before{
+				content: "Inloggen";
+				color: #082648;
+				font-family: "Roboto Slab", sans-serif;
+				font-size: 40px;
+				font-weight: 300;
+				line-height: 1em;
+				text-align: center;
+				display: block;
+				margin-bottom: 0.4em;
+			}
+			label{
+				margin-bottom: 0;
+				display: block;
+			}
+			.input {
+				font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+					sans-serif;
+				font-size: 16px;
+				padding: 13.5px 20px;
+				margin-top: 0;
+				margin-right: 0;
+				margin-bottom: 8px;
+				border: 1px solid #e5e5e5;
+				background: #fff;
+				outline: none;
+				box-shadow: none;
+			}
+			.forgetmenot{
+				float: none;
+			}
+			.submit{
+				text-align: center;
+				margin-top: 2em;
+			}
+			#wp-submit{
+				display: inline-block;
+				position: relative;
+				text-decoration: none;
+				color: #fff;
+				font-size: 16px;
+				line-height: 1em;
+				font-weight: 400;
+				padding: 12px 18px;
+				border-radius: 0;
+				border: 2px solid;
+				cursor: pointer;
+				background-color: #d45900;
+				border-color: #d45900;
+				box-shadow: none;
+				text-shadow: none;
+				height: auto;
+				float: none;
+			}
+		}
+		#backtoblog{
+			display: none;
+		}
+		#nav{
+			position: absolute;
+			left: 200px;
+			bottom: calc(8% + 112px);
+			margin: 0;
+			padding: 0;
+			a{
+				color: #707272;
+			}
+		}
+	}
 }
 
-body form .input {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-		sans-serif;
-	font-weight: 200;
-	font-size: 24px;
-	width: 97%;
-	padding: 3px;
-	margin-top: 2px;
-	margin-right: 6px;
-	margin-bottom: 16px;
-	border: 1px solid #e5e5e5;
-	background: #fbfbfb;
-	outline: none;
-	box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
+
+@media only screen and (max-width: 739px) {
+	.login{
+		#login{
+			padding-top: 5px;
+			margin: 0;
+			h1{
+				a{
+					margin: 0 auto;
+				}
+			}
+			form {
+				width: calc(100% - 20px);
+				left: 10px;
+				top: calc(50% + 20px);
+				bottom: auto;
+				transform: translateY(-50%);
+				padding: 30px 25px 32px;
+			}
+			#nav{
+				top: calc(50% + 88px);
+				transform: translateY(-50%);
+				left: auto;
+				bottom: auto;
+				right: 35px;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1219px) {
+	.login{
+		#login{
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+
 }

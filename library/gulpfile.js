@@ -42,7 +42,7 @@ var sassOptions = {
 };
 
 var prefixerOptions = {
-  browsers: ['last 2 versions']
+  Browserslist: ['last 2 versions']
 };
 gulp.task('styles', function() {
   return gulp.src('scss/*.scss')

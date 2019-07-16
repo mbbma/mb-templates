@@ -28,14 +28,15 @@
 			border-left-color: #dc3232 !important;
 		}
 		.message{
-			
+			border-left-color: #00a0d2 !important;
 		}
 		#login_error,.message{
 			margin-top: 30px;
 			width: 376px;
 			font-size: 16px;
 			background-color: white;
-			border-left: 15px solid #00a0d2;
+			border-left: 15px solid;
+			line-height: 1.2;
 		}
 		form {
 			position: absolute !important;
@@ -125,6 +126,10 @@
 
 @media only screen and (max-width: 739px) {
 	.login{
+		#login_error,.message{
+			width: calc(100% - 20px) !important;
+			margin-left: 10px;
+		}
 		#login{
 			padding-top: 5px;
 			margin: 0;
@@ -135,14 +140,14 @@
 			}
 			form {
 				width: calc(100% - 20px);
-				left: 10px;
+				left: 10px !important;
 				top: calc(50% + 20px);
 				bottom: auto;
 				transform: translateY(-50%);
 				padding: 30px 25px 32px;
 			}
 			#nav{
-				top: calc(50% + 88px);
+				top: calc(50% + 105px);
 				transform: translateY(-50%);
 				left: auto;
 				bottom: auto;

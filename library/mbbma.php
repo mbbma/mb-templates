@@ -133,7 +133,7 @@ function mbbma_scripts_and_styles() {
 
 		//adding scripts file in the footer
 		wp_register_script( 'mbbma-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-		wp_register_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0');
+		wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.7/css/all.css', array(), '5.0.7');
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'mbbma-modernizr' );

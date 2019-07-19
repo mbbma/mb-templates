@@ -39,7 +39,6 @@
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 <?php include('json-ld.php'); ?>
 <script type="application/ld+json"><?php echo json_encode($payload); ?></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <?php wp_head(); ?>
 </head>
 

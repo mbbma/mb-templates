@@ -127,4 +127,30 @@ function contact_text_func( $atts ){
 	return $html;
 }
 add_shortcode( 'contact_text', 'contact_text_func' );
+
+// Haal de custom fields op uit Houtsnip.nl
+//[mededelingen]
+function mededelingen_func( $atts ){
+	$html = '';
+
+	$date_expiration = strtotime(date('d-m-Y', strtotime(get_field('notification_expiration_date'))));
+	$date_begin =  strtotime(date('d-m-Y', strtotime(get_field('notification_begin_date'))));
+	$date_now = strtotime(date('d-m-Y'));
+
+	if(get_field('notification') == true && $date_expiration > $date_now && $date_begin <= $date_now):
+		$html .= '
+			<div class="notification">
+				<div class="title">
+					' . get_field('notification_title') . '
+				</div>
+				<div class="sub-title">
+					' . get_field('notification_text') . '
+				</div>
+			</div>
+		';
+	endif;
+
+	return $html;
+}
+add_shortcode( 'mededelingen', 'mededelingen_func' );
 ?>

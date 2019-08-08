@@ -286,6 +286,21 @@ jQuery(document).ready(function($) {
 			$(this).removeClass('hover');
 		}
 	});
+	
+	/***************************
+	Change title when on another tab
+	***************************/
+	//changeTabTitle("Miss You ❤");
+	
+	function changeTabTitle(title){
+		var pageTitle = $("title").text();
+		$(window).blur(function() {
+			$("title").text(title);
+		});
+		$(window).focus(function() {
+			$("title").text(pageTitle);
+		});
+	}
 
 	/***************************
 	Get parameter from URL

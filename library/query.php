@@ -53,32 +53,13 @@ function contact_link_func( $atts ){
 		'detail' => '',
 	), $atts );
 
-
-	$args = array(
-		'post_type' => 'page',
-		'post_status' => 'publish',
-		'meta_query' => array(
-			array(
-				'key' => '_wp_page_template',
-				'value' => 'page-contact.php',
-			)
-		)
-	);
-	$query = new WP_Query($args);
-
-	// Voor elk resultaat wordt er een nieuw blok aangemaakt
 	$html = '';
 
-
-	if( $query->have_posts() ):
-		while ($query->have_posts()) : $query->the_post();
-			if( have_rows('contactdetails') ):
-				while( have_rows('contactdetails') ) : the_row();
-					if ($a['detail'] == get_sub_field('contactdetails_var')) {
-						$html .= get_sub_field('contactdetails_link');
-					}
-				endwhile;
-			endif;
+	if( have_rows('contactdetails', 'option') ):
+		while( have_rows('contactdetails', 'option') ) : the_row();
+			if ($a['detail'] == get_sub_field('contactdetails_var')) {
+				$html .= get_sub_field('contactdetails_link');
+			}
 		endwhile;
 	endif;
 
@@ -95,30 +76,13 @@ function contact_text_func( $atts ){
 		'detail' => '',
 	), $atts );
 
-	$args = array(
-		'post_type' => 'page',
-		'post_status' => 'publish',
-		'meta_query' => array(
-			array(
-				'key' => '_wp_page_template',
-				'value' => 'page-contact.php',
-			)
-		)
-	);
-	$query = new WP_Query($args);
-
-	// Voor elk resultaat wordt er een nieuw blok aangemaakt
 	$html = '';
 
-	if( $query->have_posts() ):
-		while ($query->have_posts()) : $query->the_post();
-			if( have_rows('contactdetails') ):
-				while( have_rows('contactdetails') ) : the_row();
-					if ($a['detail'] == get_sub_field('contactdetails_var')) {
-						$html .= get_sub_field('contactdetails_text');
-					}
-				endwhile;
-			endif;
+	if( have_rows('contactdetails', 'option') ):
+		while( have_rows('contactdetails', 'option') ) : the_row();
+			if ($a['detail'] == get_sub_field('contactdetails_var')) {
+				$html .= get_sub_field('contactdetails_text');
+			}
 		endwhile;
 	endif;
 

@@ -102,7 +102,7 @@ select {
 				margin: 0;
 				&:before,
 				&:after {
-					font-family: FontAwesome;
+					font-family: $faf;
 					color: $btn-primary;
 					position: absolute;
 					top: 10px;

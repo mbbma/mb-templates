@@ -36,7 +36,7 @@ input[type="submit"],
 input[type="submit"]:hover,
 button,
 button:hover {
-	transition: all 0.4s ease-in-out 0s;
+	transition: $transition;
 }
 
 /*********************
@@ -268,7 +268,7 @@ LOGO & NAVIGATION STYLES
 		position: relative;
 		&:before {
 			content: "\f105";
-			font-family: FontAwesome;
+			font-family: $faf;
 			position: absolute;
 			top: 0;
 			left: 0;

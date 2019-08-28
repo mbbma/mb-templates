@@ -276,6 +276,19 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 }
 
 /*********************
+Theme Options
+*********************/
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Basisgegevens',
+		'menu_title'	=> 'Basisgegevens',
+		'menu_slug' 	=> 'basisgegevens',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
+
+/*********************
 RANDOM ITEMS
 *********************/
 // Enable shortcodes in text widgets

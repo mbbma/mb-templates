@@ -1,39 +1,3 @@
-span.your-name::before,
-span.your-company::before,
-span.your-email::before,
-span.your-tel::before,
-span.your-message::before {
-	font-family: FontAwesome;
-	color: $btn-primary;
-	position: absolute;
-	z-index: 10;
-	left: 10px;
-	font-size: 18px;
-	top: 10px;
-}
-span.your-name::before {
-	content: "\f007";
-}
-span.your-company::before {
-	content: "\f1ad";
-}
-span.your-email::before {
-	content: "\f0e0";
-}
-span.your-tel::before {
-	content: "\f095";
-}
-span.your-message::before {
-	content: "\f086";
-}
-
-.contact-undertxt {
-	font-weight: 700;
-	.fa-lock {
-		margin-right: 10px;
-	}
-}
-
 // setting up defaults
 input[type="text"],
 input[type="password"],
@@ -55,20 +19,17 @@ textarea,
 	display: block;
 	line-height: 1.3em;
 	padding: 10px 35px;
-	margin-bottom: 14px;
 	font-size: 1em;
 	color: $text-color;
-	border-radius: 3px;
+	border-radius: 0;
 	box-shadow: none;
-	border: 2px solid $gray;
+	border: 2px solid #fff;
 	width: 100%;
-	font-family: $lato;
-	background-color: $gray;
+	background-color: #fff;
 	@include transition(background-color 0.24s ease-in-out);
 	&:focus,
 	&:active {
-		background-color: lighten($gray, 4%);
-		outline: none;
+		border-color: $hue1;
 	}
 }
 
@@ -96,7 +57,7 @@ select {
 			display: none;
 		}
 		li.gfield {
-			margin: 0 0 1.5em;
+			margin: 0 0 0.8em;
 			position: relative;
 			.ginput_container {
 				margin: 0;

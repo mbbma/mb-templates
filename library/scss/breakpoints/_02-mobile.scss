@@ -31,8 +31,7 @@ h4,
 }
 
 .menu-toggle-desktop,
-.mobile-none,
-.logo-normal {
+.mobile-none{
 	display: none;
 }
 .phone-number {
@@ -87,7 +86,11 @@ LAYOUT & GRID STYLES
 LOGO & NAVIGATION STYLES
 *********************/
 
-.logo-mobile {
+.site-branding {
+	text-align: center;
+}
+
+.logo img {
 	height: 35px;
 	vertical-align: middle;
 }

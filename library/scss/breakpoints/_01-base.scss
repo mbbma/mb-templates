@@ -46,18 +46,9 @@ HEADER STYLES
 	background: #fff;
 	position: relative;
 }
-#zone-user {
-	z-index: 10;
-	background: #fff;
-	display: table;
-	position: absolute;
-	right: 20%;
-	top: 40px;
-}
 #zone-header {
 	margin: 0 auto;
 	display: block;
-	background: #fff;
 }
 #region-header {
 	display: table;
@@ -103,8 +94,16 @@ LAYOUT & GRID STYLES
 .home .breadcrumb {
 	display: none;
 }
-p#breadcrumbs {
-	font-size: 12px;
+.breadcrumb{
+	position: relative;
+	#breadcrumbs {
+		position: absolute;
+		top: 10px;
+		left: 0;
+		font-size: 12px;
+		line-height: 1em;
+		margin: 0;
+	}
 }
 
 .center {
@@ -145,6 +144,9 @@ p#breadcrumbs {
 .text-center {
 	text-align: center;
 }
+.relative{
+	position: relative;
+}
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES / Other titels
@@ -160,7 +162,6 @@ h4,
 	text-rendering: optimizelegibility;
 	font-weight: 700;
 	text-transform: uppercase;
-	font-family: $open-sans;
 	line-height: 1.4em;
 	margin: 0;
 	a {
@@ -196,10 +197,6 @@ LOGO & NAVIGATION STYLES
 
 .logo a {
 	display: inline-block;
-}
-.site-branding {
-	padding: 10px 0;
-	text-align: center;
 }
 
 /* Toggle menu */

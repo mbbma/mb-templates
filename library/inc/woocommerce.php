@@ -3,7 +3,7 @@
 add_theme_support( 'woocommerce' );
 
 function mbbma_wrapper_start() {  
-    echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
+    echo '<div id="primary" class="content-area pad-both"><main id="main" class="site-main columns-12 center">';
 }
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );  
 add_action( 'woocommerce_before_main_content', 'mbbma_wrapper_start', 10 );

@@ -65,6 +65,10 @@ Media Queries
 	//@import "woocommerce/05-large";
 }
 
+@media only screen and (min-width: 1320px) {
+	@import "breakpoints/08-extra-large";
+}
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	.object-fit {
 		img {

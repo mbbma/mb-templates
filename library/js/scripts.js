@@ -374,6 +374,14 @@ jQuery(document).ready(function($) {
 	});
 
 	/***************************
+	Uitklapbare footer menu's
+	***************************/
+	$('#zone-footer-wrapper .fold').click(function(){
+		$(this).toggleClass('active');
+		$('#zone-footer-wrapper .foldable[data-name="' + $(this).attr('data-value') + '"]').slideToggle();
+	});
+
+	/***************************
 	Viewport animaties
 	***************************/
 	// viewportAnimation();

@@ -57,7 +57,7 @@
 		</div>
 		<div id="zone-footer-wrapper-2">
 			<div id="zone-footer-2">
-			&copy; <?php echo date('Y'); ?>: <a href="https://www.mbbedrijfskundigmarketingadvies.nl" title="MB - Bedrijfskundig Marketing Advies" target="_blank">MB - Bedrijfskundig Marketing Advies</a> | <a href="<?php echo esc_url(home_url('/sitemap/')); ?>" title="Sitemap">Sitemap</a> | <a href="<?php echo esc_url(home_url('/samenwerkingen/')); ?>" title="Samenwerkingen">Samenwerkingen</a>
+			&copy; <?php echo date('Y'); ?>: <a href="https://www.mbbedrijfskundigmarketingadvies.nl" title="MB - Bedrijfskundig Marketing Advies" target="_blank">MB - Bedrijfskundig Marketing Advies</a> | <a href="<?php echo esc_url(home_url('/contact/sitemap/')); ?>" title="Sitemap">Sitemap</a> | <a href="<?php echo esc_url(home_url('/contact/samenwerkingen/')); ?>" title="Samenwerkingen">Samenwerkingen</a> | <a href="<?php echo esc_url(home_url('/contact/privacy-statement/')); ?>" title="Privacy statement">Privacy statement</a> | <a href="<?php echo esc_url(home_url('/contact/disclaimer/')); ?>" title="Disclaimer">Disclaimer</a>
 			</div>
 		</div>
 	</footer>

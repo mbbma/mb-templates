@@ -382,6 +382,18 @@ jQuery(document).ready(function($) {
 	});
 
 	/***************************
+	FAQ
+	***************************/
+	$('.faq-block .question').click(function(){
+		if($(this).closest('.item').hasClass('active') == false){
+			$('.faq-block .item').removeClass('active');
+			$('.faq-block .item .answer').slideUp();
+		}
+		$(this).closest('.item').toggleClass('active');
+		$(this).closest('.item').find('.answer').slideToggle();
+	});
+
+	/***************************
 	Viewport animaties
 	***************************/
 	// viewportAnimation();

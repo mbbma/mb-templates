@@ -279,14 +279,50 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 /*********************
 Theme Options
 *********************/
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Basisgegevens',
-		'menu_title'	=> 'Basisgegevens',
-		'menu_slug' 	=> 'basisgegevens',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
+if(function_exists('acf_add_options_page')){
+	acf_add_options_page(
+		array(
+			'page_title' 	=> 'Basisgegevens',
+			'menu_title'	=> 'Basisgegevens',
+			'menu_slug' 	=> 'basisgegevens',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false
+		)
+	);	
+}
+
+/*********************
+Blocks
+*********************/
+// Add a custom block category
+function mb_block_category( $categories, $post ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'mb-blocks',
+				'title' => __('MB blokken', 'mb-blocks'),
+			),
+		)
+	);
+}
+add_filter( 'block_categories', 'mb_block_category', 0, 2 );
+
+// https://www.advancedcustomfields.com/resources/blocks/
+function register_acf_block_types() {
+	acf_register_block_type(array(
+		'name'              => 'faq',
+		'title'             => __('Veelgestelde vragen'),
+		'description'       => __(''),
+		'render_template'   => 'blocks/faq.php',
+		'category'          => 'mb-blocks',
+		'icon'              => 'admin-comments',
+		'mode'              => 'edit',
+		'keywords'          => array('MB blocks'),
 	));
+}
+if( function_exists('acf_register_block_type') ) {
+	add_action('acf/init', 'register_acf_block_types');
 }
 
 /*********************
@@ -430,6 +466,5 @@ if( !function_exists('mr_tab_to_indent_in_textarea') ){
 	add_action('admin_footer-post-new.php', 'mr_tab_to_indent_in_textarea');
 	add_action('admin_footer-post.php', 'mr_tab_to_indent_in_textarea');
 }
-
 
 ?>

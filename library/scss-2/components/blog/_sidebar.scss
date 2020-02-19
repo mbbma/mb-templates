@@ -1,0 +1,14 @@
+#secondary {
+	margin-left: 0;
+	margin-right: 0;
+	@include bp('narrow'){
+		margin: 20px 0;
+		float: right;
+	}
+	ul {
+		margin: 0 0 1.5em;
+	}
+	.widget {
+		margin: 0;
+	}
+}

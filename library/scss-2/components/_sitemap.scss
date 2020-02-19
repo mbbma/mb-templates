@@ -1,0 +1,17 @@
+#menu-sitemap {
+	margin: 0;
+	ul {
+		margin: 0;
+	}
+	li {
+		padding-left: 20px;
+		position: relative;
+		&:before {
+			content: "\f105";
+			font-family: $fa;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}

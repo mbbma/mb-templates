@@ -1,0 +1,35 @@
+%btn {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color: #fff;
+	line-height: 1em;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 15px 20px;
+	border-radius: 0;
+	border: 0;
+	cursor: pointer;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: #fff;
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+.btn-primary,
+input[type="submit"],
+button {
+	@extend %btn;
+	background-color: $btn-primary;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: #fff;
+		color: $btn-primary;
+	}
+}

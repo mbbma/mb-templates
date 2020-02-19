@@ -1,0 +1,24 @@
+// Meescrollend menu
+.site-header{
+	#zone-header-wrapper{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		z-index: 100;
+		max-width: $site-width;
+		width: 100%;
+	}
+	&.site-header-up{
+		#zone-header-wrapper{
+			@include bp('mobile'){
+				top: -60px;
+			}
+
+			@include bp('narrow'){
+				top: -100px;
+			}
+		}
+	}
+}

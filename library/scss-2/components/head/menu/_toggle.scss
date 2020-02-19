@@ -1,0 +1,89 @@
+.menu-toggle {
+	position: absolute;
+	padding: 4px 0;
+	top: 10px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
+	display: block;
+	cursor: pointer;
+	@include bp('mobile'){
+		display: none;
+	}
+
+	.line {
+		margin: 0 0 8px 0;
+		width: 30px;
+		height: 2px;
+		display: block;
+		background: #000;
+		transition: top 0.3s ease 0s, transform 0.3s ease 0s, opacity 0.3s ease 0s;
+	}
+	.last-line {
+		margin: 0;
+	}
+
+	&.active {
+		.first-line {
+			transform: rotate(45deg);
+			top: 14px;
+			position: absolute;
+		}
+		.last-line {
+			transform: rotate(-45deg);
+			top: 14px;
+			position: absolute;
+		}
+		.second-line {
+			opacity: 0;
+		}
+	}
+}
+
+.submenu-toggle{
+	position: absolute;
+	top: calc(
+		((100vh - 58px - 50px) / (#{$menu-item-amount} * 2)) - 15px
+	);
+	right: 10px;
+	display: block;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 24px;
+	cursor: pointer;
+	@include bp('mobile'){
+		display: none;
+	}
+
+	&:before,
+	&:after{
+		content: "";
+		position: absolute;
+		background: $text-color;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		transition: all .4s ease-in-out 0s;
+	}
+	&:before {
+		width: 20px;
+		height: 2px;
+	}
+	&:after {
+		width: 2px;
+		height: 20px;
+	}
+
+	&.active{
+		transform: rotate(90deg);
+		&:before{
+			opacity: 0;
+			height: 0;
+		}
+	}
+}

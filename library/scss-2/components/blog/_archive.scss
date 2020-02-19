@@ -1,0 +1,30 @@
+.posts-col-right{
+	.entry-title {
+		margin: 0;
+	}
+	.entry-header {
+		margin-bottom: 10px;
+	}
+}
+
+.posts-row {
+	border-bottom: 1px solid;
+	display: table;
+	width: 100%;
+	@include bp('mobile'){
+		margin: 0 0 20px;
+	}
+
+	@include bp('narrow'){
+		margin: 0 0 20px;
+		padding: 0 0 20px;
+	}
+
+	@include bp('normal'){
+		.posts-row {
+			margin: 0 0 40px;
+			padding: 0 0 40px;
+			display: table;
+		}
+	}
+}

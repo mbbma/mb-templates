@@ -1,0 +1,71 @@
+header{
+	#zone-header-wrapper {
+		background: #fff;
+		position: relative;
+		#zone-header {
+			margin: 0 auto;
+			display: block;
+			#region-header {
+				display: table;
+				width: 100%;
+				.site-branding{
+					@include bp('mobile'){
+						text-align: center;
+					}
+
+					@include bp('narrow'){
+						float: left;
+						padding: 5px 0;
+					}
+
+					.logo{
+						a{
+							display: inline-block;
+							vertical-align: middle;
+						}
+						img{
+							@include bp('mobile'){
+								height: 35px;
+								vertical-align: middle;
+							}
+						}
+					}
+
+					.phone-number{
+						@include bp('mobile'){
+							position: absolute;
+							right: 10px;
+							top: 13px;
+						}
+						@include bp('narrow'){
+							display: none;
+						}
+					
+						a {
+							@include bp('mobile'){
+								font-size: 25px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+main{
+	#zone-content-wrapper {
+		background: #fff;
+	}
+	#zone-preface-first {
+		position: relative;
+		width: 100%;
+	}
+	#zone-preface-first,
+	#zone-preface-second,
+	#zone-postscript,
+	#zone-postscript-2 {
+		margin: 0 auto;
+		display: table;
+	}
+}

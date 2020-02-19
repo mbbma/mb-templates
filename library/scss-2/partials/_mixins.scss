@@ -114,19 +114,20 @@ https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/
 *********************/
 
 $breakpoints: (
-	'mobile':	740px,
-	'narrow':	980px,
-	'normal':	1220px,
-	'large':	1320px
+	'mobile':		(max-width: 739px),
+	'narrow':		(min-width: 740px),
+	'normal':		(min-width: 980px),
+	'large':		(min-width: 1220px),
+	'extra-large':	(min-width: 1320px),
 );
 
-@mixin breakpoint($breakpoint) {
+@mixin bp($breakpoint) {
 	@if is-breakpoint($breakpoints, $breakpoint) {
-		@media (min-width: map-get($breakpoints, $breakpoint)) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))}{
 			@content;
 		}
 	}
 	@else{
-		@warn "oepsie! Mogelijke breakpoints zijn #{map-keys($breakpoints)}";
+		@warn "Oepsie! Mogelijke breakpoints zijn #{map-keys($breakpoints)}";
 	}
 }

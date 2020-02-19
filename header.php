@@ -67,12 +67,20 @@
 						</div>
 					</div>
 					<nav id="site-navigation" class="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<div class="menu-toggle"><?php _e( '<span class="line first-line first"></span><span class="line second-line"></span><span class="line last-line last"></span>', 'mbbma' ); ?></div>
+						<div class="menu-toggle">
+							<span class="line first-line first"></span>
+							<span class="line second-line"></span>
+							<span class="line last-line last"></span>
+						</div>
 						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mbbma' ); ?></a>
-						<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+						<?php
+							wp_nav_menu(
+								array('theme_location' => 'primary')
+							);
+						?>
 					</nav>
-					<div class="phone-number">
-						<a href="<?php echo do_shortcode('[contact_link detail="Phone"]'); ?>" class="phone-number-icon" title="Phone number">
+					<div class="phone-icon">
+						<a href="<?php echo do_shortcode('[contact_link detail="Phone"]'); ?>" title="Phone number">
 							<i class="fa fa-phone" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -92,8 +100,11 @@
 		</div>
 		<?php endif; ?>
 		<div class="columns-12 breadcrumb center">
-			<?php if ( function_exists('yoast_breadcrumb') ) 
-			{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+			<?php
+				if(function_exists('yoast_breadcrumb')){
+					yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+				}
+			?>
 		</div>
 		<div id="zone-content-wrapper">
 			

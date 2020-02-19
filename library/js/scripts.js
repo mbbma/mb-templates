@@ -211,7 +211,7 @@ jQuery(document).ready(function($) {
 
 	(function ($) {
 		$('.menu-toggle').click(function(){
-			$(this).toggleClass('menu-toggle-active');
+			$(this).toggleClass('active');
 			$('.main-navigation ul.menu').slideToggle();
 		});
 		$('.sub-menu').before('<div class="submenu-toggle"></div>');

@@ -1,0 +1,114 @@
+.popup {
+	display: none;
+	position: fixed;
+	top: 100%;
+	left: 40px;
+	right: 40px;
+	max-width: 600px;
+	max-height: calc(100vh - 20px);
+	transform: translateY(-50%);
+	margin: auto;
+	background: #fff;
+	overflow: scroll;
+	z-index: 1001;
+	opacity: 0;
+	@include bp('mobile'){
+		left: 10px;
+		right: 10px;
+	}
+
+	&.active {
+		display: block;
+	}
+	&.show{
+		opacity: 1;
+		top: 50%;
+	}
+	.close {
+		position: absolute;
+		top: 20px;
+		right: 40px;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		@include bp('mobile'){
+			top: 10px;
+			right: 20px;
+			width: 35px;
+			height: 35px;
+		}
+
+		.line {
+			width: 45px;
+			height: 2px;
+			background: #000;
+			position: absolute;
+			top: 19px;
+			left: -2px;
+			@include bp('mobile'){
+				width: 40px;
+				top: 17px;
+			}
+
+			&.first-line {
+				transform: rotate(45deg);
+			}
+			&.last-line {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	.content {
+		padding: 30px;
+		@include bp('mobile'){
+			padding: 20px 20px 20px;
+		}
+
+		.gform_wrapper {
+			padding-top: 25px;
+			@include bp('mobile'){
+				padding-top: 0px;
+			}
+
+			ul.gform_fields {
+				.gfield_label {
+					display: block;
+					font-weight: 400;
+					margin-top: 20px;
+					@include bp('mobile'){
+						margin-top: 10px;
+					}
+
+				}
+				input[type="text"],
+				textarea {
+					background-color: #f7f8fa;
+				}
+			}
+			button {
+				margin-top: 20px;
+				@include bp('mobile'){
+					margin-top: 10px;
+				}
+
+			}
+		}
+	}
+}
+.popup-background {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 1);
+	opacity: 0;
+	z-index: 1000;
+	&.active {
+		display: block;
+	}
+	&.show{
+		opacity: 1;
+	}
+}

@@ -1,13 +1,14 @@
 {
-  "name": "thema",
+  "name": "base-theme",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://arondelooijer@github.com/mbbma/base-theme.git"
+    "url": "git+https://github.com/mbbma/base-theme.git"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,7 @@
   },
   "homepage": "https://github.com/mbbma/base-theme#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean-css": "^4.2.0",
@@ -27,6 +28,5 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
     "run-sequence": "^2.2.1"
-  },
-  "description": ""
+  }
 }

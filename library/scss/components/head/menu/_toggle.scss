@@ -7,7 +7,7 @@
 	height: 30px;
 	display: block;
 	cursor: pointer;
-	@include bp('mobile'){
+	@include bp('narrow'){
 		display: none;
 	}
 

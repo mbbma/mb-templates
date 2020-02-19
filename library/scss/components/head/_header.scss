@@ -30,21 +30,21 @@ header{
 							}
 						}
 					}
+				}
 
-					.phone-number{
+				.phone-icon{
+					@include bp('mobile'){
+						position: absolute;
+						right: 10px;
+						top: 13px;
+					}
+					@include bp('narrow'){
+						display: none;
+					}
+				
+					a {
 						@include bp('mobile'){
-							position: absolute;
-							right: 10px;
-							top: 13px;
-						}
-						@include bp('narrow'){
-							display: none;
-						}
-					
-						a {
-							@include bp('mobile'){
-								font-size: 25px;
-							}
+							font-size: 25px;
 						}
 					}
 				}

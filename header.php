@@ -80,7 +80,7 @@
 						?>
 					</nav>
 					<div class="phone-icon">
-						<a href="<?php echo do_shortcode('[contact_link detail="Phone"]'); ?>" title="Phone number">
+						<a href="<?php echo do_shortcode('[contact_link detail="Phone"]'); ?>" title="Bel ons">
 							<i class="fa fa-phone" aria-hidden="true"></i>
 						</a>
 					</div>

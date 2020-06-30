@@ -15,7 +15,7 @@ $questions = get_field('faq_block');
 
 <?php echo do_shortcode('[raw]'); ?>
 <?php if($questions){ ?>
-	<article class="faq-block">
+	<article class="faq">
 		<div class="columns-12 center">
 			<div class="content">
 				<div class="titles text-center">

@@ -320,9 +320,111 @@ function register_acf_block_types() {
 		'mode'              => 'edit',
 		'keywords'          => array('MB blocks'),
 	));
+	acf_register_block_type(array(
+		'name'				=> 'content-image',
+		'title'				=> __('Content met afbeelding'),
+		'description'		=> __(''),
+		'render_template'	=> 'blocks/content-image.php',
+		'category'			=> 'mb-blocks',
+		'icon'				=> 'admin-comments',
+		'mode'				=> 'edit',
+		'keywords'			=> array('MB blocks'),
+	));
+	acf_register_block_type(array(
+		'name'				=> 'centered-content',
+		'title'				=> __('Gecentreerde content'),
+		'description'		=> __(''),
+		'render_template'	=> 'blocks/centered-content.php',
+		'category'			=> 'mb-blocks',
+		'icon'				=> 'admin-comments',
+		'mode'				=> 'edit',
+		'keywords'			=> array('MB blocks'),
+	));
+	acf_register_block_type(array(
+		'name'				=> 'contact',
+		'title'				=> __('Contact'),
+		'description'		=> __(''),
+		'render_template'	=> 'blocks/contact.php',
+		'category'			=> 'mb-blocks',
+		'icon'				=> 'admin-comments',
+		'mode'				=> 'edit',
+		'keywords'			=> array('MB blocks'),
+	));
 }
 if( function_exists('acf_register_block_type') ) {
 	add_action('acf/init', 'register_acf_block_types');
+}
+
+// Bepaald de padding voor een block
+function blockPadding($cf){
+	switch ($cf) {
+		case 'Ruimte boven & onder':
+			$padding = 'pad-both';
+			break;
+	
+		case 'Ruimte boven':
+			$padding = 'pad-top';
+			break;
+	
+		case 'Ruimte onder':
+			$padding = 'pad-bottom';
+			break;
+		
+		default:
+			$padding = '';
+			break;
+	}
+	return $padding;
+}
+
+// Levert de titel in een goed formaat aan
+function blockTitle($text, $link, $type, $showAs, $center, $extraClasses){
+	$title = '';
+	$centerTitle = '';
+	$classes = '';
+
+	if($center){
+		$centerTitle = ' text-center';
+	}
+	if($extraClasses){
+		$classes = ' ' . $extraClasses;
+	}
+
+	if($link){
+		$title = '
+			<a href="'.$link.'" title="'.$text.'" data-title="'.$text.'">
+				'.$text.'
+			</a>
+		';
+	} else{
+		$title = $text;
+	}
+
+	switch ($type) {
+		case 'h1':
+			$title = '
+				<div class="titles'.$centerTitle.'">
+					<h1 class="'.$showAs.$classes.'">'.$title.'</h1>
+				</div>
+			';
+			break;
+		case 'h2':
+			$title = '
+				<div class="titles'.$centerTitle.'">
+					<h2 class="'.$showAs.$classes.'">'.$title.'</h2>
+				</div>
+			';
+			break;
+		case 'h3':
+			$title = '
+				<div class="'.$centerTitle.'">
+					<h3 class="'.$showAs.$classes.'">'.$title.'</h3>
+				</div>
+			';
+			break;
+	}
+
+	return $title;
 }
 
 /*********************

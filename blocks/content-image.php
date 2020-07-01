@@ -30,6 +30,7 @@ $padding = blockPadding(get_field('block_padding'));
 							$title = blockTitle(
 								$block['title'],
 								$block['title_link'],
+								$block['title_title'],
 								$block['title_type'],
 								'h2',
 								false,
@@ -51,20 +52,24 @@ $padding = blockPadding(get_field('block_padding'));
 											}
 											echo '<ul class="caret">' . $listItems . '</ul>';
 											break;
+
+										case 'buttons':
+											echo '<div class="buttons">';
+											foreach ($value['buttons'] as $key => $row) {
+												echo '
+													<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-secondary">
+														'.$row['button_text'].'
+													</a>
+												';
+											}
+											echo '</div>';
+											break;
 										
 										default:
 											break;
 									}
 								}
 							endif;
-
-							if($block['button_text'] && $block['button_link']){
-								echo '
-									<a href="'.$block['button_link'].'" title="'.$block['button_text'].'" class="btn-secondary">
-										'.$block['button_text'].'
-									</a>
-								';
-							}
 						?>
 					</div>
 				</div>

@@ -20,6 +20,7 @@ $padding = blockPadding(get_field('block_padding'));
 									echo blockTitle(
 										$value['title'],
 										$value['title_link'],
+										$value['title_title'],
 										$value['title_type'],
 										'h3',
 										false,

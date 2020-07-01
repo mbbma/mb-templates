@@ -378,7 +378,7 @@ function blockPadding($cf){
 }
 
 // Levert de titel in een goed formaat aan
-function blockTitle($text, $link, $type, $showAs, $center, $extraClasses){
+function blockTitle($text, $link, $linkTitle, $type, $showAs, $center, $extraClasses){
 	$title = '';
 	$centerTitle = '';
 	$classes = '';
@@ -392,7 +392,7 @@ function blockTitle($text, $link, $type, $showAs, $center, $extraClasses){
 
 	if($link){
 		$title = '
-			<a href="'.$link.'" title="'.$text.'" data-title="'.$text.'">
+			<a href="'.$link.'" title="'.$linkTitle.'" data-title="'.$text.'">
 				'.$text.'
 			</a>
 		';

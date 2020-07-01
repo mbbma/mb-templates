@@ -1,6 +1,6 @@
 article.content-image{
 	.content-wrapper{
-		&.order-1{
+		&.order-2{
 			@include bp('narrow'){
 				.grid{
 					flex-direction: row-reverse;

@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Bedankt
+Template Name: Bedanktpagina
 */
 
 get_header(); ?>

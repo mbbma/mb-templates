@@ -125,7 +125,7 @@ function mbbma_scripts_and_styles() {
 		wp_register_style( 'mbbma-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), filemtime( get_stylesheet_directory().'/library/css/style.css' ), 'all' );
 		
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false);   
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), '3.5.1', false);   
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -378,17 +378,12 @@ function blockPadding($cf){
 }
 
 // Levert de titel in een goed formaat aan
-function blockTitle($text, $link, $linkTitle, $type, $showAs, $center, $extraClasses){
+function blockTitle($text, $link, $linkTitle, $type, $showAs, $center, $extraClasses, $subtitle){
 	$title = '';
-	$centerTitle = '';
-	$classes = '';
 
-	if($center){
-		$centerTitle = ' text-center';
-	}
-	if($extraClasses){
-		$classes = ' ' . $extraClasses;
-	}
+	$centerTitle = $center ? ' text-center' : '';
+	$classes = $extraClasses ? ' ' . $extraClasses : '';
+	$sub = $subtitle ? '<h3 class="subtitle">'.$subtitle.'</h3>' : '';
 
 	if($link){
 		$title = '
@@ -405,6 +400,7 @@ function blockTitle($text, $link, $linkTitle, $type, $showAs, $center, $extraCla
 			$title = '
 				<div class="titles'.$centerTitle.'">
 					<h1 class="'.$showAs.$classes.'">'.$title.'</h1>
+					'.$sub.'
 				</div>
 			';
 			break;
@@ -412,6 +408,7 @@ function blockTitle($text, $link, $linkTitle, $type, $showAs, $center, $extraCla
 			$title = '
 				<div class="titles'.$centerTitle.'">
 					<h2 class="'.$showAs.$classes.'">'.$title.'</h2>
+					'.$sub.'
 				</div>
 			';
 			break;

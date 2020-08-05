@@ -28,7 +28,7 @@ article.faq{
 				}
 
 				&:after{
-					content: '\f107';
+					content: $fa-angle-down;
 					font-family: $fa;
 					font-weight: 700;
 					position: absolute;

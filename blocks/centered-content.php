@@ -24,6 +24,7 @@ $padding = blockPadding(get_field('block_padding'));
 										$value['title_type'],
 										'h3',
 										false,
+										'',
 										''
 									);
 									break;

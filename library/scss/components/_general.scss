@@ -110,6 +110,33 @@ a {
 		max-width: 100%;
 		height: auto;
 	}
+	ol{
+		margin-left: 1.5em;
+		list-style-type: decimal;
+	}
+	ul{
+		&.angle{
+			li{
+				&:before{
+					content: $fa-angle-right;
+				}
+			}
+		}
+		&.check{
+			li{
+				&:before{
+					content: $fa-check;
+				}
+			}
+		}
+		&.caret{
+			li{
+				&:before{
+					content: $fa-caret-right;
+				}
+			}
+		}
+	}
 }
 
 .screen-reader-text {

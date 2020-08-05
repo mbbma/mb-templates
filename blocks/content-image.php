@@ -34,6 +34,7 @@ $padding = blockPadding(get_field('block_padding'));
 								$block['title_type'],
 								'h2',
 								false,
+								'',
 								''
 							);
 							echo $title;
@@ -56,11 +57,26 @@ $padding = blockPadding(get_field('block_padding'));
 										case 'buttons':
 											echo '<div class="buttons">';
 											foreach ($value['buttons'] as $key => $row) {
-												echo '
-													<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-secondary">
-														'.$row['button_text'].'
-													</a>
-												';
+												switch ($row['button_type']) {
+													case 'Link':
+														echo '
+															<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-primary">
+																'.$row['button_text'].'
+															</a>
+														';
+														break;
+													case 'Popup':
+														echo '
+															<div class="btn-primary show-popup" data-value="'.$row['button_popup'].'">
+																'.$row['button_text'].'
+															</div>
+														';
+														break;
+													
+													default:
+														# code...
+														break;
+												}
 											}
 											echo '</div>';
 											break;

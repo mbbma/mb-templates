@@ -73,7 +73,7 @@ select {
 					left: 10px;
 				}
 				&:after {
-					content: "\f00c";
+					content: $fa-check;
 					right: 10px;
 					opacity: 0;
 					transition: all 0.4s ease-in-out 0s;
@@ -82,26 +82,6 @@ select {
 					&:after {
 						opacity: 1;
 					}
-				}
-			}
-			&.icon-name {
-				.ginput_container:before {
-					content: "\f007";
-				}
-			}
-			&.icon-mail {
-				.ginput_container:before {
-					content: "\f0e0";
-				}
-			}
-			&.icon-phone {
-				.ginput_container:before {
-					content: "\f095";
-				}
-			}
-			&.icon-message {
-				.ginput_container:before {
-					content: "\f086";
 				}
 			}
 		}
@@ -115,5 +95,9 @@ select {
 		textarea {
 			border-color: #f00;
 		}
+	}
+	// Honeypot
+	.gform_validation_container{
+		display: none;
 	}
 }

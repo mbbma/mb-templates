@@ -1,0 +1,187 @@
+angle-down:
+  changes:
+    - '3'
+    - 5.0.0
+  label: angle-down
+  search:
+    terms:
+      - arrow
+      - caret
+      - download
+      - expand
+  styles:
+    - solid
+  unicode: f107
+  voted: false
+angle-right:
+  changes:
+    - '3'
+    - 5.0.0
+    - 5.11.0
+  label: angle-right
+  search:
+    terms:
+      - arrow
+      - care
+      - forward
+      - more
+      - next
+  styles:
+    - solid
+  unicode: f105
+  voted: false
+caret-right:
+  changes:
+    - '2'
+    - 5.0.0
+  label: Caret Right
+  search:
+    terms:
+      - arrow
+      - forward
+      - next
+      - triangle
+  styles:
+    - solid
+  unicode: f0da
+  voted: false
+check:
+  changes:
+    - '1'
+    - 5.0.0
+  label: Check
+  search:
+    terms:
+      - accept
+      - agree
+      - checkmark
+      - confirm
+      - correct
+      - done
+      - notice
+      - notification
+      - notify
+      - ok
+      - select
+      - success
+      - tick
+      - todo
+      - 'yes'
+  styles:
+    - solid
+  unicode: f00c
+  voted: false
+envelope:
+  changes:
+    - '2'
+    - 5.0.0
+    - 5.10.1
+    - 5.10.2
+  label: Envelope
+  search:
+    terms:
+      - e-mail
+      - email
+      - letter
+      - mail
+      - message
+      - notification
+      - support
+  styles:
+    - solid
+  unicode: f0e0
+  voted: false
+facebook-f:
+  changes:
+    - 5.0.0
+    - 5.8.2
+  label: Facebook F
+  search:
+    terms:
+      - facebook
+  styles:
+    - brands
+  unicode: f39e
+  voted: false
+instagram:
+  changes:
+    - '4.6'
+    - 5.0.0
+  label: Instagram
+  search:
+    terms: []
+  styles:
+    - brands
+  unicode: f16d
+  voted: false
+linkedin-in:
+  changes:
+    - '2'
+    - 5.0.0
+    - 5.4.1
+    - 5.8.0
+    - 5.8.1
+  label: LinkedIn In
+  search:
+    terms:
+      - linkedin
+  styles:
+    - brands
+  unicode: f0e1
+  voted: false
+map-marker-alt:
+  changes:
+    - 5.0.0
+  label: Alternate Map Marker
+  search:
+    terms:
+      - address
+      - coordinates
+      - destination
+      - gps
+      - localize
+      - location
+      - map
+      - navigation
+      - paper
+      - pin
+      - place
+      - point of interest
+      - position
+      - route
+      - travel
+  styles:
+    - solid
+  unicode: f3c5
+  voted: false
+phone-alt:
+  changes:
+    - 5.9.0
+    - 5.10.1
+    - 5.10.2
+  label: Alternate Phone
+  search:
+    terms:
+      - call
+      - earphone
+      - number
+      - support
+      - telephone
+      - voice
+  styles:
+    - solid
+  unicode: f879
+  voted: false
+twitter:
+  changes:
+    - '2'
+    - 5.0.0
+  label: Twitter
+  search:
+    terms:
+      - social network
+      - tweet
+  styles:
+    - brands
+  unicode: f099
+  voted: false

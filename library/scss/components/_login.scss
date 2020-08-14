@@ -1,5 +1,5 @@
 .login{
-	background: url(../images/login-background.jpg) no-repeat center center;
+	background: url(../images/login-skyPeople.jpg) no-repeat center center;
 	background-size: cover;
 	#login{
 		width: 100%;
@@ -15,7 +15,7 @@
 		h1{
 			text-align: left;
 			a{
-				background: url(../images/mb-login.svg) no-repeat top center;
+				background: url(../images/skyPeople-logo.svg) no-repeat top center;
 				width: 257px;
 				height: 50px;
 				text-indent: -9999px;
@@ -117,8 +117,8 @@
 				border-radius: 0;
 				border: 2px solid;
 				cursor: pointer;
-				background-color: #d45900;
-				border-color: #d45900;
+				background-color: #FF3900;
+				border-color: #FF3900;
 				box-shadow: none;
 				text-shadow: none;
 				height: auto;
@@ -146,5 +146,8 @@
 				color: #707272;
 			}
 		}
+	}
+	.privacy-policy-page-link{
+		display: none;
 	}
 }

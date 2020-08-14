@@ -353,7 +353,49 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
+	/***************************
+		Ajax url Declaration
+	***************************/	
+	var ajaxUrl = $('.site-branding .logo a').attr('href') + 'wp-admin/admin-ajax.php';
+
 	
+	/***************************
+	Pop-ups System
+	***************************/
+	if($('.show-popup').length){
+		popupsArrays = [];
+		$('.show-popup').each(function(){
+
+			// Get pop-up names
+			popupName = $(this).data('value');
+
+			// Avoid duplication
+			if(popupsArrays.indexOf(popupName) == -1){
+				popupsArrays.push(popupName);
+			}
+		});
+		// Array to string with commas
+		popupNames = popupsArrays.join();
+
+		var data = {
+			'action': 'load_popups_by_ajax',
+			'popups': popupNames
+		};
+		$.post(ajaxUrl, data, function(response) {
+			if(response != '') {
+				$('.popups').append(response);
+
+				$('.popups .popup').each(function(){
+					let pageURL = window.location.href;
+					let siteUrl = $('.site-branding .logo a').attr('href');
+					let formAction = pageURL.replace(siteUrl, '');
+					let formAnchor = $(this).find('.gform_anchor').attr('id');
+					$(this).find('form').attr('action','/'+formAction+'#'+formAnchor+'');
+				});
+			}
+		});
+	}
+
 	/***************************
 	Popup
 	***************************/
@@ -368,7 +410,11 @@ jQuery(document).ready(function($) {
 			$('.popup[data-name="' + popupValue + '"]').addClass('show');
 		}, 100);
 	});
-	$('.popup .close, .popup-background').click(function(){
+	$('.popup-background').click(function(){
+		$('.popup, .popup-background').removeClass('active show');
+		$('body').removeClass('no-scroll');
+	});
+	$(document).on('click', '.popup .close', function(){
 		$('.popup, .popup-background').removeClass('active show');
 		$('body').removeClass('no-scroll');
 	});

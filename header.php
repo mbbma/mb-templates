@@ -49,7 +49,7 @@
 							</div>
 							<div class="site-branding-top mobile-none animated">
 								<div class="buttons"> 
-									<a class="btn-primary" href="https://hair2.mijnsalon.nl/" target="_blank" title="Hair2 - Afspraak maken">
+									<a class="btn-primary" href="#" target="_blank" title="#">
 										Afspraak maken
 									</a>
 									<div class="phone">

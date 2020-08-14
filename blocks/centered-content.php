@@ -53,7 +53,7 @@ $padding = blockPadding(get_field('block_padding'));
 									echo '<div class="buttons">';
 									foreach ($value['buttons'] as $key => $row) {
 										echo '
-											<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-secondary">
+											<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-primary">
 												'.$row['button_text'].'
 											</a>
 										';

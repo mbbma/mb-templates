@@ -9,6 +9,9 @@
 ?>
 
 			
+		<div class="popups"></div>
+		<div class="popup-background"></div></div>
+
 		</div>
 		<?php if (is_active_sidebar('content-postscript-1')) : ?>
 		<div id="zone-postscript-wrapper">

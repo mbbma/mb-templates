@@ -117,15 +117,11 @@ function mbbma_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
   if (!is_admin()) {
-
-		// modernizr (without media query polyfill)
-		wp_register_script( 'mbbma-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-
 		// register main stylesheet
 		wp_register_style( 'mbbma-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), filemtime( get_stylesheet_directory().'/library/css/style.css' ), 'all' );
 		
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), '3.5.1', false);   
+		// wp_deregister_script('jquery');
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), '3.5.1', false);
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -134,7 +130,6 @@ function mbbma_scripts_and_styles() {
 
 		//adding scripts file in the footer
 		wp_register_script( 'mbbma-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), filemtime ( get_stylesheet_directory(). '/library/js/scripts.js'), true );
-		wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.7/css/all.css', array(), '5.0.7');
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'mbbma-modernizr' );
@@ -147,7 +142,6 @@ function mbbma_scripts_and_styles() {
 		*/
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'mbbma-js' );
-		wp_enqueue_style( 'font-awesome' );
 
 	}
 }
@@ -375,53 +369,6 @@ function blockPadding($cf){
 			break;
 	}
 	return $padding;
-}
-
-// Levert de titel in een goed formaat aan
-function blockTitle($text, $link, $linkTitle, $type, $showAs, $center, $extraClasses, $subtitle){
-	$title = '';
-
-	$centerTitle = $center ? ' text-center' : '';
-	$classes = $extraClasses ? ' ' . $extraClasses : '';
-	$sub = $subtitle ? '<h3 class="subtitle">'.$subtitle.'</h3>' : '';
-
-	if($link){
-		$title = '
-			<a href="'.$link.'" title="'.$linkTitle.'" data-title="'.$text.'">
-				'.$text.'
-			</a>
-		';
-	} else{
-		$title = $text;
-	}
-
-	switch ($type) {
-		case 'h1':
-			$title = '
-				<div class="titles'.$centerTitle.'">
-					<h1 class="'.$showAs.$classes.'">'.$title.'</h1>
-					'.$sub.'
-				</div>
-			';
-			break;
-		case 'h2':
-			$title = '
-				<div class="titles'.$centerTitle.'">
-					<h2 class="'.$showAs.$classes.'">'.$title.'</h2>
-					'.$sub.'
-				</div>
-			';
-			break;
-		case 'h3':
-			$title = '
-				<div class="'.$centerTitle.'">
-					<h3 class="'.$showAs.$classes.'">'.$title.'</h3>
-				</div>
-			';
-			break;
-	}
-
-	return $title;
 }
 
 /*********************

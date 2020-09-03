@@ -1,15 +1,15 @@
 <?php
-/**
- * Gecentreerde content Block Template.
- */
-$block = get_field('centered_content_block');
-$blockID = get_field('block_id');
-$padding = blockPadding(get_field('block_padding'));
+	/**
+	 * Gecentreerde content Block Template.
+	 */
+	$block = get_field('centered_content_block');
+	$blockID = get_field('block_id') ? 'id="'.get_field('block_id').'"' : '';
+	$padding = blockPadding(get_field('block_padding'));
 ?>
 
 <?php echo do_shortcode('[raw]'); ?>
 <?php if($block){ ?>
-	<article id="<?php echo $blockID; ?>" class="centered-content <?php echo $padding; ?>">
+	<article <?php echo $blockID; ?> class="centered-content <?php echo $padding; ?>">
 		<div class="columns-12 center">
 			<div class="content-wrapper">
 				<?php
@@ -17,16 +17,21 @@ $padding = blockPadding(get_field('block_padding'));
 						foreach ($block['content'] as $key => $value) {
 							switch ($value['acf_fc_layout']) {
 								case 'title':
-									echo blockTitle(
+									$title = new BlockTitle(
 										$value['title'],
-										$value['title_link'],
-										$value['title_title'],
-										$value['title_type'],
-										'h3',
-										false,
-										'',
-										''
+										$value['title_type']
 									);
+
+									if($value['title_link']){
+										$title->setLink(
+											$value['title_link'],
+											$value['title_title']
+										);
+									}
+
+									$title->setLook('h3');
+
+									echo $title;
 									break;
 
 								case 'text':

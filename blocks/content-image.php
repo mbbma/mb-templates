@@ -1,10 +1,10 @@
 <?php
-/**
- * Content met afbeelding Block Template.
- */
-$block = get_field('content_image_block');
-$blockID = get_field('block_id');
-$padding = blockPadding(get_field('block_padding'));
+	/**
+	 * Content met afbeelding Block Template.
+	 */
+	$block = get_field('content_image_block');
+	$blockID = get_field('block_id') ? 'id="'.get_field('block_id').'"' : '';
+	$padding = blockPadding(get_field('block_padding'));
 ?>
 
 <?php echo do_shortcode('[raw]'); ?>
@@ -12,7 +12,7 @@ $padding = blockPadding(get_field('block_padding'));
 	<?php
 		$order = 'order-' . $block['order'];
 	?>
-	<article id="<?php echo $blockID; ?>" class="content-image <?php echo $padding; ?>">
+	<article <?php echo $blockID; ?> class="content-image <?php echo $padding; ?>">
 		<div class="content-wrapper <?php echo $order; ?>">
 			<div class="columns-12 center">
 				<div class="grid">
@@ -27,16 +27,20 @@ $padding = blockPadding(get_field('block_padding'));
 					?>
 					<div class="content">
 						<?php
-							$title = blockTitle(
+							$title = new BlockTitle(
 								$block['title'],
-								$block['title_link'],
-								$block['title_title'],
-								$block['title_type'],
-								'h2',
-								false,
-								'',
-								''
+								$block['title_type']
 							);
+
+							if($block['title_link']){
+								$title->setLink(
+									$block['title_link'],
+									$block['title_title']
+								);
+							}
+
+							$title->setLook('h2');
+							
 							echo $title;
 
 							if($block['content']):

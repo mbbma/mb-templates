@@ -11,6 +11,7 @@
 	// LOAD MBBMA CORE 
 	require_once( 'library/mbbma.php' );
 	require_once( 'library/query.php' );
+	require_once( 'library/classes/titles.php' );
 
 
 	function mbbma_setup() {
@@ -46,38 +47,6 @@
 
 	/************* ACTIVE WIDGETS ********************/
 	function mbbma_widgets_init() {
-		register_sidebar( array(
-			'name' 			=> 'Sidebar',
-			'id'            => 'sidebar-1',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		) );
-		register_sidebar( array(
-			'name'			=> 'Topbar',
-			'id' 			=> 'topbar-1',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>',
-		) );
-		register_sidebar( array(
-			'name'			=> 'Content Preface First',
-			'id'			=> 'content-preface-1',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
-		) );
-		register_sidebar( array(
-			'name'			=> 'Content Postscript First',
-			'id'			=> 'content-postscript-1',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
-		) );
 		register_sidebar( array(
 			'name'			=> 'Footer Columns First',
 			'id'			=> 'footer-columns-1',

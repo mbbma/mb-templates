@@ -6,10 +6,10 @@ var gulp        = require('gulp'),
     notify      = require('gulp-notify'), // notification plugin for gulp
     sassLint    = require('gulp-sass-lint'),
     sourcemaps  = require('gulp-sourcemaps') // 2.X now supports node 0.10+ due to switching out a dependency
-    runSequence = require('run-sequence') // Runs a sequence of gulp tasks in the specified order.
-    browserSync = require('browser-sync');
-var   reload      = browserSync.reload;
-
+    runSequence = require('run-sequence'), // Runs a sequence of gulp tasks in the specified order.
+    uglify     = require('uglify-js'),
+    minify = require('gulp-minify'),
+   concat = require('gulp-concat');
 
 var displayError = function(error) {
 
@@ -53,7 +53,6 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('css'))
     .pipe(cssmin({zindex: false}))
     .pipe(gulp.dest('css'))
-    .pipe(browserSync.stream());
 });
 
 gulp.task('sass-lint', function() {
@@ -63,26 +62,21 @@ gulp.task('sass-lint', function() {
     .pipe(sassLint.failOnError());
 });
 
-gulp.task('watch', function() {
-  gulp.watch('scss/**/*.scss', ['styles']);
-   gulp.watch("js/script.js").on('change', browserSync.reload);
+gulp.task('compress', function() {
+  gulp.src(['js/files/*.js'])
+    .pipe(concat('all.js'))
+    .pipe(minify({noSource: true}))
+    .pipe(gulp.dest('js'));
 });
 
-gulp.task('browser-sync', function(){
-  var files = [
-  'css',
-  '../test.php',
-  'js/script.js',
-  ];
+gulp.task('watch', function() {
+    gulp.watch('scss/**/*.scss', ['styles']);
+    gulp.watch("js/files/*.js", ['compress']);
+});
 
-  browserSync.init(files, {
-    proxy: "localhost",
-    notify: false
-  });
-})
 
 gulp.task('default', function(done) {
-  runSequence('styles', 'watch', 'browser-sync', done);
+  runSequence('styles', 'watch','compress', done);
 });
 
 gulp.task('build', function(done) {

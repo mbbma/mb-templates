@@ -8,29 +8,9 @@
  */
 ?>
 
-			
-<<<<<<< HEAD
-=======
-		<div class="popups"></div>
-		<div class="popup-background"></div></div>
-
-		</div>
-		<?php if (is_active_sidebar('content-postscript-1')) : ?>
-		<div id="zone-postscript-wrapper">
-			<div id="zone-postscript">
-				<div class="content-postscript">
-					<?php if(is_active_sidebar('content-postscript-1')){ dynamic_sidebar('content-postscript-1');}?>
-				</div>
-			</div>
-		</div>
-		<?php endif; ?>
-		<?php if (is_active_sidebar('content-postscript-2')) : ?>
-		<div id="zone-postscript-wrapper-2">
-			<div id="zone-postscript-2">
-				<div class="content-postscript-2 columns-12 gutter">
-					<?php if(is_active_sidebar('content-postscript-2')){ dynamic_sidebar('content-postscript-2');}?>
-				</div>
->>>>>>> master
+		
+				<div class="popups"></div>
+				<div class="popup-background"></div>
 			</div>
 		</main>
 

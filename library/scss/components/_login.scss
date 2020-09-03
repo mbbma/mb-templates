@@ -117,8 +117,8 @@
 				border-radius: 0;
 				border: 2px solid;
 				cursor: pointer;
-				background-color: #d45900;
-				border-color: #d45900;
+				background-color: #FF3900;
+				border-color: #FF3900;
 				box-shadow: none;
 				text-shadow: none;
 				height: auto;
@@ -146,5 +146,8 @@
 				color: #707272;
 			}
 		}
+	}
+	.privacy-policy-page-link{
+		display: none;
 	}
 }

@@ -46,10 +46,16 @@
 							if($block['content']):
 								foreach ($block['content'] as $key => $value) {
 									switch ($value['acf_fc_layout']) {
+										case 'title':
+											echo '
+												<div class="titles">
+													<h3>'.$value['title'].'</h3>
+												</div>
+											';
+											break;
 										case 'text':
 											echo $value['text'];
 											break;
-
 										case 'list':
 											$listItems = '';
 											foreach ($value['list'] as $key => $row) {
@@ -58,32 +64,32 @@
 											echo '<ul class="caret">' . $listItems . '</ul>';
 											break;
 
-										case 'buttons':
-											echo '<div class="buttons">';
-											foreach ($value['buttons'] as $key => $row) {
-												switch ($row['button_type']) {
-													case 'Link':
-														echo '
-															<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-primary">
-																'.$row['button_text'].'
-															</a>
-														';
-														break;
-													case 'Popup':
-														echo '
-															<div class="btn-primary show-popup" data-value="'.$row['button_popup'].'">
-																'.$row['button_text'].'
-															</div>
-														';
-														break;
-													
-													default:
-														# code...
-														break;
+											case 'buttons':
+												echo '<div class="buttons">';
+												foreach ($value['buttons'] as $key => $row) {
+													switch ($row['button_type']) {
+														case 'Link':
+															echo '
+																<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-primary">
+																	'.$row['button_text'].'
+																</a>
+															';
+															break;
+														case 'Popup':
+															echo '
+																<div class="btn-primary show-popup" data-value="'.strtolower(str_replace(" ", "-", $row['button_popup']['value'])).'">
+																	'.$row['button_text'].'
+																</div>
+															';
+															break;
+														
+														default:
+															# code...
+															break;
+													}
 												}
-											}
-											echo '</div>';
-											break;
+												echo '</div>';
+												break;
 										
 										default:
 											break;

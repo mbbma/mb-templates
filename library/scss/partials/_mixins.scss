@@ -153,3 +153,53 @@ $breakpoints: (
 		}
 	}
 }
+
+/********************
+Breakpoint more advanced
+https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+*********************/
+$breakpointsAdvanced: (
+  mobile: 739px,
+  narrow: 740px,
+  normal: 980px,
+  large: 1220px,
+  extraLarge: 1320px,
+);
+/********************
+	Bp only
+*********************/
+
+// @include respond-between(sm, md) {}
+@mixin bp-only($lower, $upper) {
+
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpointsAdvanced, $lower) and map-has-key($breakpointsAdvanced, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpointsAdvanced, $lower);
+    $upper-breakpoint: map-get($breakpointsAdvanced, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  
+  // If one or both of the breakpoints don't exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpointsAdvanced, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpointsAdvanced, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+

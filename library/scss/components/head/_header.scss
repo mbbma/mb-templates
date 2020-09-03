@@ -1,53 +1,143 @@
 header{
+	@include bp('narrwo'){
+		overflow: hidden;
+	}
 	#zone-header-wrapper {
 		background: #fff;
 		position: relative;
+		border-bottom: 2px solid $hue1;
 		#zone-header {
 			margin: 0 auto;
 			display: block;
+			z-index: 1000;
+			position: relative;
 			#region-header {
 				display: table;
 				width: 100%;
+				position: relative;
 				.site-branding{
 					@include bp('mobile'){
-						text-align: center;
+						padding: 5px 10px;
 					}
 
 					@include bp('narrow'){
 						float: left;
-						padding: 5px 0;
+						padding: 20px 0;
 					}
 
 					.logo{
 						a{
-							display: inline-block;
-							vertical-align: middle;
+							@include bp('mobile'){
+								margin: auto;
+								width: auto;
+								display: table;
+								img{
+									margin: auto;
+								}
+							}
+							@include bp('narrow'){
+								display: inline-block;
+								vertical-align: middle;
+							}
 						}
 						img{
+							display: block;
 							@include bp('mobile'){
-								height: 35px;
-								vertical-align: middle;
+								height: 45px;
 							}
 						}
 					}
 				}
+				.site-branding-top{ 
+					@include bp('narrow'){
+						display: table;
+						float: right;
+						.buttons{
+							padding: 0;
+						}
+					}
+				}
+				
 
 				.phone-icon{
 					@include bp('mobile'){
 						position: absolute;
 						right: 10px;
-						top: 13px;
+						top: 14px;
 					}
 					@include bp('narrow'){
 						display: none;
 					}
 				
 					a {
+						color: $hue1;
 						@include bp('mobile'){
 							font-size: 25px;
 						}
 					}
 				}
+			}
+		}
+	}
+
+	article.header{
+		position: relative;
+		.header-image{
+			&.small-header{
+				img{
+					@include bp('narrow'){
+						height: 350px;
+					}
+				}
+			}
+			img{
+				display: block;
+				object-fit: cover;
+				object-position: 35%;
+				width: 100%;
+				@include bp('mobile'){
+					height: 250px;
+				}
+				@include bp('narrow'){
+					height: 430px;
+				}
+			}
+		}
+		.overlay{
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			color: #fff;
+			text-shadow: 0 0 12px rgba(0,0,0,0.5);
+
+			@include bp('mobile'){
+				width: 100%;
+				top: 50%;
+			}
+			@include bp('narrow'){
+				top: calc(50% - 30px);
+			}
+
+			.title{
+				line-height: 1em;
+				margin-bottom: 0.15em;
+
+				@include bp('mobile'){
+					font-size: 40px;
+				}
+				@include bp('narrow'){
+					font-size: 60px;
+				}
+			}
+			.subtitle{
+				@include bp('mobile'){
+					font-size: 25px;
+				}
+				@include bp('narrow'){
+					font-size: 35px;
+				}
+				line-height: 1.2em;
 			}
 		}
 	}

@@ -7,13 +7,40 @@
 	@include bp('narrow'){
 		float: right;
 	}
+	@include bp-only('narrow', 'normal') {
+		width: 80%;
+	}
+	@include bp-only('normal', 'large') {
+		width: 80%;
+	}
+	@include bp('large'){
+		width: 70%;
+	}
+	#menu-hoofdmenu{
+		
+		@include bp('mobile'){
+			position: absolute;
+			z-index: 10;
+			width: 85%;
+			background: #fff;
+			height: calc(100vh - 60px);
+			overflow: scroll;
+		}
+		@include bp('narrow'){
+			float: right;
+		}
 
+	}
 	ul{
 		margin: 0;
 		transition: none;
 		
 		@include bp('mobile'){
-			display: none;
+			left: -110%;
+			transition: all .4s ease-in-out 0s;
+			&.active{
+				left: 0%;
+			}
 		}
 
 		&.menu{
@@ -73,7 +100,6 @@
 							(100vh - 60px - 150px) / #{$menu-item-amount}
 						);
 					}
-					
 					@include bp('narrow'){
 						text-align: left;
 						transition: none;
@@ -85,19 +111,28 @@
 
 	li{
 		position: relative;
-
+		
 		@include bp('narrow'){
-			float: left;
-			font-weight: 400;
+			display: inline-block;
 			text-transform: uppercase;
 			border-top: none;
-			margin: 0 auto;
-			border-right: 1px solid #000;
+			margin: 0 0 0 35px;
 		}
 
-		&:last-of-type {
+		&:first-of-type {
 			@include bp('narrow'){
-				border-right: 0px;
+				margin-left: 0;
+			}
+		}
+
+		&.current_page_item{
+			a{
+				font-weight: bold;
+			}
+		}
+		&.current-page-ancestor{
+			a{
+				font-weight: bold;
 			}
 		}
 
@@ -119,13 +154,36 @@
 				font-size: 16px;
 				height: calc((100vh - 60px - 50px) / #{$menu-item-amount});
 				line-height: calc((100vh - 60px - 50px) / #{$menu-item-amount});
+				padding-left: 20px;
 			}
-
+			@include bp-only('narrow', 'normal') {
+				font-size: 12px;
+			}
 			@include bp('narrow'){
 				padding: 0;
-				font-size: 20px;
 				line-height: 1em;
 			}
+			@include bp('normal'){
+				font-size: 16px;
+			}
 		}
+	}
+}
+.menu-background{
+	display: none;
+	position: fixed;
+	top: 104px;
+	right: 0;
+	bottom: 0;
+	width: 15%;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	z-index: 100;
+	transition: all .4s ease-in-out 0s;
+	&.active {
+		display: block;
+	}
+	&.show{
+		opacity: 1;
 	}
 }

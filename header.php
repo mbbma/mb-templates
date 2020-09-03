@@ -19,6 +19,19 @@
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 		<?php include('json-ld.php'); ?>
 		<script type="application/ld+json"><?php echo json_encode($payload); ?></script>
+		<?php 
+			// Enqueue gravity form scripts in the header
+			// https://docs.gravityforms.com/gravity_form_enqueue_scripts/
+			function gravity_forms_scripts_enqueue() {
+				$myforms = RGFormsModel::get_forms();
+					foreach ($myforms as $myform) {
+						if($myform ->is_active){
+							gravity_form_enqueue_scripts($myform->id, true);
+						}
+					}    	 
+			}
+			gravity_forms_scripts_enqueue();
+		?>
 		<?php wp_head(); ?>
 	</head>
 
@@ -34,6 +47,16 @@
 									<a href="/" title="<?php bloginfo('name'); ?>" rel="home">
 										<img alt="<?php bloginfo('name'); ?> logo" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
 									</a>
+								</div>
+							</div>
+							<div class="site-branding-top mobile-none animated">
+								<div class="buttons"> 
+									<a class="btn-primary" href="#" target="_blank" title="#">
+										Afspraak maken
+									</a>
+									<div class="phone">
+										of bel <a href="<?php echo do_shortcode("[contact_link detail='Phone']"); ?>" title="Bel ons"><?php echo do_shortcode("[contact_text detail='Phone']"); ?></a>
+									</div>
 								</div>
 							</div>
 							<nav id="site-navigation" class="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -52,6 +75,29 @@
 						</div>
 					</div>
 				</div>
+
+				<?php
+					$header = get_field('header');
+					if($header['image']){
+						echo '
+							<article class="header ">
+								<div class="header-image ">
+									<img src="'.wp_get_attachment_image_src($header['image'],'full')[0].'" alt="'.get_post_meta($header['image'], '_wp_attachment_image_alt', TRUE).'">
+								</div>
+								<div class="overlay">
+									<div class="columns-12 center">
+										<div class="title animated">
+											'.$header['title'].'
+										</div>
+										<div class="subtitle animated">
+											'.$header['subtitle'].'
+										</div>
+									</div>
+								</div>
+							</article>
+						';
+					}
+				?>
 			</header>
 
 			<main id="content" class="site-content">

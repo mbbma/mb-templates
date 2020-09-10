@@ -16,15 +16,20 @@ get_header(); ?>
 
 				<div class="pad-both">
 					<div class="columns-6 center">
-						<h1>Bedankt <?php echo htmlspecialchars($_GET["Naam"]) ?>,</h1>
-						<br>
-						Hartelijk bedankt voor het invullen van het formulier.<br>
-						Wij nemen zo snel mogelijk contact met u op.
-						<br><br>
-						Heeft u eerder vragen kunt u altijd contact met ons opnemen!
-						<br><br>
-						Met vriendelijke groet,<br>
-						Team <?php bloginfo( 'name' ); ?>
+						<div class="titles">
+							<h1>Bedankt <?php echo htmlspecialchars($_GET["Naam"]) ?>,</h1>
+						</div>
+						<p>
+							Hartelijk bedankt voor het invullen van het formulier.<br>
+							Wij nemen zo snel mogelijk contact met u op.
+						</p>
+						<p>
+							Heeft u eerder vragen kunt u altijd contact met ons opnemen!
+						</p>
+						<p>
+							Met vriendelijke groet,<br>
+							Team <?php bloginfo( 'name' ); ?>
+						</p>
 					</div>
 				</div>
 

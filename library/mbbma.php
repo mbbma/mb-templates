@@ -509,4 +509,15 @@ if( !function_exists('mr_tab_to_indent_in_textarea') ){
 	add_action('admin_footer-post.php', 'mr_tab_to_indent_in_textarea');
 }
 
+
+// Hide Updates counters on customer account
+function custom_admin_css() {
+    global $current_user;
+    get_currentuserinfo();
+    if ($current_user->ID != 1) {
+           echo '<style type="text/css">.update-plugins, .update-count {display: none!important; }</style>';
+    }
+}
+add_action('admin_head','custom_admin_css');
+
 ?>

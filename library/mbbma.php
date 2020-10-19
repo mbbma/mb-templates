@@ -535,4 +535,14 @@ function remove_weak_password_check_script_2() {
 }
 add_action('login_enqueue_scripts','remove_weak_password_check_script_2');
 
+// Hide Updates counters on customer account
+function custom_admin_css() {
+    global $current_user;
+    get_currentuserinfo();
+    if ($current_user->ID != 1) {
+           echo '<style type="text/css">.update-plugins, .update-count {display: none!important; }</style>';
+    }
+}
+add_action('admin_head','custom_admin_css');
+
 ?>

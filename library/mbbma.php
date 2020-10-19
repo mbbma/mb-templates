@@ -509,4 +509,30 @@ if( !function_exists('mr_tab_to_indent_in_textarea') ){
 	add_action('admin_footer-post.php', 'mr_tab_to_indent_in_textarea');
 }
 
+// Removes the "Bevestig het gebruik van een zwak wachtwoord" check, so strong passwords will be enforced.
+function remove_weak_password_check_script() {
+	?>
+		<script>
+			jQuery(document).ready(function() {
+				jQuery('.pw-weak').remove();
+			});
+		</script>
+	<?php
+}
+add_action('admin_head','remove_weak_password_check_script');
+
+function remove_weak_password_check_script_2() {
+	?>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) { 
+				var elements = document.getElementsByClassName('pw-weak');
+				console.log(elements);
+				var requiredElement = elements[0];
+				requiredElement.remove();
+			});
+		</script>
+	<?php
+}
+add_action('login_enqueue_scripts','remove_weak_password_check_script_2');
+
 ?>

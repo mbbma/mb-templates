@@ -45,17 +45,17 @@
 							<div class="site-branding">
 								<div class="logo" itemscope itemtype="http://schema.org/Organization">
 									<a href="/" title="<?php bloginfo('name'); ?>" rel="home">
-										<img alt="<?php bloginfo('name'); ?> logo" src="<?php bloginfo('template_url'); ?>/library/images/logo-feeltastic.png" />
+										<img alt="<?php bloginfo('name'); ?> logo" src="<?php echo wp_get_attachment_image_src(get_field('logo', 'options'),'full')[0] ?>" />
 									</a>
 								</div>
 							</div>
 							<div class="site-branding-top mobile-none animated">
 								<div class="buttons"> 
-									<a class="btn-primary" href="#" target="_blank" title="#">
+									<a class="btn-primary" href="#" target="_blank" title="Afspraak maken">
 										Afspraak maken
 									</a>
 									<div class="phone">
-										of bel <a href="<?php echo do_shortcode("[contact_link detail='Phone']"); ?>" title="Bel ons"><?php echo do_shortcode("[contact_text detail='Phone']"); ?></a>
+										of bel <a href="<?php echo contactDetails(array('detail' => 'phone_link')); ?>" title="Bel ons"><?php echo contactDetails(array('detail' => 'phone')); ?></a>
 									</div>
 								</div>
 							</div>
@@ -75,29 +75,6 @@
 						</div>
 					</div>
 				</div>
-
-				<?php
-					$header = get_field('header');
-					if($header['image']){
-						echo '
-							<article class="header ">
-								<div class="header-image ">
-									<img src="'.wp_get_attachment_image_src($header['image'],'full')[0].'" alt="'.get_post_meta($header['image'], '_wp_attachment_image_alt', TRUE).'">
-								</div>
-								<div class="overlay">
-									<div class="columns-12 center">
-										<div class="title animated">
-											'.$header['title'].'
-										</div>
-										<div class="subtitle animated">
-											'.$header['subtitle'].'
-										</div>
-									</div>
-								</div>
-							</article>
-						';
-					}
-				?>
 			</header>
 
 			<main id="content" class="site-content">

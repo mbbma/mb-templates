@@ -7,7 +7,6 @@ var gulp        = require('gulp'),
     sassLint    = require('gulp-sass-lint'),
     sourcemaps  = require('gulp-sourcemaps') // 2.X now supports node 0.10+ due to switching out a dependency
     runSequence = require('run-sequence'), // Runs a sequence of gulp tasks in the specified order.
-    uglify     = require('uglify-js'),
     minify = require('gulp-minify'),
    concat = require('gulp-concat');
 

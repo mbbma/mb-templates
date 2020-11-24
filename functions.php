@@ -1,18 +1,23 @@
 <?php
 	/*
-	Author: Alex van Mosel
-	URL: http://www.mbbma.nl
-
-	This is where you can drop your custom functions or
-	just edit things like thumbnail sizes, header images,
-	sidebars, comments, etc.
+		Author: Alex van Mosel
+		URL: http://www.mbbma.nl
 	*/
 
-	// LOAD MBBMA CORE 
-	require_once( 'library/mbbma.php' );
-	require_once( 'library/query.php' );
-	require_once( 'library/classes/titles.php' );
+	// Required classes
+	require_once('library/classes/title.php');
+	require_once('library/classes/button.php');
 
+	// Required functions
+	require_once('library/functions/acf-blocks.php');
+	require_once('library/functions/acf-options-page.php');
+	require_once('library/functions/cleanup.php');
+	require_once('library/functions/contact-details.php');
+	require_once('library/functions/enqueueing.php');
+	require_once('library/functions/login.php');
+	require_once('library/functions/pagination.php');
+	require_once('library/functions/randomness.php');
+	require_once('library/functions/theme-support.php');
 
 	function mbbma_setup() {
 		// let's get language support going, if you need it
@@ -42,135 +47,15 @@
 	}
 
 	// let's get this party started
-	add_action( 'after_setup_theme', 'mbbma_setup' );
+	add_action( 'after_setup_theme', 'mbbma_setup' );	
 
 
-	/************* ACTIVE WIDGETS ********************/
-	function mbbma_widgets_init() {
-		register_sidebar( array(
-			'name'			=> 'Footer Columns First',
-			'id'			=> 'footer-columns-1',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
-		) );
-		register_sidebar( array(
-			'name'			=> 'Footer Columns Second',
-			'id'			=> 'footer-columns-2',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
-		) );
-		register_sidebar( array(
-			'name'			=> 'Footer Columns Third',
-			'id'			=> 'footer-columns-3',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
-		) );
-		register_sidebar( array(
-			'name'			=> 'Footer Columns Fourth',
-			'id'			=> 'footer-columns-4',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
-		) );
-	}
-
-	add_action( 'widgets_init', 'mbbma_widgets_init' );
-
-	/************* COMMENT LAYOUT *********************/
-	// Comment Layout
-	function mbbma_comments( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment; ?>
-		<div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
-			<article  class="cf">
-				<header class="comment-author vcard">
-					<?php
-					// create variable
-					$bgauthemail = get_comment_author_email();
-					?>
-					<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
-					<?php // end custom gravatar call ?>
-					<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'mbbma' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'mbbma' ),'  ','') ) ?>
-					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'mbbma' )); ?> </a></time>
-				</header>
-				<?php if ($comment->comment_approved == '0') : ?>
-					<div class="alert alert-info">
-					<p><?php _e( 'Your comment is awaiting moderation.', 'mbbma' ) ?></p>
-					</div>
-				<?php endif; ?>
-				<section class="comment_content cf">
-					<?php comment_text() ?>
-				</section>
-				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-			</article>
-		</div>
-<?php
-}
-	/**
-	 * Implement the Custom Header feature.
-	 */
-	//require get_template_directory() . 'library/inc/custom-header.php';
-
-	/**
-	 * Custom template tags for this theme.
-	 */
+	// Custom template tags for this theme.
 	require get_template_directory() . '/library/inc/template-tags.php';
 
-	/**
-	 * Custom functions that act independently of the theme templates.
-	 */
+	// Custom functions that act independently of the theme templates.
 	require get_template_directory() . '/library/inc/extras.php';
 
-	/**
-	 * Load Woocommerce compatibility file.
-	 */
+	// Load Woocommerce compatibility file.
 	//require get_template_directory() . '/library/inc/woocommerce.php';
-
-	/* Login page aanpassingen */
-
-	//http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
-	function mbbma_login_css() {
-		wp_enqueue_style( 'mbbma_login_css', get_template_directory_uri() . '/library/css/login.css', false );
-	}
-
-	// changing the alt text on the logo to show your site name
-	function mbbma_login_title() { return get_option( 'blogname' ); }
-
-	// changing the logo link from wordpress.org to your site
-	function mbbma_login_url() {  return home_url(); }
-
-	// calling it only on the login page
-	add_action( 'login_enqueue_scripts', 'mbbma_login_css', 10 );
-	add_filter( 'login_headerurl', 'mbbma_login_url' );
-	add_filter( 'login_headertitle', 'mbbma_login_title' );
-
-	// Tab toevoegen
-	if( !function_exists('mr_tab_to_indent_in_textarea') ){
-	  function mr_tab_to_indent_in_textarea() {
-	    $tabindent = '<script>
-	jQuery(function($) {
-	      $("textarea#content, textarea#wp_mce_fullscreen").keydown(function(e){  
-	        if( e.keyCode == 9 ){
-	        console.log("tab");
-	        e.preventDefault();
-	        var textarea = $(this)[0], start = textarea.selectionStart, before = textarea.value.substring(0, start), after = textarea.value.substring(start, textarea.value.length);
-	        textarea.value = before + "\t" + after; textarea.setSelectionRange(start+1,start+1);  
-	    }
-	      });
-	    });
-	</script>';
-	    echo $tabindent;
-	  }
-	 
-	  add_action('admin_footer-post-new.php', 'mr_tab_to_indent_in_textarea');
-	  add_action('admin_footer-post.php', 'mr_tab_to_indent_in_textarea');
-	}
-
-
 ?>

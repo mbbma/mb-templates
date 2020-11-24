@@ -5,14 +5,38 @@
 	$block = get_field('centered_content_block');
 	$blockID = get_field('block_id') ? 'id="'.get_field('block_id').'"' : '';
 	$padding = blockPadding(get_field('block_padding'));
+	$blockTitle = get_field('block_title');
 ?>
 
-<?php echo do_shortcode('[raw]'); ?>
 <?php if($block){ ?>
+	[raw]
 	<article <?php echo $blockID; ?> class="centered-content <?php echo $padding; ?>">
 		<div class="columns-12 center">
 			<div class="content-wrapper">
 				<?php
+					$title = new BlockTitle(
+						$blockTitle['title'],
+						$blockTitle['title_type']
+					);
+
+					if($blockTitle['title_link']){
+						$title->setLink(
+							$blockTitle['title_link']['url'],
+							$blockTitle['title_link']['title'],
+							$blockTitle['title_link']['target'],
+						);
+					}
+
+					if($blockTitle['subtitle']){
+						$title->setSubtitle(
+							$blockTitle['subtitle']
+						);
+					}
+
+					$title->setLook('h2');
+
+					echo $title->getTitle();
+
 					if($block['content']):
 						foreach ($block['content'] as $key => $value) {
 							switch ($value['acf_fc_layout']) {
@@ -24,14 +48,17 @@
 
 									if($value['title_link']){
 										$title->setLink(
-											$value['title_link'],
-											$value['title_title']
+											$value['title_link']['url'],
+											$value['title_link']['title'],
+											$value['title_link']['target'],
 										);
 									}
 
-									$title->setLook('h3');
+									$title->setLook('h4');
+									
+									$title->setClass('no-margin');
 
-									echo $title;
+									echo $title->getTitle();
 									break;
 
 								case 'text':
@@ -57,11 +84,33 @@
 								case 'buttons':
 									echo '<div class="buttons">';
 									foreach ($value['buttons'] as $key => $row) {
-										echo '
-											<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-primary">
-												'.$row['button_text'].'
-											</a>
-										';
+										$button = new BlockButton($row['button_text']);
+
+										switch ($row['button_type']) {
+											case 'link':
+												$button->setLink(
+													$row['button_link']['url'],
+													$row['button_link']['title'],
+													$row['button_link']['target'],
+												);
+												break;
+
+											case 'popup':
+												$button->setPopup($row['button_popup']);
+												break;
+											
+											default:
+												break;
+										}
+										echo $button->getButton();
+
+										if($row['phone']){
+											echo '
+												<div class="phone">
+													of bel <a href="'.contactDetails(array('detail' => 'phone_link')).'" title="Bel ons">'.contactDetails(array('detail' => 'phone')).'</a>
+												</div>
+											';
+										}
 									}
 									echo '</div>';
 									break;
@@ -75,5 +124,5 @@
 			</div>
 		</div>
 	</article>
+	[/raw]
 <?php } ?>
-<?php echo do_shortcode('[/raw]'); ?>

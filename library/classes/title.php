@@ -20,9 +20,10 @@
 			';
 		}
 
-		function setLink($link, $linkTitle){
+		function setLink($link, $linkTitle, $linkTarget){
+			$target = $linkTarget == '_blank' ? ' target="_blank"' : '';
 			$this->title = '
-				<a href="'.$link.'" title="'.$linkTitle.'">
+				<a href="'.$link.'" title="'.$linkTitle.'" '.$target.'>
 					'.$this->title.'
 				</a>
 			';
@@ -38,6 +39,10 @@
 
 		function setLook($look){
 			$this->look = 'class="'.$look.'"';
+		}
+
+		function setClass($class){
+			$this->classes = " ".$class;
 		}
 	}
 ?>

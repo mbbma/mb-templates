@@ -5,15 +5,16 @@
 	$block = get_field('content_image_block');
 	$blockID = get_field('block_id') ? 'id="'.get_field('block_id').'"' : '';
 	$padding = blockPadding(get_field('block_padding'));
+	$blockTitle = get_field('block_title');
 ?>
 
-<?php echo do_shortcode('[raw]'); ?>
 <?php if($block){ ?>
+	[raw]
 	<?php
 		$order = 'order-' . $block['order'];
 	?>
-	<article <?php echo $blockID; ?> class="content-image <?php echo $padding; ?>">
-		<div class="content-wrapper <?php echo $order; ?>">
+	<article <?php echo $blockID; ?> class="content-image light-background <?php echo $padding; ?>">
+		<div class="content-wrapper pad-both <?php echo $order; ?>">
 			<div class="columns-12 center">
 				<div class="grid">
 					<?php
@@ -28,68 +29,95 @@
 					<div class="content">
 						<?php
 							$title = new BlockTitle(
-								$block['title'],
-								$block['title_type']
+								$blockTitle['title'],
+								$blockTitle['title_type']
 							);
 
-							if($block['title_link']){
+							if($blockTitle['title_link']){
 								$title->setLink(
-									$block['title_link'],
-									$block['title_title']
+									$blockTitle['title_link']['url'],
+									$blockTitle['title_link']['title'],
+									$blockTitle['title_link']['target'],
+								);
+							}
+
+							if($blockTitle['subtitle']){
+								$title->setSubtitle(
+									$blockTitle['subtitle']
 								);
 							}
 
 							$title->setLook('h2');
 							
-							echo $title;
+							echo $title->getTitle();
 
 							if($block['content']):
 								foreach ($block['content'] as $key => $value) {
 									switch ($value['acf_fc_layout']) {
 										case 'title':
-											echo '
-												<div class="titles">
-													<h3>'.$value['title'].'</h3>
-												</div>
-											';
+											$title = new BlockTitle(
+												$value['title'],
+												$value['title_type']
+											);
+		
+											if($value['title_link']){
+												$title->setLink(
+													$value['title_link']['url'],
+													$value['title_link']['title'],
+													$value['title_link']['target'],
+												);
+											}
+		
+											$title->setLook('h3');
+		
+											echo $title->getTitle();
 											break;
+
 										case 'text':
 											echo $value['text'];
 											break;
+
 										case 'list':
 											$listItems = '';
 											foreach ($value['list'] as $key => $row) {
 												$listItems .= '<li>' . $row['item'] . '</li>';
 											}
-											echo '<ul class="caret">' . $listItems . '</ul>';
+											echo '<ul class="check">' . $listItems . '</ul>';
 											break;
 
-											case 'buttons':
-												echo '<div class="buttons">';
-												foreach ($value['buttons'] as $key => $row) {
-													switch ($row['button_type']) {
-														case 'Link':
-															echo '
-																<a href="'.$row['button_link'].'" title="'.$row['button_text'].'" class="btn-primary">
-																	'.$row['button_text'].'
-																</a>
-															';
-															break;
-														case 'Popup':
-															echo '
-																<div class="btn-primary show-popup" data-value="'.strtolower(str_replace(" ", "-", $row['button_popup']['value'])).'">
-																	'.$row['button_text'].'
-																</div>
-															';
-															break;
-														
-														default:
-															# code...
-															break;
-													}
+										case 'buttons':
+											echo '<div class="buttons">';
+											foreach ($value['buttons'] as $key => $row) {
+												$button = new BlockButton($row['button_text']);
+		
+												switch ($row['button_type']) {
+													case 'link':
+														$button->setLink(
+															$row['button_link']['url'],
+															$row['button_link']['title'],
+															$row['button_link']['target'],
+														);
+														break;
+		
+													case 'popup':
+														$button->setPopup($row['button_popup']);
+														break;
+													
+													default:
+														break;
 												}
-												echo '</div>';
-												break;
+												echo $button->getButton();
+		
+												if($row['phone']){
+													echo '
+														<div class="phone">
+															of bel <a href="'.contactDetails(array('detail' => 'phone_link')).'" title="Bel ons">'.contactDetails(array('detail' => 'phone')).'</a>
+														</div>
+													';
+												}
+											}
+											echo '</div>';
+											break;
 										
 										default:
 											break;
@@ -102,5 +130,5 @@
 			</div>
 		</div>
 	</article>
+	[/raw]
 <?php } ?>
-<?php echo do_shortcode('[/raw]'); ?>

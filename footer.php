@@ -33,7 +33,7 @@
 				</div>
 				<div id="zone-footer-wrapper-2">
 					<div id="zone-footer-2">
-					&copy; <?php echo date('Y'); ?>: <a href="https://www.mbbedrijfskundigmarketingadvies.nl/" title="MB - Bedrijfskundig Marketing Advies" target="_blank">MB - Bedrijfskundig Marketing Advies</a> | <a href="/contact/sitemap/" title="Sitemap">Sitemap</a> | <a href="/contact/online-samenwerkingen/" title="Samenwerkingen">Samenwerkingen</a> | <a href="/contact/privacy-statement/" title="Privacy statement">Privacy statement</a> | <a href="/contact/disclaimer/" title="Disclaimer">Disclaimer</a>
+					&copy; <?php echo date('Y'); ?>: <a href="https://www.mbbedrijfskundigmarketingadvies.nl/" title="MB - Bedrijfskundig Marketing Advies" target="_blank">MB - Bedrijfskundig Marketing Advies</a> | <a href="/sitemap/" title="Sitemap">Sitemap</a> | <a href="/contact/online-samenwerkingen/" title="Samenwerkingen">Samenwerkingen</a> | <a href="/contact/privacy-statement/" title="Privacy statement">Privacy statement</a> | <a href="/contact/disclaimer/" title="Disclaimer">Disclaimer</a>
 					</div>
 				</div>
 			</footer>

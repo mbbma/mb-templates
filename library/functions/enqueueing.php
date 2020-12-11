@@ -29,4 +29,9 @@
 			wp_enqueue_script( 'mbbma-js' );
 		}
 	}
+
+	add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+	function load_admin_style() {
+		wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/library/css/admin.css', array(), filemtime( get_stylesheet_directory().'/library/css/style.css' ), 'all' );
+	}
 ?>

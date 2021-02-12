@@ -81,4 +81,20 @@
 		}
 		return $padding;
 	}
+
+		// Disable standard Wordpress / Woocommerce blocks
+		add_filter( 'allowed_block_types', 'allowed_block_types', 10, 2 );
+		function allowed_block_types( $allowed_blocks, $post ) {
+		
+			$allowed_blocks = array(
+				'core/html',
+				'core/shortcode',
+				'acf/contact',
+				'acf/content-image',
+				'acf/centered-content',
+				'acf/faq',
+			);
+		
+			return $allowed_blocks;
+		}
 ?>

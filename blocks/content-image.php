@@ -21,7 +21,7 @@
 						if($block['image']){
 							echo '
 								<div class="image">
-									<img src="'.wp_get_attachment_image_src($block['image'],'full')[0].'" alt="'.get_post_meta($block['image'], '_wp_attachment_image_alt', TRUE).'">
+									<img src="'.$block['image']['url'].'" alt="'.$block['image']['alt'].'" loading="lazy" width="'.$block['image']['width'].'" height="'.$block['image']['height'].'">
 								</div>
 							';
 						}
@@ -73,16 +73,8 @@
 											echo $title->getTitle();
 											break;
 
-										case 'text':
-											echo $value['text'];
-											break;
-
-										case 'list':
-											$listItems = '';
-											foreach ($value['list'] as $key => $row) {
-												$listItems .= '<li>' . $row['item'] . '</li>';
-											}
-											echo '<ul class="check">' . $listItems . '</ul>';
+										case 'content':
+											echo $value['content'];
 											break;
 
 										case 'buttons':

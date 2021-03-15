@@ -17,7 +17,7 @@ textarea,
 .field {
 	display: block;
 	line-height: 1.3em;
-	padding: 10px 35px;
+	padding: 10px 20px;
 	font-size: 1em;
 	color: $text-color;
 	border-radius: 0;
@@ -56,14 +56,19 @@ select {
 			display: none;
 		}
 		li.gfield {
-			margin: 0 0 0.8em;
+			margin: 10px 0 0;
 			position: relative;
+			&:first-child,
+			&.gform_hidden{
+				margin-top: 0;
+			}
 			.ginput_container {
 				margin: 0;
 				&:before,
 				&:after {
 					font-family: $fa;
 					color: $btn-primary;
+					font-weight: 700;
 					position: absolute;
 					top: 10px;
 					z-index: 10;
@@ -95,6 +100,9 @@ select {
 		textarea {
 			border-color: #f00;
 		}
+	}
+	.gform_footer{
+		margin-top: 1em;
 	}
 	// Honeypot
 	.gform_validation_container{

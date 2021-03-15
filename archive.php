@@ -8,52 +8,35 @@
  */
 
 get_header(); ?>
-
-<?php if ( have_posts() ) : ?>
-
-	<header class="entry-header page-head">
+	<article class="news-overview pad-bottom">
 		<div class="columns-12 center">
-			<h1 class="page-title">
-				<?php
-					if (is_category()){
-						single_cat_title();
-					}
-				?>
-			</h1>
-		
+			<div class="titles text-center">
+				<h1 class="h2">
+					Nieuws
+				</h1>
+			</div>
+			
 			<?php
-				$term_description = term_description();
-				if ( ! empty( $term_description ) ) :
-					printf( '<div class="taxonomy-description">%s</div>', $term_description );
-				endif;
-			?>
-		</div>
-	</header>
+				echo get_search_form();
 
-	<div class="columns-12 center">
-		<section id="primary" class="content-area content-sidebar columns-8 float-left">
-			<div id="main" class="site-main" role="main">
-				<?php
+
+				if ( have_posts() ) :
+					echo '<div class="grid">';
 					while ( have_posts() ) : the_post();
 						get_template_part( 'content', get_post_format() );
-					
 					endwhile;
-				?>
+					echo '</div>';
+			?>
 
 				<div class="page-number-wrapper">
 					<?php wpex_pagination(); ?>
 				</div>
 
-			<?php else : ?>
-
-				<?php get_template_part( 'content', 'none' ); ?>
-
-			<?php endif; ?>
-
-			</div>
-		</section>
-
-		<?php get_sidebar(); ?>
-
-	</div>
+			<?php
+				else :
+					get_template_part( 'content', 'none' );
+				endif;
+			?>
+		</div>
+	</article>
 <?php get_footer(); ?>

@@ -3,9 +3,12 @@
 	#zone-footer {
 		margin: 0 auto;
 		padding: 30px 0;
-		display: table;
-		font-weight: 300;
 		font-size: 12px;
+
+		@include bp('narrow'){
+			display: flex;
+			justify-content: space-between;
+		}
 		ul {
 			margin: 0 0 20px;
 			list-style: none;

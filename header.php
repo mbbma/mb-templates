@@ -24,11 +24,11 @@
 			// https://docs.gravityforms.com/gravity_form_enqueue_scripts/
 			function gravity_forms_scripts_enqueue() {
 				$myforms = RGFormsModel::get_forms();
-					foreach ($myforms as $myform) {
-						if($myform ->is_active){
-							gravity_form_enqueue_scripts($myform->id, true);
-						}
-					}    	 
+				foreach ($myforms as $myform) {
+					if($myform ->is_active){
+						gravity_form_enqueue_scripts($myform->id, true);
+					}
+				}
 			}
 			gravity_forms_scripts_enqueue();
 		?>
@@ -44,7 +44,7 @@
 						<div id="region-header">
 							<div class="site-branding">
 								<div class="logo" itemscope itemtype="http://schema.org/Organization">
-									<a href="/" title="<?php bloginfo('name'); ?>" rel="home">
+									<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" rel="home">
 										<img alt="<?php bloginfo('name'); ?> logo" src="<?php echo wp_get_attachment_image_src(get_field('logo', 'options'),'full')[0] ?>" />
 									</a>
 								</div>

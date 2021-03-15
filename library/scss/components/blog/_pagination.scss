@@ -1,136 +1,28 @@
-.pagination,
-.wp-prev-next {
-	margin: 1.5em 0;
-}
-.pagination {
-	text-align: center;
-	ul {
-		display: inline-block;
-		background-color: #fff;
-		white-space: nowrap;
-		padding: 0;
-		clear: both;
-		border-radius: 3px;
-	}
-	li {
+.page-number-wrapper {
+	margin: 2.2em auto 0;
+	display: table;
+	position: relative;
+	ul.page-numbers{
 		padding: 0;
 		margin: 0;
-		display: inline;
-		overflow: hidden;
-		border-right: 1px solid $gray;
+		white-space: nowrap;
+		li {
+			float: left;
+			border-right: 1px solid $hue1;
+			&:last-child{
+				border: none;
+			}
+		}
 	}
 	a,
 	span {
-		margin: 0;
-		text-decoration: none;
-		padding: 0;
 		line-height: 1em;
-		font-size: 1em;
-		font-weight: normal;
-		padding: 0.75em;
-		min-width: 1em;
-		display: block;
-		color: #000;
-		&:hover,
-		&:focus {
-			background-color: #000;
-			color: #fff;
-		}
-	}
-	.current {
-		cursor: default;
-		color: $text-color;
-		&:hover,
-		&:focus {
-			background-color: #fff;
-			color: $text-color;
-		}
-	}
-}
-.wp-prev-next {
-	.prev-link {
-		float: left;
-	}
-	.next-link {
-		float: right;
-	}
-}
-
-ul.page-numbers {
-	list-style: none;
-	margin: 0;
-}
-
-ul.page-numbers {
-	border-width: 1px 0 1px 1px;
-	clear: both;
-	display: inline-block;
-	padding: 0;
-	white-space: nowrap;
-}
-
-ul.page-numbers li {
-	display: inline;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-}
-.prev{
-	i{
-		font-size: 16px;
-	}
-}
-.page-numbers a,
-.page-numbers span {
-	display: block;
-	font-size: 1em;
-	font-weight: normal;
-	line-height: 1em;
-	margin: 0;
-	min-width: 1em;
-	padding: 15px 10px;
-	text-decoration: none;
-
-}
-.page-numbers{
-	float: left;
-	font-size: 16px;
-}
-.page-numbers.current {
-	background-color: #003855;
-	color: white;
-	display: table;
-	font-weight: bold;
-	background: #fff;
-	position: relative;
-}
-.page-number-wrapper {
-	text-align: left;
-	display: table;
-	width: 100%;
-	position: relative;
-	&:before{
-		content: "";
-		position: absolute;
-		height: 2px;
-		background: #003855;
-		left: 0;
-		right: 2px;
-		bottom: 0;
-		margin: auto;
-		top: -44.5px;
-		z-index: 100;
-	}
-	a{
-		text-transform: uppercase;
+		padding: 0 10px;
+		text-decoration: none;
 		font-weight: 400;
-		position: relative;
-		z-index: 1;
-		background: #fff;
-		padding-left: 15px;
-		color: #003855;
-	}
-	.next{
-		display: none;
+		color: $hue1;
+		&.current {
+			font-weight: bold;
+		}
 	}
 }

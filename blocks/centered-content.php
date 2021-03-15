@@ -61,22 +61,14 @@
 									echo $title->getTitle();
 									break;
 
-								case 'text':
-									echo $value['text'];
-									break;
-
-								case 'list':
-									$listItems = '';
-									foreach ($value['list'] as $key => $row) {
-										$listItems .= '<li>' . $row['item'] . '</li>';
-									}
-									echo '<ul class="caret">' . $listItems . '</ul>';
+								case 'content':
+									echo $value['content'];
 									break;
 
 								case 'image':
 									echo '
 										<div class="image">
-											<img src="'.wp_get_attachment_image_src($value['image'],'full')[0].'" alt="'.get_post_meta($value['image'], '_wp_attachment_image_alt', TRUE).'">
+											<img src="'.$value['image']['url'].'" alt="'.$value['image']['alt'].'" loading="lazy" width="'.$value['image']['width'].'" height="'.$value['image']['height'].'">
 										</div>
 									';
 									break;
@@ -119,7 +111,7 @@
 									break;
 							}
 						}
-					endif;			
+					endif;
 				?>
 			</div>
 		</div>

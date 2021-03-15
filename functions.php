@@ -18,6 +18,7 @@
 	require_once('library/functions/pagination.php');
 	require_once('library/functions/randomness.php');
 	require_once('library/functions/theme-support.php');
+	require_once('library/functions/user-roles.php');
 
 	function mbbma_setup() {
 		// let's get language support going, if you need it

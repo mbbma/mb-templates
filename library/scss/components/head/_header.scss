@@ -56,7 +56,6 @@ header{
 						}
 					}
 				}
-				
 
 				.phone-icon{
 					@include bp('mobile'){
@@ -75,68 +74,6 @@ header{
 						}
 					}
 				}
-			}
-		}
-	}
-
-	article.header{
-		position: relative;
-		.header-image{
-			&.small-header{
-				img{
-					@include bp('narrow'){
-						height: 350px;
-					}
-				}
-			}
-			img{
-				display: block;
-				object-fit: cover;
-				object-position: 35%;
-				width: 100%;
-				@include bp('mobile'){
-					height: 250px;
-				}
-				@include bp('narrow'){
-					height: 430px;
-				}
-			}
-		}
-		.overlay{
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			text-align: center;
-			color: #fff;
-			text-shadow: 0 0 12px rgba(0,0,0,0.5);
-
-			@include bp('mobile'){
-				width: 100%;
-				top: 50%;
-			}
-			@include bp('narrow'){
-				top: calc(50% - 30px);
-			}
-
-			.title{
-				line-height: 1em;
-				margin-bottom: 0.15em;
-
-				@include bp('mobile'){
-					font-size: 40px;
-				}
-				@include bp('narrow'){
-					font-size: 60px;
-				}
-			}
-			.subtitle{
-				@include bp('mobile'){
-					font-size: 25px;
-				}
-				@include bp('narrow'){
-					font-size: 35px;
-				}
-				line-height: 1.2em;
 			}
 		}
 	}

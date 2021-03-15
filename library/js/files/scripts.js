@@ -341,19 +341,6 @@ jQuery(document).ready(function($) {
 	}
 
 	/***************************
-	IE object fit
-	***************************/
-	if ( ! Modernizr.objectfit ) {
-		$('.object-fit').each(function () {
-			var $container = $(this),
-			imgUrl = $container.find('img').prop('src');
-
-			if (imgUrl) {
-				$container.css('backgroundImage', 'url(' + imgUrl + ')');
-			}
-		});
-	}
-	/***************************
 		Ajax url Declaration
 	***************************/	
 	var ajaxUrl = $('.site-branding .logo a').attr('href') + 'wp-admin/admin-ajax.php';

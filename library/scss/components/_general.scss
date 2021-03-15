@@ -47,11 +47,13 @@ input[type="submit"],
 input[type="submit"]:hover,
 button,
 button:hover {
-	transition: $transition;
+	&:not(.slick-track):not(.slick-list){
+		transition: $transition;
+	}
 }
 
 a {
-	color: $link-color;
+	color: inherit;
 	text-decoration: none;
 	&:hover,
 	&:focus {

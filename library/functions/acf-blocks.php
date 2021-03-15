@@ -88,6 +88,10 @@
 		
 			$allowed_blocks = array(
 				'core/html',
+				'core/list',
+				'core/image',
+				'core/paragraph',
+				'core/quote',
 				'core/shortcode',
 				'acf/contact',
 				'acf/content-image',

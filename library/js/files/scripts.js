@@ -397,11 +397,14 @@ jQuery(document).ready(function($) {
 			$('.popup[data-name="' + popupValue + '"]').addClass('show');
 		}, 100);
 	});
-	$('.popup-background').click(function(){
-		$('.popup, .popup-background').removeClass('active show');
-		$('body').removeClass('no-scroll');
-	});
-	$(document).on('click', '.popup .close', function(){
+	$(document).on('click', '.popup .close, .popup-background', function(){
+		
+		// If video popup
+		var src = $('.popup.active iframe').attr("src");
+		$('.popup.active iframe').attr("src", '');
+		$('.popup.active iframe').attr("src", src);
+		
+		
 		$('.popup, .popup-background').removeClass('active show');
 		$('body').removeClass('no-scroll');
 	});

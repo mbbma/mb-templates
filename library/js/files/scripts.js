@@ -374,14 +374,19 @@ jQuery(document).ready(function($) {
 
 				$('.popups .popup').each(function(){
 					let pageURL = window.location.href;
-					let siteUrl = $('.site-branding .logo a').attr('href');
+					var pageURLArr = pageURL.split("/");
+					var siteUrl = pageURLArr[0] + "//" + pageURLArr[2];
 					let formAction = pageURL.replace(siteUrl, '');
 					let formAnchor = $(this).find('.gform_anchor').attr('id');
-					$(this).find('form').attr('action','/'+formAction+'#'+formAnchor+'');
+					$(this).find('form').attr('action',''+formAction+'#'+formAnchor+'');
 				});
 			}
 		});
 	}
+
+	$(document).on('click','.popup .gform_button', function(e){
+		window.document.dispatchEvent(new Event("DOMContentLoaded", { bubbles: true, cancelable: true }));
+	});
 
 	/***************************
 	Popup

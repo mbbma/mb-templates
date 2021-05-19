@@ -29,4 +29,12 @@
 		return 'subadmin';
 		return $default_role;
 	});
+
+
+	// Giving subadmins Access to Gravity Forms
+	function add_grav_forms(){
+		$role = get_role('subadmin');
+		$role->add_cap('gform_full_access');
+	}
+	add_action('admin_init','add_grav_forms');
 ?>

@@ -1,84 +1,67 @@
-var gulp        = require('gulp'),
-    sass        = require('gulp-sass'),
-    cssmin      = require('gulp-cssnano'), // Minify CSS
-    prefix      = require('gulp-autoprefixer'),
-    plumber     = require('gulp-plumber'), // This 🐒-patch plugin is fixing issue with Node Streams piping
-    notify      = require('gulp-notify'), // notification plugin for gulp
-    sassLint    = require('gulp-sass-lint'),
-    sourcemaps  = require('gulp-sourcemaps') // 2.X now supports node 0.10+ due to switching out a dependency
-    runSequence = require('run-sequence'), // Runs a sequence of gulp tasks in the specified order.
-    minify = require('gulp-minify'),
-   concat = require('gulp-concat');
+const { src, dest, watch, series, parallel } = require('gulp');
 
-var displayError = function(error) {
+// Importing all the Gulp-related packages we want to use
+const sourcemaps      = require('gulp-sourcemaps');
+const sass            = require('gulp-sass');
+const concat          = require('gulp-concat');
+const postcss         = require('gulp-postcss');
+const autoprefixer    = require('autoprefixer');
+const cssnano         = require('cssnano');
+const plumber         = require('gulp-plumber'); 
+const notify          = require("gulp-notify");
+const minify          = require('gulp-minify');
 
-  var errorString = '[' + error.plugin.error.bold + ']';
-  errorString += ' ' + error.message.replace("\n",''); // Removes new line at the end
+// File paths
+const files = { 
+    scssPath: 'scss/**/*.scss',
+    jsPath: 'js/files/*.js'
+}
 
-  if(error.fileName)
-      errorString += ' in ' + error.fileName;
-
-  if(error.lineNumber)
-      errorString += ' on line ' + error.lineNumber.bold;
-
-  // This will output an error like the following:
-  // [gulp-sass] error message in file_name on line 1
-  console.error(errorString);
-};
 
 var onError = function(err) {
   notify.onError({
-    title:    "Gulp",
-    subtitle: "MB!",
+    title:    "Gulp Error",
     message:  "Error: <%= error.message %>",
-    sound:    "gulps"
+    sound:    "Purr",
   })(err);
   this.emit('end');
 };
 
-var sassOptions = {
-  outputStyle: 'expanded'
-};
 
-var prefixerOptions = {
-  Browserslist: ['last 2 versions']
-};
-gulp.task('styles', function() {
-  return gulp.src('scss/*.scss')
-    .pipe(plumber({errorHandler: onError}))
-    .pipe(sourcemaps.init())
-    .pipe(sass(sassOptions))
-    .pipe(prefix(prefixerOptions))
-    .pipe(gulp.dest('css'))
-    .pipe(cssmin({zindex: false}))
-    .pipe(gulp.dest('css'))
-});
+// Sass task: compiles the style.scss file into style.css
+function scssTask(){    
+    return src(files.scssPath)
+        .pipe(plumber({errorHandler: onError}))
+        .pipe(sourcemaps.init()) // initialize sourcemaps first
+        .pipe(sass()) // compile SCSS to CSS
+        .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
+        .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+        .pipe(dest('css') // put final CSS in dist folder
+    ); 
+}
 
-gulp.task('sass-lint', function() {
-  gulp.src('scss/**/*.scss')
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError());
-});
+// JS task: concatenates and uglifies JS files to script.js
+function jsTask(){
+    return src([
+        files.jsPath
+        //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
+        ])
+        .pipe(plumber({errorHandler: onError}))
+        .pipe(concat('all.js'))
+        .pipe(minify({noSource: true}))
+        .pipe(dest('js')
+    );
+}
 
-gulp.task('compress', function() {
-  gulp.src(['js/files/*.js'])
-    .pipe(concat('all.js'))
-    .pipe(minify({noSource: true}))
-    .pipe(gulp.dest('js'));
-});
+function watchTask(){
+    watch([files.scssPath, files.jsPath],
+        series(
+            parallel(scssTask, jsTask),
+        )
+    );    
+}
 
-gulp.task('watch', function() {
-    gulp.watch('scss/**/*.scss', ['styles']);
-    gulp.watch("js/files/*.js", ['compress']);
-});
-
-
-gulp.task('default', function(done) {
-  runSequence('styles', 'watch','compress', done);
-});
-
-gulp.task('build', function(done) {
-  runSequence('styles', done);
-});
-
+exports.default = series(
+    parallel(scssTask, jsTask), 
+    watchTask
+);

@@ -15,7 +15,6 @@
 					$field['choices'][ $value ] = $label;
 				}
 		}
-
 		// return the field
 		return $field;
 	}
@@ -43,43 +42,106 @@
 	}
 	add_filter('acf/load_field/name=button_popup', 'load_popups_names');
 
+// Adding GLOBAL VAR
+function add_global_popup_var() {
+	global $popups;
+	$popups = [];
+	global $popups_names;
+	$popups_names = [];
+	global $popups_forms_ids;
+	$popups_forms_ids = [];
+}
+add_action( 'after_setup_theme', 'add_global_popup_var' );
 
-	add_action('wp_ajax_load_popups_by_ajax', 'load_popups_by_ajax_callback');
-	add_action('wp_ajax_nopriv_load_popups_by_ajax', 'load_popups_by_ajax_callback');
+// Adding GLOBAL VAR
+function add_global_popup($popup_name) {
+	global $popups;
+	global $popups_names;
+	global $popups_forms_ids;
 
-	function load_popups_by_ajax_callback() {
-		$popups = $_POST['popups'];
 
-		$popupsArray[] = explode(",", $popups);
-		$count = 0;
-		if( have_rows('pop_ups_group', 'option') ):
-			while (have_rows('pop_ups_group', 'option')) : the_row();
-				if( have_rows('pop_ups_repeater', 'option') ):
-					while (have_rows('pop_ups_repeater', 'option')) : the_row();
-						if (in_array(strtolower(str_replace(" ", "-", get_sub_field('pop_up_name'))), $popupsArray[0])) {
-							echo '<div class="popup" data-name="'.strtolower(str_replace(" ", "-", get_sub_field('pop_up_name'))).'">
-									<div class="close">
-										<div class="line first-line"></div>
-										<div class="line last-line"></div>
-									</div>
-									<div class="content">
-										<div class="text-center">
-											<h3 class="h2">
-												'.get_sub_field('pop_up_title').'
-											</h3>
-											<div class="form">
-												'.do_shortcode('[gravityform id="'.get_sub_field('pop_up_form')['value'].'" title="false" description="false" ajax="true"]').'
-											</div>
-										</div>
-									</div>
-								</div>';
+	if( have_rows('pop_ups_group', 'option') ):
+		while (have_rows('pop_ups_group', 'option')) : the_row();
+			if( have_rows('pop_ups_repeater', 'option') ):
+				while (have_rows('pop_ups_repeater', 'option')) : the_row();
+					if (strtolower(str_replace(" ", "-", get_sub_field('pop_up_name'))) == $popup_name) {
+						if(!in_array(strtolower(str_replace(" ", "-", get_sub_field('pop_up_name'))), $popups_names, true)){
+							if(!in_array(get_sub_field('pop_up_form'),$popups_forms_ids)){
+								$popups_temp = [
+									'popup_name' 	=>	strtolower(str_replace(" ", "-", get_sub_field('pop_up_name'))),
+									'title' 		=> 	get_sub_field('pop_up_title'),
+									'form_id'		=>	get_sub_field('pop_up_form'),
+									'multi-titles'	=>	false,
+								];
+								$popups[] = $popups_temp;
+								$popups_names[] = strtolower(str_replace(" ", "-", get_sub_field('pop_up_name')));
+								$popups_forms_ids[] = get_sub_field('pop_up_form');
+							}else{
+								$popups_temp = [
+									'popup_name' 	=>	strtolower(str_replace(" ", "-", get_sub_field('pop_up_name'))),
+									'title' 		=> 	get_sub_field('pop_up_title'),
+									'form_id'		=>	get_sub_field('pop_up_form'),
+									'multi-titles'	=>	true,
+								];
+								$popups[] = $popups_temp;
+								$popups_names[] = strtolower(str_replace(" ", "-", get_sub_field('pop_up_name')));
+								$popups_forms_ids[] = get_sub_field('pop_up_form');
+							}
 						}
-						$count++;
-					endwhile;
-				endif;
-			endwhile;
-		endif;
+					}
+				endwhile;
+			endif;
+		endwhile;
+	endif;
+}
 
-		die();
-	}
+
+function footer_popups(){
+	
+	// VARS
+	global $popups;
+    $multi_popup = [];
+    $popups_multi_forms_ids = [];
+	$multi_popups_counter = 1;
+	
+
+	if($popups):
+		foreach($popups as $key => $popup):
+			if($popup['multi-titles']){
+				$form_id = $popup['form_id'];
+				foreach($popups as $key => $popup_check){
+					if($popup_check['form_id'] == $form_id){
+						$popups[$key]['multi-titles'] = true;
+						if(!in_array($popup_check['popup_name'], array_column($multi_popup, 'name'))){
+							$multi_popup[] = [
+								'title' => $popup_check['title'],
+								'name'	=> $popup_check['popup_name'],
+								'id'	=> $popup_check['form_id']
+							];
+						}
+					}
+				}
+			}
+		endforeach;
+	endif;
+	
+	if($popups):
+		foreach($popups as $key => $popup):
+			$popup_object = new BlockPopup($popup['popup_name'],$popup['title'],$popup['form_id']);
+			if($popup['multi-titles']){
+				if(!in_array($popup['form_id'],$popups_multi_forms_ids)){
+					$popups_multi_forms_ids[] = $popup['form_id'];
+					$popup_object->set_multi_titles($multi_popup,$multi_popups_counter);
+					$popup_object->set_multi_names($multi_popup,$multi_popups_counter);
+					echo $popup_object->get_multi_titles_popup($multi_popup);
+					$multi_popups_counter++;
+				}
+			}else{
+				echo $popup_object->get_popup();
+			}
+		endforeach;
+	endif;
+}
+
 ?>
+

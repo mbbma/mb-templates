@@ -347,59 +347,18 @@ jQuery(document).ready(function($) {
 
 	
 	/***************************
-	Pop-ups System
-	***************************/
-	if($('.show-popup').length){
-		popupsArrays = [];
-		$('.show-popup').each(function(){
-
-			// Get pop-up names
-			popupName = $(this).data('value');
-
-			// Avoid duplication
-			if(popupsArrays.indexOf(popupName) == -1){
-				popupsArrays.push(popupName);
-			}
-		});
-		// Array to string with commas
-		popupNames = popupsArrays.join();
-
-		var data = {
-			'action': 'load_popups_by_ajax',
-			'popups': popupNames
-		};
-		$.post(ajaxUrl, data, function(response) {
-			if(response != '') {
-				$('.popups').append(response);
-
-				$('.popups .popup').each(function(){
-					let pageURL = window.location.href;
-					var pageURLArr = pageURL.split("/");
-					var siteUrl = pageURLArr[0] + "//" + pageURLArr[2];
-					let formAction = pageURL.replace(siteUrl, '');
-					let formAnchor = $(this).find('.gform_anchor').attr('id');
-					$(this).find('form').attr('action',''+formAction+'#'+formAnchor+'');
-				});
-			}
-		});
-	}
-
-	$(document).on('click','.popup .gform_button', function(e){
-		window.document.dispatchEvent(new Event("DOMContentLoaded", { bubbles: true, cancelable: true }));
-	});
-
-	/***************************
 	Popup
 	***************************/
 	$('.show-popup').click(function(){
 		let popupValue = $(this).attr('data-value');
-		$('.popup[data-name="' + popupValue + '"], .popup-background').addClass('active');
+		$('.popup[data-name*="' + popupValue + '"], .popup-background').addClass('active');
+		$('.popup[data-name*="' + popupValue + '"] h3[data-title="' + popupValue + '"]').addClass('active');
 		$('body').addClass('no-scroll');
 		setTimeout(function(){
 			$('.popup-background').addClass('show');
 		}, 10);
 		setTimeout(function(){
-			$('.popup[data-name="' + popupValue + '"]').addClass('show');
+			$('.popup[data-name*="' + popupValue + '"]').addClass('show');
 		}, 100);
 	});
 	$(document).on('click', '.popup .close, .popup-background', function(){
@@ -409,7 +368,7 @@ jQuery(document).ready(function($) {
 		$('.popup.active iframe').attr("src", '');
 		$('.popup.active iframe').attr("src", src);
 		
-		
+		$('.popup.multiple-titles .popup-title').removeClass('active');
 		$('.popup, .popup-background').removeClass('active show');
 		$('body').removeClass('no-scroll');
 	});

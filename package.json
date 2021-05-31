@@ -16,8 +16,10 @@
   },
   "homepage": "https://github.com/mbbma/base-theme#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
-    "gulp": "^3.9.1",
+    "autoprefixer": "^10.2.6",
+    "browser-sync": "^2.26.14",
+    "cssnano": "^5.0.4",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
@@ -25,11 +27,15 @@
     "gulp-minify": "^3.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
     "readable-stream": "^3.6.0",
     "run-sequence": "^2.2.1"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "postcss": "^8.3.0"
+  }
 }

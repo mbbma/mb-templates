@@ -7,9 +7,9 @@
  * @package mbbma
  */
 ?>
-
-		
-					<div class="popups"></div>
+					<div class="popups">
+						<?php footer_popups(); ?>
+					</div>
 					<div class="popup-background"></div>
 				</div>
 			</main>

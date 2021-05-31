@@ -7,7 +7,7 @@
 	// Required classes
 	require_once('library/classes/title.php');
 	require_once('library/classes/button.php');
-
+	require_once('library/classes/popup.php');
 	// Required functions
 	require_once('library/functions/acf-blocks.php');
 	require_once('library/functions/acf-options-page.php');
@@ -19,6 +19,7 @@
 	require_once('library/functions/randomness.php');
 	require_once('library/functions/theme-support.php');
 	require_once('library/functions/user-roles.php');
+	require_once('library/functions/popups.php');
 
 	function mbbma_setup() {
 		// let's get language support going, if you need it

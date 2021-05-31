@@ -19,19 +19,6 @@
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 		<?php include('json-ld.php'); ?>
 		<script type="application/ld+json"><?php echo json_encode($payload); ?></script>
-		<?php 
-			// Enqueue gravity form scripts in the header
-			// https://docs.gravityforms.com/gravity_form_enqueue_scripts/
-			function gravity_forms_scripts_enqueue() {
-				$myforms = RGFormsModel::get_forms();
-				foreach ($myforms as $myform) {
-					if($myform ->is_active){
-						gravity_form_enqueue_scripts($myform->id, true);
-					}
-				}
-			}
-			gravity_forms_scripts_enqueue();
-		?>
 		<?php wp_head(); ?>
 	</head>
 

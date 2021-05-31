@@ -75,35 +75,39 @@
 
 								case 'buttons':
 									echo '<div class="buttons">';
-									foreach ($value['buttons'] as $key => $row) {
-										$button = new BlockButton($row['button_text']);
-
-										switch ($row['button_type']) {
-											case 'link':
-												$button->setLink(
-													$row['button_link']['url'],
-													$row['button_link']['title'],
-													$row['button_link']['target'],
-												);
-												break;
-
-											case 'popup':
-												$button->setPopup($row['button_popup']);
-												break;
-											
-											default:
-												break;
-										}
-										echo $button->getButton();
-
-										if($row['phone']){
-											echo '
-												<div class="phone">
-													of bel <a href="'.contactDetails(array('detail' => 'phone_link')).'" title="Bel ons">'.contactDetails(array('detail' => 'phone')).'</a>
-												</div>
-											';
+									if($value['buttons']){
+										foreach ($value['buttons'] as $key => $row) {
+											$button = new BlockButton($row['button_text']);
+	
+											switch ($row['button_type']) {
+												case 'link':
+													$button->setLink(
+														$row['button_link']['url'],
+														$row['button_link']['title'],
+														$row['button_link']['target'],
+													);
+													break;
+	
+												case 'popup':
+													add_global_popup($row['button_popup']);
+													$button->setPopup($row['button_popup']);
+													break;
+												
+												default:
+													break;
+											}
+											echo $button->getButton();
+	
+											if($row['phone']){
+												echo '
+													<div class="phone">
+														of bel <a href="'.contactDetails(array('detail' => 'phone_link')).'" title="Bel ons">'.contactDetails(array('detail' => 'phone')).'</a>
+													</div>
+												';
+											}
 										}
 									}
+
 									echo '</div>';
 									break;
 								
@@ -112,9 +116,11 @@
 							}
 						}
 					endif;
+
 				?>
 			</div>
 		</div>
 	</article>
 	[/raw]
+	
 <?php } ?>

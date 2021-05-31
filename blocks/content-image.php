@@ -92,6 +92,7 @@
 														break;
 		
 													case 'popup':
+														add_global_popup($row['button_popup']);
 														$button->setPopup($row['button_popup']);
 														break;
 													

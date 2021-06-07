@@ -33,6 +33,7 @@
 		}
 		
 		function setPopup($popup){
+			add_global_popup($popup);
 			$this->popup = $popup;
 
 			$this->button = '

@@ -9,9 +9,38 @@ animals:
   label: Animals
 arrows:
   icons:
+    - angle-double-down
+    - angle-double-left
+    - angle-double-right
+    - angle-double-up
     - angle-down
+    - angle-left
     - angle-right
+    - angle-up
+    - arrow-down
+    - arrow-left
+    - arrow-right
+    - arrow-up
+    - caret-down
+    - caret-left
     - caret-right
+    - caret-up
+    - chevron-circle-down
+    - chevron-circle-left
+    - chevron-circle-right
+    - chevron-circle-up
+    - chevron-double-down
+    - chevron-double-left
+    - chevron-double-right
+    - chevron-double-up
+    - chevron-down
+    - chevron-left
+    - chevron-right
+    - chevron-up
+    - long-arrow-down
+    - long-arrow-left
+    - long-arrow-right
+    - long-arrow-up
   label: Arrows
 audio-video:
   icons: []
@@ -70,7 +99,8 @@ currency:
   icons: []
   label: Currency
 date-time:
-  icons: []
+  icons:
+    - clock
   label: Date & Time
 design:
   icons: []
@@ -136,6 +166,8 @@ interfaces:
   icons:
     - check
     - envelope
+    - search-plus
+    - star
   label: Interfaces
 logistics:
   icons: []
@@ -144,6 +176,7 @@ maps:
   icons:
     - map-marker-alt
     - phone-alt
+    - search-plus
   label: Maps
 maritime:
   icons: []
@@ -168,9 +201,11 @@ objects:
     - envelope
     - map-marker-alt
     - phone-alt
+    - star
   label: Objects
 payments-shopping:
-  icons: []
+  icons:
+    - star
   label: Payments & Shopping
 pharmacy:
   icons: []
@@ -191,7 +226,8 @@ security:
   icons: []
   label: Security
 shapes:
-  icons: []
+  icons:
+    - star
   label: Shapes
 shopping:
   icons: []
@@ -200,6 +236,7 @@ social:
   icons:
     - envelope
     - map-marker-alt
+    - star
   label: Social
 spinners:
   icons: []
@@ -214,12 +251,14 @@ status:
   icons:
     - map-marker-alt
     - phone-alt
+    - star
   label: Status
 summer:
   icons: []
   label: Summer
 toggle:
-  icons: []
+  icons:
+    - star
   label: Toggle
 travel:
   icons: []

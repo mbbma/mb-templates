@@ -1,7 +1,11 @@
 export const faFacebookF: IconDefinition;
+export const faFacebookSquare: IconDefinition;
 export const faInstagram: IconDefinition;
+export const faLinkedin: IconDefinition;
 export const faLinkedinIn: IconDefinition;
+export const faPinterest: IconDefinition;
 export const faTwitter: IconDefinition;
+export const faTwitterSquare: IconDefinition;
 import { IconDefinition, IconLookup, IconName, IconPrefix, IconPack } from '@fortawesome/fontawesome-common-types';
 export { IconDefinition, IconLookup, IconName, IconPrefix, IconPack } from '@fortawesome/fontawesome-common-types';
 export const prefix: IconPrefix;

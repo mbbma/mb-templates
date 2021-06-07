@@ -1,3 +1,72 @@
+angle-double-down:
+  changes:
+    - '3'
+    - 5.0.0
+  label: Angle Double Down
+  search:
+    terms:
+      - arrows
+      - caret
+      - download
+      - expand
+  styles:
+    - regular
+    - solid
+  unicode: f103
+  voted: false
+angle-double-left:
+  changes:
+    - '3'
+    - 5.0.0
+  label: Angle Double Left
+  search:
+    terms:
+      - arrows
+      - back
+      - caret
+      - laquo
+      - previous
+      - quote
+  styles:
+    - regular
+    - solid
+  unicode: f100
+  voted: false
+angle-double-right:
+  changes:
+    - '3'
+    - 5.0.0
+  label: Angle Double Right
+  search:
+    terms:
+      - arrows
+      - caret
+      - forward
+      - more
+      - next
+      - quote
+      - raquo
+  styles:
+    - regular
+    - solid
+  unicode: f101
+  voted: false
+angle-double-up:
+  changes:
+    - '3'
+    - 5.0.0
+  label: Angle Double Up
+  search:
+    terms:
+      - arrows
+      - caret
+      - collapse
+      - upload
+  styles:
+    - regular
+    - solid
+  unicode: f102
+  voted: false
 angle-down:
   changes:
     - '3'
@@ -11,7 +80,26 @@ angle-down:
       - expand
   styles:
     - solid
+    - regular
   unicode: f107
+  voted: false
+angle-left:
+  changes:
+    - '3'
+    - 5.0.0
+    - 5.11.0
+  label: angle-left
+  search:
+    terms:
+      - arrow
+      - back
+      - caret
+      - less
+      - previous
+  styles:
+    - solid
+    - regular
+  unicode: f104
   voted: false
 angle-right:
   changes:
@@ -28,7 +116,111 @@ angle-right:
       - next
   styles:
     - solid
+    - regular
   unicode: f105
+  voted: false
+angle-up:
+  changes:
+    - '3'
+    - 5.0.0
+  label: angle-up
+  search:
+    terms:
+      - arrow
+      - caret
+      - collapse
+      - upload
+  styles:
+    - solid
+    - regular
+  unicode: f106
+  voted: false
+arrow-down:
+  changes:
+    - '1'
+    - 5.0.0
+  label: arrow-down
+  search:
+    terms:
+      - download
+  styles:
+    - solid
+    - regular
+  unicode: f063
+  voted: false
+arrow-left:
+  changes:
+    - '1'
+    - 5.0.0
+  label: arrow-left
+  search:
+    terms:
+      - back
+      - previous
+  styles:
+    - solid
+    - regular
+  unicode: f060
+  voted: false
+arrow-right:
+  changes:
+    - '1'
+    - 5.0.0
+  label: arrow-right
+  search:
+    terms:
+      - forward
+      - next
+  styles:
+    - solid
+    - regular
+  unicode: f061
+  voted: false
+arrow-up:
+  changes:
+    - '1'
+    - 5.0.0
+  label: arrow-up
+  search:
+    terms:
+      - forward
+      - upload
+  styles:
+    - solid
+    - regular
+  unicode: f062
+  voted: false
+caret-down:
+  changes:
+    - '2'
+    - 5.0.0
+  label: Caret Down
+  search:
+    terms:
+      - arrow
+      - dropdown
+      - expand
+      - menu
+      - more
+      - triangle
+  styles:
+    - solid
+  unicode: f0d7
+  voted: false
+caret-left:
+  changes:
+    - '2'
+    - 5.0.0
+  label: Caret Left
+  search:
+    terms:
+      - arrow
+      - back
+      - previous
+      - triangle
+  styles:
+    - solid
+  unicode: f0d9
   voted: false
 caret-right:
   changes:
@@ -44,6 +236,20 @@ caret-right:
   styles:
     - solid
   unicode: f0da
+  voted: false
+caret-up:
+  changes:
+    - '2'
+    - 5.0.0
+  label: Caret Up
+  search:
+    terms:
+      - arrow
+      - collapse
+      - triangle
+  styles:
+    - solid
+  unicode: f0d8
   voted: false
 check:
   changes:
@@ -70,6 +276,197 @@ check:
   styles:
     - solid
   unicode: f00c
+  voted: false
+chevron-circle-down:
+  changes:
+    - '3.1'
+    - 5.0.0
+  label: Chevron Circle Down
+  search:
+    terms:
+      - arrow
+      - download
+      - dropdown
+      - menu
+      - more
+  styles:
+    - solid
+  unicode: f13a
+  voted: false
+chevron-circle-left:
+  changes:
+    - '3.1'
+    - 5.0.0
+  label: Chevron Circle Left
+  search:
+    terms:
+      - arrow
+      - back
+      - previous
+  styles:
+    - solid
+  unicode: f137
+  voted: false
+chevron-circle-right:
+  changes:
+    - '3.1'
+    - 5.0.0
+  label: Chevron Circle Right
+  search:
+    terms:
+      - arrow
+      - forward
+      - next
+  styles:
+    - solid
+  unicode: f138
+  voted: false
+chevron-circle-up:
+  changes:
+    - '3.1'
+    - 5.0.0
+  label: Chevron Circle Up
+  search:
+    terms:
+      - arrow
+      - collapse
+      - upload
+  styles:
+    - solid
+  unicode: f139
+  voted: false
+chevron-double-down:
+  changes:
+    - 5.0.0
+  label: Chevron Double Down
+  search:
+    terms:
+      - arrow
+      - download
+      - expand
+  styles:
+    - solid
+  unicode: f322
+  voted: false
+chevron-double-left:
+  changes:
+    - 5.0.0
+    - 5.11.0
+  label: Chevron Double Left
+  search:
+    terms:
+      - arrow
+      - back
+      - bracket
+      - previous
+  styles:
+    - solid
+  unicode: f323
+  voted: false
+chevron-double-right:
+  changes:
+    - 5.0.0
+    - 5.11.0
+  label: Chevron Double Right
+  search:
+    terms:
+      - arrow
+      - bracket
+      - forward
+      - next
+  styles:
+    - solid
+  unicode: f324
+  voted: false
+chevron-double-up:
+  changes:
+    - 5.0.0
+  label: Chevron Double Up
+  search:
+    terms:
+      - arrow
+      - collapse
+      - upload
+  styles:
+    - solid
+  unicode: f325
+  voted: false
+chevron-down:
+  changes:
+    - '1'
+    - 5.0.0
+  label: chevron-down
+  search:
+    terms:
+      - arrow
+      - download
+      - expand
+  styles:
+    - solid
+  unicode: f078
+  voted: false
+chevron-left:
+  changes:
+    - '1'
+    - 5.0.0
+  label: chevron-left
+  search:
+    terms:
+      - arrow
+      - back
+      - bracket
+      - previous
+  styles:
+    - solid
+  unicode: f053
+  voted: false
+chevron-right:
+  changes:
+    - '1'
+    - 5.0.0
+  label: chevron-right
+  search:
+    terms:
+      - arrow
+      - bracket
+      - forward
+      - next
+  styles:
+    - solid
+  unicode: f054
+  voted: false
+chevron-up:
+  changes:
+    - '1'
+    - 5.0.0
+  label: chevron-up
+  search:
+    terms:
+      - arrow
+      - collapse
+      - upload
+  styles:
+    - solid
+  unicode: f077
+  voted: false
+clock:
+  changes:
+    - '1'
+    - 5.0.0
+    - 5.12.1
+  label: Clock
+  search:
+    terms:
+      - date
+      - late
+      - schedule
+      - time
+      - timer
+      - timestamp
+      - watch
+  styles:
+    - solid
+  unicode: f017
   voted: false
 envelope:
   changes:
@@ -103,6 +500,19 @@ facebook-f:
     - brands
   unicode: f39e
   voted: false
+facebook-square:
+  changes:
+    - '1'
+    - 5.0.0
+    - 5.8.2
+  label: Facebook Square
+  search:
+    terms:
+      - social network
+  styles:
+    - brands
+  unicode: f082
+  voted: false
 instagram:
   changes:
     - '4.6'
@@ -113,6 +523,18 @@ instagram:
   styles:
     - brands
   unicode: f16d
+  voted: false
+linkedin:
+  changes:
+    - '1'
+    - 5.0.0
+  label: LinkedIn
+  search:
+    terms:
+      - linkedin-square
+  styles:
+    - brands
+  unicode: f08c
   voted: false
 linkedin-in:
   changes:
@@ -128,6 +550,60 @@ linkedin-in:
   styles:
     - brands
   unicode: f0e1
+  voted: false
+long-arrow-down:
+  changes:
+    - '3.2'
+    - 5.0.0
+  label: Long Arrow Down
+  search:
+    terms:
+      - download
+      - long-arrow-down
+  styles:
+    - light
+  unicode: f175
+  voted: false
+long-arrow-left:
+  changes:
+    - '3.2'
+    - 5.0.0
+  label: Long Arrow Left
+  search:
+    terms:
+      - back
+      - long-arrow-left
+      - previous
+  styles:
+    - light
+  unicode: f177
+  voted: false
+long-arrow-right:
+  changes:
+    - '3.2'
+    - 5.0.0
+  label: Long Arrow Right
+  search:
+    terms:
+      - forward
+      - long-arrow-right
+      - next
+  styles:
+    - light
+  unicode: f178
+  voted: false
+long-arrow-up:
+  changes:
+    - '3.2'
+    - 5.0.0
+  label: Long Arrow Up
+  search:
+    terms:
+      - long-arrow-up
+      - upload
+  styles:
+    - light
+  unicode: f176
   voted: false
 map-marker-alt:
   changes:
@@ -172,6 +648,53 @@ phone-alt:
     - solid
   unicode: f879
   voted: false
+pinterest:
+  changes:
+    - '2'
+    - 5.0.0
+  label: Pinterest
+  search:
+    terms: []
+  styles:
+    - brands
+  unicode: f0d2
+  voted: false
+search-plus:
+  changes:
+    - '1'
+    - 5.0.0
+  label: Search Plus
+  search:
+    terms:
+      - bigger
+      - enlarge
+      - magnify
+      - positive
+      - zoom
+      - zoom in
+  styles:
+    - solid
+  unicode: f00e
+  voted: false
+star:
+  changes:
+    - '1'
+    - 5.0.0
+    - 5.10.2
+  label: Star
+  search:
+    terms:
+      - achievement
+      - award
+      - favorite
+      - important
+      - night
+      - rating
+      - score
+  styles:
+    - solid
+  unicode: f005
+  voted: false
 twitter:
   changes:
     - '2'
@@ -184,4 +707,17 @@ twitter:
   styles:
     - brands
   unicode: f099
+  voted: false
+twitter-square:
+  changes:
+    - '1'
+    - 5.0.0
+  label: Twitter Square
+  search:
+    terms:
+      - social network
+      - tweet
+  styles:
+    - brands
+  unicode: f081
   voted: false

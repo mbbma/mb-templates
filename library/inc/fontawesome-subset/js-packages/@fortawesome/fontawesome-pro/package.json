@@ -47,9 +47,12 @@
     "node": ">=6"
   },
   "dependencies": {},
-  "version": "5.14.0",
+  "version": "5.15.1",
   "name": "@fortawesome/fontawesome-pro",
   "main": "js/fontawesome.js",
   "style": "css/fontawesome.css",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "scripts": {
+    "postinstall": "node attribution.js"
+  }
 }

@@ -1,4 +1,4 @@
-# Font Awesome 5.14.0
+# Font Awesome 5.15.1
 
 Thanks for downloading Font Awesome! We're so excited you're here.
 

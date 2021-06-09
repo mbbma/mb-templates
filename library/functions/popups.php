@@ -102,7 +102,6 @@ function footer_popups(){
 	global $popups;
     $multi_popup = [];
     $popups_multi_forms_ids = [];
-	$multi_popups_counter = 1;
 	
 
 	if($popups):
@@ -131,10 +130,9 @@ function footer_popups(){
 			if($popup['multi-titles']){
 				if(!in_array($popup['form_id'],$popups_multi_forms_ids)){
 					$popups_multi_forms_ids[] = $popup['form_id'];
-					$popup_object->set_multi_titles($multi_popup,$multi_popups_counter);
-					$popup_object->set_multi_names($multi_popup,$multi_popups_counter);
+					$popup_object->set_multi_titles($multi_popup,$popup['form_id']);
+					$popup_object->set_multi_names($multi_popup,$popup['form_id']);
 					echo $popup_object->get_multi_titles_popup($multi_popup);
-					$multi_popups_counter++;
 				}
 			}else{
 				echo $popup_object->get_popup();

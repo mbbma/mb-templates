@@ -58,9 +58,11 @@ select {
 		li.gfield {
 			margin: 10px 0 0;
 			position: relative;
-			&:first-child,
-			&.gform_hidden{
+			&:first-child{
 				margin-top: 0;
+			}
+			&.gform_hidden{
+				display: none;
 			}
 			.ginput_container {
 				margin: 0;

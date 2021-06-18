@@ -1,3 +1,55 @@
-.wp-block{
-    max-width: 900px;
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/typography';
+@import "../inc/fontawesome-subset/css/all.min.css";
+
+.acf-block-preview{
+	@import 'components/buttons';
+	@import 'components/titles';
+}
+
+@import 'components/blocks_admin/blocks';
+
+.editor-styles-wrapper{
+	.wp-block{
+		max-width: 900px;
+		h1,
+		h2,
+		h3{
+			margin: 0;
+		}
+		a{
+			&:not(.button){
+				color: inherit;
+			}
+		}
+		.acf-block-preview{
+			position: relative;
+			&:before{
+				content: '';
+				position: absolute;
+				z-index: 25;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			.text-center{
+				text-align: center;
+			}
+		}
+	}
+}
+.wp-admin{
+	h1,
+	h2,
+	h3{
+		text-transform: none;
+	}
+}
+.interface-complementary-area{
+	@include bp('narrow'){
+		width: 350px;
+	}
 }

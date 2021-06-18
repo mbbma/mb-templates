@@ -8,9 +8,10 @@
 	$blockTitle = get_field('block_title');
 ?>
 
-<?php if($block){ ?>
-	[raw]
-	<?php
+<?php
+	if($block){
+		echo !$is_preview ? '[raw]' : '';
+		
 		$order = 'order-' . $block['order'];
 	?>
 	<article <?php echo $blockID; ?> class="content-image light-background <?php echo $padding; ?>">
@@ -77,36 +78,34 @@
 											echo $value['content'];
 											break;
 
-										case 'buttons':
+										case 'button':
 											echo '<div class="buttons">';
-											foreach ($value['buttons'] as $key => $row) {
-												$button = new BlockButton($row['button_text']);
+											$button = new BlockButton($value['button']['button_text']);
 		
-												switch ($row['button_type']) {
-													case 'link':
-														$button->setLink(
-															$row['button_link']['url'],
-															$row['button_link']['title'],
-															$row['button_link']['target'],
-														);
-														break;
+											switch ($value['button']['button_type']) {
+												case 'link':
+													$button->setLink(
+														$value['button']['button_link']['url'],
+														$value['button']['button_link']['title'],
+														$value['button']['button_link']['target'],
+													);
+													break;
 		
-													case 'popup':
-														$button->setPopup($row['button_popup']);
-														break;
-													
-													default:
-														break;
-												}
-												echo $button->getButton();
+												case 'popup':
+													$button->setPopup($value['button']['button_popup']);
+													break;
+												
+												default:
+													break;
+											}
+											echo $button->getButton();
 		
-												if($row['phone']){
-													echo '
-														<div class="phone">
-															of bel <a href="'.contactDetails(array('detail' => 'phone_link')).'" title="Bel ons">'.contactDetails(array('detail' => 'phone')).'</a>
-														</div>
-													';
-												}
+											if($value['button']['phone']){
+												echo '
+													<div class="phone">
+														of bel <a href="'.contactDetails(array('detail' => 'phone_link')).'" title="Bel ons">'.contactDetails(array('detail' => 'phone')).'</a>
+													</div>
+												';
 											}
 											echo '</div>';
 											break;
@@ -122,5 +121,7 @@
 			</div>
 		</div>
 	</article>
-	[/raw]
-<?php } ?>
+<?php
+		echo !$is_preview ? '[/raw]' : '';
+	}
+?>

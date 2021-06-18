@@ -16,7 +16,7 @@
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/library/images/favicon.png">
 		<?php include('json-ld.php'); ?>
 		<script type="application/ld+json"><?php echo json_encode($payload); ?></script>
 		<?php wp_head(); ?>
@@ -36,7 +36,12 @@
 									</a>
 								</div>
 							</div>
-							<div class="site-branding-top mobile-none animated">
+							<div class="phone-icon mobile-only">
+								<a href="<?php echo contactDetails(array('detail' => 'phone_link')); ?>" title="Bel ons">
+									<i class="fas fa-phone-alt"></i>
+								</a>
+							</div>
+							<div class="site-branding-top mobile-none">
 								<div class="buttons"> 
 									<a class="btn-primary" href="#" target="_blank" title="Afspraak maken">
 										Afspraak maken

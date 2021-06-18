@@ -9,7 +9,7 @@ body {
 	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-weight: 300;
+	font-weight: 400;
 
 	@include bp('mobile'){
 		font-size: $mobile-font-size;
@@ -27,6 +27,9 @@ body {
 
 p {
 	margin-bottom: 1.5em;
+	&:last-child{
+		margin-bottom: 0;
+	}
 	a{
 		text-decoration: underline;
 	}
@@ -117,26 +120,10 @@ a {
 		list-style-type: decimal;
 	}
 	ul{
-		&.angle{
-			li{
-				&:before{
-					content: $fa-angle-right;
-				}
-			}
-		}
-		&.check{
-			li{
-				&:before{
-					content: $fa-check;
-				}
-			}
-		}
-		&.caret{
-			li{
-				&:before{
-					content: $fa-caret-right;
-				}
-			}
+		margin-top: 0;
+		margin-bottom: 1.5em;
+		&:last-child{
+			margin-bottom: 0;
 		}
 	}
 }

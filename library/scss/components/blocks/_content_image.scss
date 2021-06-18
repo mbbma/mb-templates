@@ -1,6 +1,6 @@
 article.content-image{
 	.content-wrapper{
-		&.order-2{
+		&.order-1{
 			@include bp('narrow'){
 				.grid{
 					flex-direction: row-reverse;
@@ -17,7 +17,7 @@ article.content-image{
 		}
 		.content{
 			@include bp('mobile'){
-				padding-bottom: $pad-mobile;
+				padding-top: $pad-mobile;
 			}
 			@include bp('narrow'){
 				width: 50%;
@@ -25,12 +25,6 @@ article.content-image{
 			@include bp('normal'){
 				max-width: 440px;
 				width: 100%;
-			}
-
-			p{
-				a{
-					text-decoration: underline;
-				}
 			}
 		}
 

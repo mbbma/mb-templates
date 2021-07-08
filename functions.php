@@ -12,6 +12,7 @@
 	// Required functions
 	require_once('library/functions/acf-blocks.php');
 	require_once('library/functions/acf-options-page.php');
+	require_once('library/functions/api-requests.php');
 	require_once('library/functions/cleanup.php');
 	require_once('library/functions/contact-details.php');
 	require_once('library/functions/enqueueing.php');
